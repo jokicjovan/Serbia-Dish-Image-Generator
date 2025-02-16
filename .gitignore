@@ -472,5 +472,5 @@ tags
 
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm,visualstudiocode,vim,intellij+all,flask
 /data_recepti
-/data_coolinarika/images
-data_coolinarika/data.json
+/data_coolinarika/*
+/Data/*
