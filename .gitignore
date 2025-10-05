@@ -474,3 +474,8 @@ tags
 /data_recepti
 /data_coolinarika/*
 /Data/*
+
+
+.DS_store
+/data_merged/images
+data_merged/images.zip
