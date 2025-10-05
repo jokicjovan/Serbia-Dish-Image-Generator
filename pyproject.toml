@@ -1,0 +1,12 @@
+[project]
+name = "serbia-dish-image-generator"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "bs4>=0.0.2",
+    "pillow>=11.3.0",
+    "requests>=2.32.5",
+    "selenium>=4.36.0",
+]

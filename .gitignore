@@ -477,3 +477,5 @@ tags
 
 
 .DS_store
+/data_merged/images
+data_merged/images.zip
