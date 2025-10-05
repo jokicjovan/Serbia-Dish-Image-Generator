@@ -473,9 +473,11 @@ tags
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm,visualstudiocode,vim,intellij+all,flask
 /data_recepti
 /data_coolinarika/*
-/Data/*
+/Data/images/*
 
 
 .DS_store
 /data_merged/images
 data_merged/images.zip
+images.rar
+images.zip

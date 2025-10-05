@@ -6,6 +6,7 @@ import time
 import uuid
 import requests
 import json
+import re
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.common import TimeoutException
@@ -86,10 +87,11 @@ def fetch_recipe_data(url):
 
         # Extract the JSON content
         json_data = json.loads(script_tag.string)
-        name = json_data['name']
+
+        name = re.sub(r'\xa0', '', json_data['name'].replace("\"", "").replace("'", "").replace('\xad', ''))
         image_url = json_data['image']
-        ingredients = json_data['recipeIngredient']
-        preparation_steps = [step['text'] for step in json_data['recipeInstructions']]
+        ingredients = [re.sub(r'\xa0', '', ingredient.replace("\"", "").replace("'", "").replace('\xad', '')) for ingredient in json_data['recipeIngredient']]
+        preparation_steps = [re.sub(r'\xa0', '', step['text'].replace("\"", "").replace("'", "").replace('\xad', '')) for step in json_data['recipeInstructions']]
 
         # Download the image
         image_name = str(uuid.uuid4()) + ".jpg"
