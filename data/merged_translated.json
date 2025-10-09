@@ -1,6 +1,1291 @@
 {
   "dishes": [
     {
+      "name": "Bolognese Zucchini",
+      "ingredients": [
+        "2 larger zucchinis",
+        "500 g ground meat",
+        "500 ml tomato sauce",
+        "1 larger onion",
+        "to taste cheese, mozzarella..",
+        "to taste spices (salt, pepper, oregano, garlic, basil..)"
+      ],
+      "preparation": [
+        "Peel the zucchinis and slice them thinly, then cut them lengthwise to get spaghetti-like strands; there is also a tool available for this at Chinese stores. \r\rLet them drain, and in the meantime, prepare the sauce. \r\rFinely chop the onion, add the meat, and sauté until the meat changes color. Add the tomato sauce and simmer for another 10 minutes on low heat. \r\rAdd the drained zucchinis and sauté together for another 10-15 minutes, finally adding spices to taste and preference. \r\rWhen done, you can immediately grate cheese or serve it on the side."
+      ],
+      "image_path": "data/images/02025193-9834-4033-ba83-47f4068bc135.jpg"
+    },
+    {
+      "name": "Stuffed Peppers with Potatoes",
+      "ingredients": [
+        "7 medium bell peppers",
+        "300 g onion",
+        "4 cloves garlic",
+        "100 g leek",
+        "160 g carrot",
+        "800 g potatoes",
+        "2 heaping tablespoons ajvar",
+        "1 teaspoon salt",
+        "to taste dry vegetable seasoning",
+        "1 teaspoon ground pepper",
+        "1 teaspoon smoked paprika",
+        "2 teaspoons paprika",
+        "1 smaller bunch of parsley",
+        "oil as needed"
+      ],
+      "preparation": [
+        "Clean the onion, garlic, leek, and carrot, and chop everything into small cubes (in a chopper). In a larger pot, pour in oil and heat it (about 150 ml of oil). Add the chopped vegetables to the heated oil and sauté on medium heat just until softened. Add the cleaned and coarsely grated potatoes and sauté for another 10 minutes, stirring. Finally, add the ajvar, chopped parsley, and all the listed spices. Mix well, remove from heat, and let cool.",
+        "Clean the seeds and stems from the peppers. Grease a baking dish with oil (you can also use any other non-stick dish). Stuff the peppers, sprinkle flour over each opening (there's no need to close them with tomato or potato), and arrange them in the dish. Distribute the remaining filling between the peppers.",
+        "Preheat the oven to 180 degrees. Just cover the dish with foil, but leave an opening on the side so that the peppers bake instead of boiling. Bake the peppers under foil for 45 minutes. Then, carefully remove the foil, brush the peppers with oil using a silicone brush, and return to the oven to brown.",
+        "A very tasty lunch..."
+      ],
+      "image_path": "data/images/294a7c66-0bf2-4294-add0-48a7d83075cd.jpg"
+    },
+    {
+      "name": "Crispy Spiced White Meat",
+      "ingredients": [
+        "700 g white meat",
+        "1 cup (2 dl) flour",
+        "1/2 cup milk",
+        "1 teaspoon ground sweet paprika",
+        "1 egg",
+        "oil for frying as needed",
+        "a few tablespoons of breadcrumbs and flour",
+        "1 teaspoon salt",
+        "1 teaspoon dry vegetable seasoning",
+        "1 teaspoon ground paprika",
+        "1 teaspoon turmeric",
+        "1 teaspoon garlic powder"
+      ],
+      "preparation": [
+        "Cut the white meat into smaller pieces, either into steaks or elongated pieces. Place the meat in a bowl and sprinkle it with a mixture of all the spices and mix.",
+        "In a bowl, pour in the flour, milk, paprika, a little salt, and the egg, and mix well with a fork until you get a smooth mixture.",
+        "Dip each piece of meat into the mixture, drain a little, and roll in the mixture of flour and breadcrumbs, then fry in oil until golden.",
+        "Breadcrumbs are not included in the recipe, but I added them to make the meat even crispier.",
+        "Place the fried meat on a paper towel, then serve with sides, i.e., sauces (dips) and salad."
+      ],
+      "image_path": "data/images/d5eb4096-e021-480d-a18d-e624de79ebef.jpg"
+    },
+    {
+      "name": "Pork Ribs with Potatoes",
+      "ingredients": [
+        "800 g whole pork ribs",
+        "a little salt",
+        "a little Mediterranean herb mix",
+        "1 smallest teaspoon of pesto (ready-made product)",
+        "1 smallest teaspoon of chopped tomato sauce (ready-made product)",
+        "300 g (3 pieces) potatoes",
+        "a little oil",
+        "50 ml quality wine"
+      ],
+      "preparation": [
+        "With a sharp knife, score the skin on the ribs and salt them.\r\rIn a small bowl, mix the pesto, chopped tomato sauce, and Mediterranean herb mix, and rub this mixture all over the pork.",
+        "Peel, wash, and slice the potatoes thinly and salt them.\r\rIn a baking dish, add a little oil, then the sliced potatoes and the ribs.\r\rBake in a preheated oven at 180 degrees for about an hour and a half, basting with wine and a little water during baking."
+      ],
+      "image_path": "data/images/7dcb5db8-f121-4a09-807a-dca20e999561.jpg"
+    },
+    {
+      "name": "Simple: Pilaf",
+      "ingredients": [
+        "1 cup (1.5 dl) rice",
+        "200-300 g chicken white meat",
+        "1 onion",
+        "1 carrot",
+        "2-3 cloves garlic",
+        "to taste salt",
+        "to taste pepper",
+        "to taste dry vegetable seasoning",
+        "to taste parsley",
+        "oil as needed"
+      ],
+      "preparation": [
+        "Cut the meat into smaller pieces and boil: when it starts to boil, cook for about ten minutes. Remove from water to cool, then cut into small cubes, saving the water.\r\rBoil the rice in salted water: the cooking time depends on whether you are preparing glutinous or whole grain rice. It should soften but not overcook as it will continue to simmer in the oven.\r\rIn oil, sauté finely chopped onion, garlic, and carrot.",
+        "To the sautéed onion with carrot, add the chopped meat, boiled rice with not too much liquid from the rice, but if needed, add the broth in which the meat was cooked so that it is mushy but not too runny. Simmer for 5-6 minutes. Season with salt and pepper to taste, add vegetable seasoning and finely chopped parsley (fresh or dried), mix well, and transfer to a greased baking dish.",
+        "Bake in a preheated oven at 180°C for about 30 minutes to evaporate excess liquid and to blend the flavors."
+      ],
+      "image_path": "data/images/932b1fdf-2d71-43a0-aa90-ef95b9cb9a94.jpg"
+    },
+    {
+      "name": "Baked Beans with Cheese",
+      "ingredients": [
+        "150 g beans",
+        "1 red onion",
+        "150 g cheese",
+        "oil as needed and to taste",
+        "salt",
+        "paprika",
+        "parsley"
+      ],
+      "preparation": [
+        "Cook the beans in the usual way. Soak in water overnight, discard the first cooking water, and cook while occasionally adding hot water until cooked.\rSauté finely chopped red onion in oil, add paprika, briefly fry, add crumbled white cheese, remove from heat, and add finely chopped parsley. Add the cooked and drained beans. Mix and season to taste (depends on how salty the cheese is).",
+        "Pour into a greased smaller baking dish, sprinkle with a little finely chopped fresh or dried parsley, and bake in the oven at 180 degrees for about half an hour."
+      ],
+      "image_path": "data/images/6c7696e8-a84f-45ca-89f2-67d28454279e.jpg"
+    },
+    {
+      "name": "Pizza Macaroni",
+      "ingredients": [
+        "300 g macaroni",
+        "180 g sour cream",
+        "1 tablespoon oil",
+        "2 tablespoons tomato sauce",
+        "250 g cheese",
+        "150 g salami/ham",
+        "to taste salt",
+        "1/2 teaspoon oregano",
+        "to taste pepper",
+        "50 ml milk",
+        "to taste dry vegetable seasoning"
+      ],
+      "preparation": [
+        "Cook the macaroni according to the package instructions, drain, and let cool. Add sour cream, milk, oil, tomato sauce, chopped salami, 100 g grated cheese, oregano, salt, pepper, dry vegetable seasoning to the macaroni and mix to combine all ingredients. Pour the prepared macaroni into a greased baking dish. Top with 150 g grated cheese and bake in a well-heated oven at 200 degrees for 20 minutes.",
+        "Remove the baked macaroni from the oven, let cool, and serve."
+      ],
+      "image_path": "data/images/625bc394-49cc-4f86-bc2e-69c4043ff378.jpg"
+    },
+    {
+      "name": "Macaroni with Chicken",
+      "ingredients": [
+        "250 g macaroni",
+        "360 g sour cream",
+        "oil as needed",
+        "to taste salt",
+        "pepper",
+        "oregano",
+        "250 g chicken white meat"
+      ],
+      "preparation": [
+        "Cook the macaroni according to the package instructions. Drain and let cool, then add 180 g sour cream and mix. In heated oil, sauté finely chopped chicken white meat. When browned, season with salt and add a little water and sauté briefly until the water evaporates. Then add 180 g sour cream, season to taste (add salt, pepper, and oregano) and simmer for a few minutes before removing from heat. Distribute the macaroni with sour cream on plates, and top with the meat and sour cream sauce. Sprinkle with oregano and serve."
+      ],
+      "image_path": "data/images/6d5e73be-202d-4b2f-9745-596b7847fd12.jpg"
+    },
+    {
+      "name": "Turkey in Soy Sauce",
+      "ingredients": [
+        "1-1.5 kg turkey drumsticks and thighs",
+        "about 80 ml soy sauce",
+        "2 tablespoons honey",
+        "1 orange - juice",
+        "3 tablespoons ketchup",
+        "1-2 teaspoons garlic granules",
+        "to taste salt",
+        "to taste pepper",
+        "1-1.5 kg potatoes"
+      ],
+      "preparation": [
+        "Wash and dry the meat. For the marinade, mix soy sauce with ketchup, orange juice, honey, and spices - be careful with salt, as soy sauce is salty...\rRub the turkey well with the marinade and let it rest for at least 2 hours, preferably overnight...\rPreheat the oven, arrange the meat in a baking dish, add the marinade if any is left, cover with foil, and bake.\rAbout halfway through the time - one to one and a half hours. Remove the baking dish, take out the meat, place the cleaned and seasoned potatoes, return the turkey, cover again with foil, and continue baking. When both the meat and potatoes are cooked, remove the foil and let it brown nicely.\rServe with a seasonal salad."
+      ],
+      "image_path": "data/images/45d7eea5-d7fd-40d4-8792-7ecff0d83442.jpg"
+    },
+    {
+      "name": "Stuffed Peppers Baked in the Oven",
+      "ingredients": [
+        "12-13 fresh bell peppers",
+        "500 g ground mixed meat",
+        "1 onion",
+        "2-3 cloves garlic",
+        "1 carrot",
+        "700 ml cooked tomatoes",
+        "1 teaspoon red ground paprika",
+        "2 teaspoons dry vegetable seasoning",
+        "to taste salt, ground black pepper",
+        "1/2 cup rice",
+        "2 larger tomatoes",
+        "2 tablespoons lard"
+      ],
+      "preparation": [
+        "In a deeper pan, sauté the onion and garlic with 2 tablespoons of lard, then add the ground meat and spices. Finally, add the drained rice and sauté for another 2-3 minutes. Remove from heat and break in 1 egg. Prepare a baking dish for the oven. Grease it with lard.",
+        "Wash the peppers, remove the seeds and hollow them out, then fill the insides with the prepared mixture. Close the peppers with tomato slices. Arrange the stuffed peppers in the baking dish with the opening facing up. Mix the cooked tomatoes with water, add 1 teaspoon of sugar, and pour over the peppers so that the liquid covers them.",
+        "Cover with aluminum foil and bake at 200 degrees for 2 hours. Then remove the foil and bake for another 10 minutes."
+      ],
+      "image_path": "data/images/d4577b35-2df1-4ceb-bb47-c5f77ec331f0.jpg"
+    },
+    {
+      "name": "Shopska Dish with Vegetables and Cheese",
+      "ingredients": [
+        "1 smaller zucchini",
+        "1 onion",
+        "2-3 cloves garlic",
+        "3 peppers",
+        "3-4 tomatoes",
+        "to taste parsley",
+        "1 tablespoon paprika (I also added a little hot paprika)",
+        "about 250 g meaty smoked bacon",
+        "about 250 g cheese",
+        "2 eggs",
+        "1/2 cup yogurt",
+        "a few tablespoons of oil",
+        "to taste salt",
+        "pepper",
+        "dry vegetable seasoning"
+      ],
+      "preparation": [
+        "Clean all the listed vegetables (zucchini, onion, peppers, tomatoes, and garlic), wash them, and cut them into desired pieces and rings, then place them in a baking dish. Season with salt, pepper, add dry seasoning and paprika, and mix everything. Top with sliced meaty smoked bacon. \rSeparately beat the eggs with yogurt and oil, then pour over the vegetables. Optionally sprinkle with chopped parsley. Place in a preheated oven at 180 degrees and bake for about twenty minutes, then remove from the oven and sprinkle crumbled cheese on top. Return to the oven and bake for another ten minutes.",
+        "Serve the finished dish warm."
+      ],
+      "image_path": "data/images/e279ee2f-54e2-48cf-a182-d327b432bb9c.jpg"
+    },
+    {
+      "name": "Baked Macaroni with Cheese",
+      "ingredients": [
+        "250 g macaroni",
+        "400 ml milk",
+        "2 dl yogurt",
+        "2 eggs",
+        "1 teaspoon salt",
+        "200 g cheese",
+        "100 g bacon",
+        "50 ml oil"
+      ],
+      "preparation": [
+        "Pour milk over the macaroni and leave for half an hour or more in the refrigerator. \r\rWhisk the eggs, cheese, yogurt, oil, salt, and finely chopped bacon, then mix with the milk and macaroni, pour into a lightly greased baking dish size 24, and bake in a preheated oven at 180 degrees for about 40 minutes. Towards the end, remove, grate cheese on top, and return for another 5 minutes. That's it!!!"
+      ],
+      "image_path": "data/images/1b61b308-0ab2-4319-ac76-95d0f11aa8cb.jpg"
+    },
+    {
+      "name": "Lenten Pilaf with Mushrooms",
+      "ingredients": [
+        "1 cup rice",
+        "1 onion",
+        "1 carrot",
+        "300 g mushrooms",
+        "to taste salt",
+        "to taste dry vegetable seasoning",
+        "to taste curry",
+        "oregano",
+        "pepper",
+        "ginger"
+      ],
+      "preparation": [
+        "In oil, sauté the finely chopped onion, then add the carrot sliced into rounds and the mushrooms sliced into thin slices. Sauté a little more, then add the rice and fry until the rice starts to clump together.\rPour in 3 cups of water, and when it boils, add one teaspoon of salt, a little dry vegetable seasoning, a little pepper, half a teaspoon of curry, half a teaspoon of ground ginger, and half a teaspoon of oregano."
+      ],
+      "image_path": "data/images/f356300f-8012-4753-b856-01b30f8a7b9e.jpg"
+    },
+    {
+      "name": "Tender and Juicy Stewed Meat",
+      "ingredients": [
+        "700 g pork",
+        "1 heaping tablespoon lard",
+        "1 tablespoon dry seasoning",
+        "to taste ground sweet paprika"
+      ],
+      "preparation": [
+        "Cut the meat into cubes, place in a pot, cover with water to submerge the meat, add lard and dry seasoning. Let the meat simmer for 2 hours on low heat.\rWhen it starts to fall apart, let all the water evaporate and brown a little.\rFinally, add a little ground red paprika."
+      ],
+      "image_path": "data/images/2d66c88a-3ca9-467e-849e-ec1a69e4c66d.jpg"
+    },
+    {
+      "name": "Baked Chicken in a Bag",
+      "ingredients": [
+        "4 chicken drumsticks",
+        "potatoes as needed",
+        "carrots as needed",
+        "to taste salt",
+        "to taste dry seasoning",
+        "2 tablespoons oil"
+      ],
+      "preparation": [
+        "Season the drumsticks with salt and spices.\r\rClean and chop the potatoes and carrots to taste, then season and place them together with the chicken in a baking bag and close it.\r\rPuncture the bag in 2-3 places and place it in a baking dish.\r\rBake for about an hour in a preheated oven at 200 degrees."
+      ],
+      "image_path": "data/images/a1e11bb0-09ad-4b21-8ea8-93e0fb3be905.jpg"
+    },
+    {
+      "name": "Tasty Chicken Sticks with Sesame",
+      "ingredients": [
+        "600 g chicken breasts",
+        "2 tablespoons soy sauce",
+        "1/2 lemon - juice",
+        "100 g sesame",
+        "2-3 tablespoons breadcrumbs",
+        "1 tablespoon dry vegetable seasoning",
+        "1 egg",
+        "5-6 tablespoons flour",
+        "to taste salt",
+        "to taste pepper",
+        "a little oil"
+      ],
+      "preparation": [
+        "Cut the chicken into larger strips the size of fish sticks (about 8 cm by 3 cm).",
+        "Pour the chicken with the juice of half a lemon and soy sauce. Season with dry vegetable seasoning, salt, pepper, and let it rest for 30 minutes in the refrigerator. Coat the chicken sticks in flour, then in beaten egg, and finally in sesame mixed with breadcrumbs. Fry the chicken sticks over medium heat until the meat turns a nice golden color. Optionally, you can serve with salad, rice, or potatoes."
+      ],
+      "image_path": "data/images/d148b8d8-c4ed-4d91-9da4-2e18db92ba7b.jpg"
+    },
+    {
+      "name": "Stuffed Peppers (4)",
+      "ingredients": [
+        "14 peppers for stuffing - bell peppers",
+        "300 g ground meat",
+        "1 onion",
+        "2 larger carrots",
+        "1 cup washed rice",
+        "1 teaspoon salt",
+        "1/2 teaspoon pepper",
+        "to taste dry vegetable seasoning",
+        "a little paprika",
+        "water for watering the peppers",
+        "500 ml tomato sauce",
+        "oil for frying",
+        "tomato or potato for closing the peppers"
+      ],
+      "preparation": [
+        "In oil, sauté finely chopped onion, add ground meat and sauté, add grated carrot, sauté a little more, add salt, pepper, dry vegetable seasoning, and paprika, to taste as you like it seasoned. \r\rStuff the peppers with the mixture, close them with tomato or potato, arrange them either in a casserole or a baking dish, pour in enough water to simmer. Cover with aluminum foil and place in the oven at 200 degrees for about 50 minutes, then remove the foil, pour with tomato sauce, and leave for another half hour. \r\rServe warm with sour milk. Enjoy."
+      ],
+      "image_path": "data/images/f6181771-0dac-42ae-801f-7e9eb5c4e565.jpg"
+    },
+    {
+      "name": "Chicken Paprikash",
+      "ingredients": [
+        "2 chicken drumsticks",
+        "2 medium onions",
+        "3-4 cloves garlic",
+        "3 carrots",
+        "4-5 potatoes",
+        "2 peppers",
+        "500 ml tomato sauce",
+        "to taste spices"
+      ],
+      "preparation": [
+        "Place the drumsticks in a smaller pot to boil.\rIn a larger pot where you will prepare the paprikash, pour in a little oil or lard to heat. \rChop the onion and garlic and sauté until golden. Add the chopped pepper and carrot to the onion, and sauté everything together, adding a little water if necessary. Finally, add the potatoes. \rPour in 500 ml of tomato sauce and 500 ml of water. \rWhen the drumsticks are cooked, remove the meat from the bones and add it to the vegetables to simmer together. When the vegetables soften after 20-30 minutes, add spices to taste. \rI do not make a roux, but you can if you prefer it thicker. I added salt, pepper, parsley, basil, paprika, and dry vegetable seasoning."
+      ],
+      "image_path": "data/images/791f5ffd-0578-4673-9666-38bd3ba922c0.jpg"
+    },
+    {
+      "name": "Summer Moussaka with Zucchini and Carrots",
+      "ingredients": [
+        "300 g young zucchini",
+        "300 g carrots",
+        "1 onion",
+        "3-4 cloves garlic",
+        "6 eggs",
+        "2 dl milk",
+        "oil as needed",
+        "flour as needed",
+        "salt as needed",
+        "pepper as needed",
+        "parsley as needed",
+        "dry vegetable seasoning as needed"
+      ],
+      "preparation": [
+        "Peel the zucchinis and cut them lengthwise into thin slices. Salt and let them rest. Drain excess water.",
+        "Beat three eggs. Heat oil in a pan. Coat the zucchinis: flour - eggs - flour - eggs and fry in hot oil until golden on both sides. Remove to a paper towel to drain excess fat.",
+        "Grate the carrot, and finely chop the onion and garlic. Sauté the onion in oil, add the grated carrot, pour in 1 dl of milk, and simmer for about 10 minutes until the carrot softens.",
+        "Add garlic, salt, pepper, and finely chopped parsley, all to taste, and mix in one beaten egg. Sauté briefly and remove from heat.",
+        "In a smaller greased baking dish, layer the fried zucchini, then the carrot filling until you run out of zucchini and filling, finishing with zucchini.",
+        "Beat two eggs with 1 dl of milk and a teaspoon of vegetable seasoning and pour over the moussaka.",
+        "Bake in a preheated oven at 180°C for 20-25 minutes until nicely browned. Serve warm with tomato salad, cheese, sour milk, yogurt,..."
+      ],
+      "image_path": "data/images/f6c33e08-35aa-462c-aa71-f2669099c382.jpg"
+    },
+    {
+      "name": "Lenten Peppers Stuffed with Beans",
+      "ingredients": [
+        "14 dried red peppers",
+        "300 g white beans",
+        "2-3 onions",
+        "2-3 cloves garlic",
+        "1 teaspoon spicy red paprika",
+        "1 tablespoon dry vegetable seasoning mix",
+        "2 tablespoons flour",
+        "to taste salt",
+        "to taste pepper",
+        "2-3 tablespoons oil"
+      ],
+      "preparation": [
+        "Wash the beans and place them to cook in cold water. After 20 minutes of cooking, drain the beans and add new warm water. Add finely chopped onion and garlic, salt, and let it cook. When the beans soften but are still whole, remove from heat.",
+        "In another pot, sauté the remaining finely chopped onion in hot oil and add spicy red paprika. Pour in the drained beans, add pepper, dry vegetable seasoning, and sauté a little more.\r\rWash the dried red peppers and place them in hot water to soften. Stuff them with beans and arrange them in a pot, closing them with potatoes. If you have leftover beans, distribute them between the peppers. Pour in the water you cooked the beans in, just enough to cover them. Bake in the oven until about half of the water evaporates. Make a roux from oil and spicy red paprika, pour it over the peppers, and bake in the oven."
+      ],
+      "image_path": "data/images/57b3fd2f-4137-4e73-864e-e76d017354ef.jpg"
+    },
+    {
+      "name": "Chicken with Mlinci",
+      "ingredients": [
+        "250 g mlinci",
+        "400 g chicken breast",
+        "a little oil",
+        "50 g butter",
+        "500 ml cooking cream",
+        "180 g sour cream",
+        "200 g cheese",
+        "to taste dry vegetable seasoning",
+        "to taste ground pepper",
+        "1 l hot water",
+        "1 chicken broth cube"
+      ],
+      "preparation": [
+        "In a suitable pot, pour a little oil, add butter, and place it on low heat to melt the butter. Add chicken cut into cubes, sprinkle with dry vegetable seasoning and pepper to taste, stir and fry until the meat is browned. Remove the fried meat with a slotted spoon to a plate and leave it on the stove.",
+        "In the pot where the meat was fried, pour in the cooking cream and sour cream. Briefly bring to a boil while scraping off any remnants stuck from frying the meat with a wooden spoon. Season to taste and turn off the heat.",
+        "Dissolve the chicken broth cube in 1 l of hot water. Break the mlinci into larger pieces and add them to the water. Stir, leave them for about two minutes, and remove them with a slotted spoon to a plate.",
+        "Preheat the oven to 200 degrees. Grease a deeper dish that will go in the oven (my dish was 24cm in size) with butter and arrange a third of the mlinci. Spread half of the fried chicken over them, then pour a third of the cream sauce over it. Again, layer the mlinci, place the second half of the meat, and pour the second third of the cream sauce over it. Finally, add the remaining mlinci, pour the rest of the cream over it, and evenly sprinkle with coarsely grated cheese. Bake until the surface of the dish turns a nice golden color.",
+        "Let the mlinci with chicken cool down, cut them into cubes, and serve (they cut very nicely, but we couldn't wait for them to cool down, so I cut them while hot).",
+        "Mlinci can be prepared with both chicken and turkey breast. They are tasty warm and cold..."
+      ],
+      "image_path": "data/images/55848662-b6e2-426f-9346-ce2a3a8c904d.jpg"
+    },
+    {
+      "name": "Lenten Soy Goulash with Vegetables",
+      "ingredients": [
+        "250 g soy steaks",
+        "250 ml vegetable soup or water",
+        "1 onion",
+        "1 carrot",
+        "1 yellow bell pepper",
+        "1/2 zucchini",
+        "1 clove garlic",
+        "1 tablespoon cumin",
+        "1 teaspoon sweet paprika",
+        "a little pepper",
+        "a little salt",
+        "a little fresh parsley",
+        "a little oil"
+      ],
+      "preparation": [
+        "Soak the soy steaks in lukewarm water for 60 minutes, and when they swell, drain them well and cut them into cubes.",
+        "In heated oil, sauté the chopped onion and garlic. Add the cleaned and washed bell pepper, carrot, and zucchini cut into cubes. Then add the sweet paprika and cumin and sauté everything a little. Pour in the soup, season with salt and pepper, cover, and simmer for about ten minutes over medium heat. Then add the cubed soy steaks, pour in a little more water, and continue cooking for another 10 minutes. Before serving, sprinkle the goulash with chopped parsley. Optionally serve with potatoes or pasta."
+      ],
+      "image_path": "data/images/7fd2bb32-5e02-4378-9c2c-bb5cc3c3831c.jpg"
+    },
+    {
+      "name": "Baked Pork Neck with Beer",
+      "ingredients": [
+        "2 kg boneless pork neck",
+        "4 large onions",
+        "5 large cloves of garlic",
+        "1/2 l beer (of your choice)",
+        "3 larger sprigs of fresh rosemary",
+        "as needed pork lard",
+        "to taste dried thyme",
+        "to taste salt",
+        "to taste ground pepper",
+        "1 tablespoon cornstarch",
+        "1 tablespoon honey"
+      ],
+      "preparation": [
+        "Generously grease a large baking tray (40x30 cm) with softened pork lard and set it aside. Clean the onions and cut them into wedges, spreading them over the bottom of the tray. Place the cleaned garlic cloves and rosemary sprigs on top. Season the pork neck with salt and ground pepper to taste on both sides, then take each piece of meat and rub the spices in well with your hands (the meat slices should be about 1 cm thick). Then, arrange the meat over the onions. Sprinkle very lightly with thyme. Drizzle each layer of meat with a little melted lard and pour the beer on the side. Cover the tray well with aluminum foil and bake in a preheated oven at 200 degrees for three hours.",
+        "Then remove the tray, carefully remove the aluminum foil, and transfer the meat to a suitable dish (carefully transfer the meat using two forks, as it is so tender that it may fall apart). In a bowl, take a little of the liquid and dissolve the cornstarch, then pour it into the tray. Add the honey, stir, and mash the onions with a fork to create a sauce. Return the meat, but now the side that was facing the onions should be turned up, and return the tray to the oven to brown the meat.",
+        "The meat is so tender that you won't even need a fork, and without hesitation, dip bread into the sauce directly from the tray, as it is delicious..."
+      ],
+      "image_path": "data/images/bb30b07c-2fdf-432b-a31b-3421c8dd89d8.jpg"
+    },
+    {
+      "name": "Tuna Meatballs",
+      "ingredients": [
+        "1 can of tuna chunks (drained from liquid)",
+        "3 medium potatoes, boiled and mashed",
+        "to taste dry vegetable seasoning",
+        "to taste pepper",
+        "to taste salt",
+        "to taste ground red pepper",
+        "1 egg",
+        "to taste parsley",
+        "100 g breadcrumbs",
+        "1 egg"
+      ],
+      "preparation": [
+        "Mix the tuna, potatoes, salt, pepper, dry seasoning, ground red pepper, and egg until combined. Place in the refrigerator for half an hour, then form small meatballs.\r\rRoll them in breadcrumbs, then in beaten egg, and again in breadcrumbs, and fry in hot oil until browned on all sides.\rNote: Add enough oil so that they do not touch the bottom of the pot."
+      ],
+      "image_path": "data/images/6ed1f53a-a1e9-4e59-b335-e16247d96b04.jpg"
+    },
+    {
+      "name": "Oven-Baked Pork Chops",
+      "ingredients": [
+        "4 pork chops",
+        "to taste salt",
+        "to taste pepper",
+        "to taste dry vegetable seasoning",
+        "1 teaspoon sweet paprika",
+        "4 slices of toast cheese",
+        "4 teaspoons sour cream",
+        "4 tablespoons cooking cream",
+        "as needed margarine/butter"
+      ],
+      "preparation": [
+        "Cover the chops with cling film and pound them with a meat mallet. Season both sides of the chops with salt, pepper, and dry vegetable seasoning, then arrange them in an oiled baking dish. On each chop, spread 1 tablespoon of cooking cream, cover with a slice of toast cheese, add a teaspoon of sour cream, sprinkle with sweet paprika, and distribute small pieces of margarine. Bake in a well-heated oven at 200 degrees for about 40 minutes.",
+        "Remove the baked chops from the oven and let them cool before serving."
+      ],
+      "image_path": "data/images/02aa3795-ffe5-44da-863b-c565607483a4.jpg"
+    },
+    {
+      "name": "Sautéed Potatoes with Bacon and Sausages",
+      "ingredients": [
+        "800 g potatoes",
+        "160 g red onion",
+        "2 larger cloves of garlic",
+        "200 g smoked bacon",
+        "2 teaspoons salt",
+        "1 heaping tablespoon paprika",
+        "1 teaspoon ground pepper",
+        "1/2 small bunch of parsley",
+        "about 50 ml oil",
+        "as needed smoked homemade sausages"
+      ],
+      "preparation": [
+        "Peel the potatoes and cut them into cubes. Place them in a deeper pot, cover with cold water, sprinkle with one teaspoon of salt, and bring to a boil. Cut the bacon into thinner strips (I cut the bacon into 0.5 cm thick and 4 cm long) and place it in a deeper non-stick pan without adding fat. Turn on medium heat, and as soon as the bacon starts to fry, reduce the heat and fry until crispy. Remove the fried bacon with a slotted spoon onto a plate.",
+        "In the fat released by the bacon, add about 50 ml of oil and add finely chopped red onion. Fry over medium heat. When the onion softens, add the chopped garlic and fry until it softens. Then sprinkle with paprika and ground pepper and stir. Add the drained boiled potatoes and mix with a fork while pressing until mashed. Season with a teaspoon of salt (or to taste) and mix for about another minute. Finally, add finely chopped parsley and mix well.",
+        "Place the sautéed potatoes on a plate (these ingredients are for three hearty servings), sprinkle with crispy bacon, and serve with fried sausage on the side. Sautéed potatoes are excellent with minced schnitzels...",
+        "A simple dish that smells of past times..."
+      ],
+      "image_path": "data/images/ab76eaaf-fac2-411a-881b-02d54ac349fb.jpg"
+    },
+    {
+      "name": "Chicken with Couscous and Dried Apricots",
+      "ingredients": [
+        "300 g chicken",
+        "1 onion",
+        "1 teaspoon fresh ginger",
+        "10 dried apricots",
+        "180 g sweet corn",
+        "250 g raw couscous",
+        "300 ml warm water",
+        "1 tablespoon mixed dry vegetable seasoning",
+        "to taste salt",
+        "a little olive oil"
+      ],
+      "preparation": [
+        "Cut the chicken into small cubes, grate a little fresh ginger. Finely chop the dried apricots.",
+        "In olive oil, sauté the finely chopped onion in a deeper pan. Add the chicken and sauté for about 8-10 minutes, then add the grated ginger and sauté the chicken for another two minutes.",
+        "Wash and drain the sweet corn. Add the drained sweet corn, dried apricots, uncooked couscous, and season to the pan with chicken.",
+        "In a separate pot, bring 300 ml of water to a boil. Pour the boiling water over everything and stir. Cover the pan with a lid, leave it on the stove for one minute, then remove it from the heat and leave it covered for another five minutes. Before serving, stir the finished dish with a fork."
+      ],
+      "image_path": "data/images/72db8e1f-8dd7-4d06-acf1-98b03614f6e0.jpg"
+    },
+    {
+      "name": "Sausages with Mushrooms in Tomato Sauce",
+      "ingredients": [
+        "400 g mushrooms",
+        "400 g sausages",
+        "500 ml pureed tomatoes",
+        "1 onion",
+        "2 cloves of garlic",
+        "100 ml oil",
+        "to taste salt",
+        "to taste ground black pepper",
+        "1-2 tablespoons flour",
+        "a little oregano",
+        "a little basil"
+      ],
+      "preparation": [
+        "In a little oil, sauté the sausages cut into slices. When they are almost fried, remove them and in the same oil sauté the chopped onion and cleaned chopped mushrooms. Season with salt and pepper and let them simmer. Stir occasionally to prevent burning. When the liquid has evaporated, add flour and chopped garlic, return the sausages, and pour in the pureed tomatoes. Stir, add spices, and let everything simmer for another twenty minutes.\rServe with cooked tagliatelle or a side dish of your choice.\r\rEnjoy!"
+      ],
+      "image_path": "data/images/ae716acd-86f4-4a88-9160-67738c747e2d.jpg"
+    },
+    {
+      "name": "Baked Chicken with Vegetables",
+      "ingredients": [
+        "2 medium onions",
+        "2 medium potatoes",
+        "2 larger tomatoes",
+        "4-5 cloves of garlic",
+        "3 larger chicken thighs with drumsticks",
+        "200 g smaller mushrooms",
+        "1.5 tablespoons lard",
+        "seasoning for chicken",
+        "500 ml water",
+        "2 teaspoons paprika",
+        "1/2 teaspoon ground pepper",
+        "1/2 teaspoon salt",
+        "to taste dry vegetable seasoning",
+        "1 tablespoon flour"
+      ],
+      "preparation": [
+        "For this dish, I used a deeper pot with a non-stick bottom, 26 cm in size. Clean the onion and potatoes and cut them into 0.5 cm thick rounds. Cut the tomatoes to the same thickness. Clean the garlic and just cut it in half. Wash the mushrooms. Separate the chicken meat into thighs and drumsticks and season with chicken seasoning to taste.",
+        "Preheat the oven to 200 degrees. In the pot, first arrange the onion rings in a circle.",
+        "Layer the potatoes over the onions.",
+        "Then place the tomatoes and garlic over the potatoes.",
+        "On top, arrange the seasoned chicken. Distribute the mushrooms in between. Place the lard over the meat.",
+        "For the sauce: In a suitable bowl, pour in 500 ml of warm water, add paprika, pepper, salt, dry vegetable seasoning, and flour. Whisk everything together to avoid lumps from the flour. Pour over the prepared dish. Cover the pot with aluminum foil and press it down well. Poke the foil in two places with a toothpick and place the dish in the oven to bake for one hour.",
+        "Then, carefully remove the aluminum foil and return it to the oven to brown the meat.",
+        "Very simple, yet so delicious..."
+      ],
+      "image_path": "data/images/496df79a-7c84-42c4-8b41-57d4d0fbe53f.jpg"
+    },
+    {
+      "name": "Potato Gnocchi",
+      "ingredients": [
+        "700 g potatoes",
+        "300 g flour",
+        "1 teaspoon salt",
+        "1 egg",
+        "100-200 g flour",
+        "1 tablespoon salt"
+      ],
+      "preparation": [
+        "Wash the potatoes well and boil them in their skins. They should not be overcooked and falling apart, but should remain firm yet cooked.\r\rWhile still hot, peel them with a knife (the skin comes off easily). When they cool slightly, mash them so that no lumps remain, or better yet, grate them on the fine side of a grater.",
+        "To the grated (or mashed) potatoes, add the egg, a teaspoon of salt, and combine, then gradually add flour and knead. The mixture will stick to the surface, so add more flour as needed.",
+        "Take pieces of the dough and roll them on the table to form sausage shapes about 2 cm wide. Using a floured knife, cut pieces about 2 cm long. Press each piece onto a fork, then roll it to form the gnocchi shape. Repeat the process until all the dough is used, making sure to place the gnocchi on a floured surface to prevent sticking. Sprinkle them with a little flour and shake off the excess flour.",
+        "In a pot, pour water and add one tablespoon of salt. When it boils, add the gnocchi and wait for them to float to the surface. Once they float, cook for another half a minute and remove with a slotted spoon. I do not put more than ten pieces at a time to prevent them from sticking while cooking.\rServe the finished gnocchi with sauce of your choice."
+      ],
+      "image_path": "data/images/56e1e75c-80df-4c81-8bbc-d7a2357debbb.jpg"
+    },
+    {
+      "name": "Lenten Sauerkraut with Rice",
+      "ingredients": [
+        "1 head of sauerkraut",
+        "1/2 cup rice",
+        "1 cup oil",
+        "to taste pepper",
+        "to taste ground red pepper",
+        "to taste dry seasoning"
+      ],
+      "preparation": [
+        "Cut the cabbage into larger or smaller pieces as you like and place it in a deeper pot.\r\rAdd 1 cup of cabbage juice and about 3 cups of water to cover the cabbage, add 50 ml of oil, and bring to a boil over medium heat.\r\rWhen the cabbage softens, add the washed rice, season, and cook until the rice is also cooked.\r\rIn a shallow dish/pan, pour the remaining oil, heat it, then add the smoked paprika, sauté briefly, and add it to the cabbage, leaving it on the stove to boil, then remove it.\rWhen serving, additionally season with hot ground pepper if you like!!"
+      ],
+      "image_path": "data/images/c6f377af-a56e-44a2-ab36-c94c48a3a31d.jpg"
+    },
+    {
+      "name": "Chicken with Spinach Sauce",
+      "ingredients": [
+        "2 larger chicken thighs with drumsticks",
+        "seasoning for chicken",
+        "3 tablespoons oil",
+        "70 ml hot water",
+        "3 blocks of spinach",
+        "200 ml cooking cream",
+        "30 g finely grated cheese",
+        "1/2 teaspoon garlic powder",
+        "1/2 teaspoon ground pepper",
+        "to taste dry vegetable seasoning",
+        "to taste chili powder"
+      ],
+      "preparation": [
+        "Separate the chicken meat into thighs and drumsticks. Season with chicken seasoning to taste on both sides. Rub each piece of meat well with your hand over the sprinkled seasoning. In a deeper non-stick pan (I used a 24 cm pan), pour in only three tablespoons of oil, as the chicken will release its fat. Place the meat in the heated oil and cover the pan. Fry the meat on low heat (for me, that is 5 out of 9, which is the highest). When it gets a nice golden color, turn the meat to the other side and continue frying, covered. The meat will take a little longer to fry, but it's worth it; it gets a beautiful crispy crust. Remove the fried meat to a plate.",
+        "Spinach sauce: In the fat where the meat was fried, pour in hot water and, using a wooden spoon, scrape off all the remnants from frying the meat (continue to work on low heat). Add the spinach blocks and stir until they thaw. Once the spinach has thawed, add the cooking cream, garlic powder, ground pepper, and chili (omit the chili if you don't like it spicy). Stir, cover, and let the sauce come to a boil. Then add the grated cheese, stir, cover, and let the sauce thicken for 3-4 minutes. During that time, stir the sauce twice. Taste to see if any more seasoning is needed and remove from heat.",
+        "Serve the fried chicken with mashed potatoes, spinach sauce, and salad to taste.",
+        "The wonderfully crispy chicken pairs perfectly with the creamy spinach sauce..."
+      ],
+      "image_path": "data/images/c88a46e6-da02-48f0-8029-b4aad1c84ee4.jpg"
+    },
+    {
+      "name": "Stuffed Zucchini Baked in the Oven",
+      "ingredients": [
+        "3 medium zucchinis",
+        "1 larger onion",
+        "400 g chicken breast",
+        "1 dl oil",
+        "5 tablespoons rice",
+        "to taste dry vegetable seasoning",
+        "to taste salt",
+        "to taste pepper",
+        "3 tablespoons flour",
+        "1 cup sour cream",
+        "1 clove garlic",
+        "3 tablespoons chopped parsley and celery leaves",
+        "1 dl water",
+        "50 g cheese"
+      ],
+      "preparation": [
+        "Peel the zucchinis, wash them, cut them in half, and scoop out the insides, finely chopping them. Cut the meat into small cubes. In a pan, pour in the oil, add the chopped onion, add the rice, and gradually add water, cooking until it is half cooked, then add the meat and the chopped zucchini insides and sauté for a few minutes.\rGrease a baking dish with oil, arrange the zucchini boats, and fill them to the top, then bake for 20 minutes. Meanwhile, mix the topping of flour, sour cream, cheese, garlic, parsley, and water, and pour it over the zucchinis, baking for another 10 minutes."
+      ],
+      "image_path": "data/images/aed7dfc1-4d5e-449f-b641-0dcceca48c64.jpg"
+    },
+    {
+      "name": "Macaroni with Potatoes",
+      "ingredients": [
+        "700 g potatoes",
+        "300 g lenten macaroni",
+        "1 larger onion",
+        "1 tablespoon paprika",
+        "to taste salt",
+        "to taste pepper"
+      ],
+      "preparation": [
+        "Peel the potatoes and cut them into rounds, then boil them in salted water.\r\rAt the same time, cook the macaroni in salted water.\rChop the onion finely and sauté it in a little oil.\r\rRemove the sautéed onion from the heat and add the paprika.\r\rMix the boiled potatoes and sautéed onion, then add the cooked macaroni, mix well, and season with salt and pepper for a delicious meal. Enjoy."
+      ],
+      "image_path": "data/images/dc7058fa-a9c8-4842-9a7a-b3354cd1dda1.jpg"
+    },
+    {
+      "name": "Potato and Spinach Moussaka",
+      "ingredients": [
+        "800 g potatoes",
+        "400 g spinach or young nettles",
+        "100 g cream cheese",
+        "100 g hard cheese",
+        "200 ml neutral cooking cream",
+        "1 tablespoon butter",
+        "2 tablespoons oil",
+        "2 tablespoons flour",
+        "400 ml hot milk",
+        "to taste pepper",
+        "to taste salt"
+      ],
+      "preparation": [
+        "Peel the potatoes and cut them into thin rounds, then partially cook them in salted water.",
+        "Towards the end of cooking, add the nettles to the potatoes and strain after 5 minutes.",
+        "In a greased baking dish, pour in the potatoes mixed with nettles.",
+        "Melt one tablespoon of butter, add oil, and sauté the flour. Gradually pour in the hot milk while constantly stirring. Add pepper and salt to taste and cook until the sauce thickens.",
+        "Pour the béchamel sauce over the potatoes and mix.",
+        "In another bowl, whisk the neutral cream with cream cheese and season to taste. Pour the cream over the potatoes and sprinkle with grated cheese. Bake in the oven for about 40 minutes at 200 degrees."
+      ],
+      "image_path": "data/images/922df96e-61a2-4da3-a173-d2a6cf025556.jpg"
+    },
+    {
+      "name": "Potato, Cheese, and Dried Meat Moussaka",
+      "ingredients": [
+        "800 g potatoes",
+        "50 g butter",
+        "250 - 300 g dried meat or bacon",
+        "300 g cottage cheese",
+        "1/2 cup sour cream",
+        "a little salt",
+        "2 eggs",
+        "1/2 cup sour cream",
+        "a little pepper",
+        "a little salt"
+      ],
+      "preparation": [
+        "Peel, wash, and boil the potatoes in salted water for 10 to 15 minutes until half cooked, strain, and cut into rounds as for moussaka.",
+        "Cut the dried meat into small cubes and place it in a bowl, add the cottage cheese and half a cup of sour cream, and mix everything together.",
+        "Grease a baking dish with butter, layer the sliced potatoes.",
+        "Spread the mixture of dried meat, sour cream, and cheese over the potatoes.",
+        "Layer the remaining potatoes on top and lightly grease with butter. Cover with foil and bake for about 25 minutes at 220°C.",
+        "Towards the end of baking, whisk the two eggs, add the remaining sour cream, season with pepper and salt, and pour over the potatoes.",
+        "Return the moussaka to the oven to brown for another five minutes. The moussaka is done when it gets a nice golden yellow color. Serve the moussaka with a salad of your choice."
+      ],
+      "image_path": "data/images/723ac9cc-5219-43ee-a1a2-9244754dd0ce.jpg"
+    },
+    {
+      "name": "Homemade Chicken Medallions (Chicken Nuggets)",
+      "ingredients": [
+        "450 g chicken breast",
+        "to taste salt",
+        "to taste pepper",
+        "to taste dry vegetable seasoning",
+        "to taste garlic granules",
+        "as needed flour",
+        "2 eggs",
+        "as needed breadcrumbs",
+        "as needed oil"
+      ],
+      "preparation": [
+        "Cut the chicken breast into slices. Season the slices with salt, add pepper, dry vegetable seasoning, and garlic granules, rub with your hand, then turn to the other side and season it as well. Then chop them in a food processor.",
+        "Form a ball and transfer it to a baking dish with a little oil.",
+        "Cover with cling film, flatten with your hand, and shape into a rectangle. Using a wet knife, cut into 12 pieces (you can also cut them smaller to get 16 pieces).",
+        "Roll the prepared medallions in flour, then in beaten eggs, and finally in breadcrumbs. Fry in heated oil until browned on both sides.",
+        "Place on kitchen paper to drain excess fat.",
+        "Serve with fries or a side dish of your choice."
+      ],
+      "image_path": "data/images/14c6992b-4733-4ab1-9145-61c6ad16a4f1.jpg"
+    },
+    {
+      "name": "Pork Bajadera",
+      "ingredients": [
+        "2 kg pork belly (pork loin, pork belly, or pork belly)",
+        "200 ml soy sauce",
+        "1 tablespoon mustard",
+        "2 tablespoons brown sugar",
+        "1 teaspoon garlic powder",
+        "1 teaspoon ginger powder",
+        "1 teaspoon chili powder",
+        "2 teaspoons salt"
+      ],
+      "preparation": [
+        "Place the piece of meat on a cutting board and with a sharp knife or scalpel, make 3-4 cuts in the skin and fat underneath. Place the marinade ingredients in a suitable bowl and mix well. Transfer the meat to a container that will go in the refrigerator and brush it well with the marinade on all sides using a silicone brush. Leave the remaining marinade at room temperature, as we will need it the next day for two more brushings of the meat and for the sauce. Cover the container with cling film (or if it has a lid, cover it) and leave it overnight in the refrigerator.",
+        "The next day, take the meat out of the refrigerator to sit at room temperature for half an hour before baking. Preheat the oven to 180 degrees. Place the meat on the oven rack (the rack does not heat up), brush it with marinade again, but only on the side where the skin is. Lightly cover it with aluminum foil, do not close it completely, just drape the foil over the meat. Place a baking tray with a little water under the rack to collect the juices from the baking and bake for 40 minutes. After 40 minutes, remove the foil and continue baking for another hour.",
+        "Then, brush the meat with marinade again, increase the temperature to 200 degrees, and bake for another 10-15 minutes. Carefully remove the baked meat with gloves, along with the rack (I placed another tray under the rack to be able to transfer it) and let it cool so that we can cut it nicely.",
+        "For the sauce from the remaining marinade: Add three tablespoons of the meat's baking juice and three tablespoons of water to the remaining marinade. Place over low heat and cook until it thickens slightly. Cool and serve with the meat.",
+        "Preparing the meat for pork bajadera is not complicated, it takes a little more time, but your effort will be rewarded with the juiciest bites that melt in your mouth."
+      ],
+      "image_path": "data/images/ef093e2d-4266-44c3-b335-7bf82d5f7293.jpg"
+    },
+    {
+      "name": "Beetroot Patties",
+      "ingredients": [
+        "200 g boiled or roasted beetroot",
+        "100 g grated zucchini",
+        "1 onion",
+        "2 cloves of garlic",
+        "150 g canned chickpeas",
+        "50 g cashews",
+        "1 teaspoon smoked paprika",
+        "1 teaspoon sweet ground paprika",
+        "1 teaspoon mustard",
+        "to taste salt",
+        "to taste ground black pepper",
+        "7 tablespoons oatmeal"
+      ],
+      "preparation": [
+        "In a food processor, combine the beetroot, zucchini, onion, garlic, chickpeas, cashews, sweet paprika, smoked paprika, mustard, salt, pepper, and oatmeal, and form patties. Arrange them in a baking dish lined with parchment paper. Bake for about twenty minutes at 180 degrees.\r\rYou can spray them with oil before baking.\r\rEnjoy!"
+      ],
+      "image_path": "data/images/99586b82-d915-4573-82de-b742de957996.jpg"
+    },
+    {
+      "name": "Quinoa Risotto with Mushrooms",
+      "ingredients": [
+        "1/2 cup cooked quinoa",
+        "5-6 mushrooms sliced",
+        "2 heaping tablespoons sautéed onion from a bag",
+        "1/2 cup grated carrot",
+        "1 bell pepper (chopped into cubes)",
+        "to taste dry vegetable seasoning",
+        "to taste pepper",
+        "to taste salt",
+        "to taste parsley"
+      ],
+      "preparation": [
+        "Sauté the bell pepper and carrot in a little oil. When they soften, add the mushrooms and sauté. Towards the end of sautéing, add the sautéed onion from the bag, and sauté for another minute. Remove from heat, then add the quinoa, parsley, and seasonings to taste. Enjoy!!!"
+      ],
+      "image_path": "data/images/6787c2ce-a305-42ff-af0d-397dcc57576a.jpg"
+    },
+    {
+      "name": "Chicken with Dried Cherries and Couscous",
+      "ingredients": [
+        "400 g chicken breast",
+        "250 g couscous",
+        "1/2 head of onion",
+        "1 clove of garlic",
+        "100 g dried cherries",
+        "100 g coarsely grated roasted almonds",
+        "2 tablespoons olive oil",
+        "250 ml water",
+        "salt to taste",
+        "a little oil for frying",
+        "1/2 lemon - juice and grated zest",
+        "1/2 teaspoon cumin",
+        "1/2 teaspoon cinnamon",
+        "1/2 teaspoon sweet red paprika",
+        "1/2 teaspoon nutmeg",
+        "salt to taste"
+      ],
+      "preparation": [
+        "Cut the chicken breast into strips of 5*1cm. For the marinade, mix the lemon juice and grated zest with crushed cumin, cinnamon, grated nutmeg, sweet red paprika, and salt.",
+        "Pour the marinade over the cut chicken and let it rest for an hour in the refrigerator.",
+        "In a separate pot, bring 250 ml of water to a boil. Place the couscous in another pot and pour boiling water over it, add olive oil, dried cherries, grated almonds, season with salt, and stir. Let it sit covered until the couscous absorbs the water. Once the couscous cools, serve it on a plate.",
+        "Fry the chicken in hot oil. Towards the end, add finely chopped onion and crushed garlic. Continue frying the chicken for another 2-3 minutes. Optionally, serve the chicken with couscous, rice, or potatoes."
+      ],
+      "image_path": "data/images/ba136852-fbd8-46f0-8008-2c880d246570.jpg"
+    },
+    {
+      "name": "Potatoes with Roasted Peppers and Cheese",
+      "ingredients": [
+        "3-4 potatoes",
+        "5 roasted peppers (can be from the freezer)",
+        "100 g cheese",
+        "a few tablespoons of oil",
+        "salt to taste",
+        "ground pepper to taste"
+      ],
+      "preparation": [
+        "Wash the potatoes well and boil them until half cooked. Once cooked, cool them, peel, and cut into rounds. Grease the bottom of a baking dish with oil, arrange half of the potato rounds, season with salt and pepper, then layer four roasted peppers that have been cleaned of stems and seeds on top. Drizzle with a little oil, place half of the grated cheese on top, then layer the remaining potato rounds and the fifth pepper cut into pieces. Season with salt and pepper, drizzle with a little oil, and bake in an oven preheated to 180 degrees for about 15 minutes, then remove and grate the remaining cheese on top. Return to the oven and bake for another ten minutes. Serve the dish warm."
+      ],
+      "image_path": "data/images/40d04272-48b4-4c2f-8c56-4328fcece746.jpg"
+    },
+    {
+      "name": "Peas with Vegetables and Chicken",
+      "ingredients": [
+        "1/2 kg chicken thighs",
+        "160 g onion",
+        "80 g celery root",
+        "60 g parsnip root",
+        "120 g carrot",
+        "250 g peas",
+        "100 g sweet corn",
+        "200 g potatoes",
+        "2 medium cloves of garlic",
+        "2-3 small peppers",
+        "400 ml water",
+        "2 tablespoons tomato puree",
+        "oil as needed",
+        "3 teaspoons dry vegetable seasoning (or to taste)",
+        "1 teaspoon ground pepper",
+        "2 teaspoons sweet paprika",
+        "1/2 teaspoon ground ginger",
+        "seasoning for chicken",
+        "chopped parsley"
+      ],
+      "preparation": [
+        "Season the chicken thighs (I cut them in half) with chicken seasoning to taste on both sides. In the pot where you will prepare the dish, pour in oil and heat it. Once the oil is hot, add the meat and fry until it gets a nice golden color. Remove the fried meat to a plate and leave it on the stove.",
+        "In the fat where the meat was fried, add finely chopped onion, diced celery root, parsnip, and carrot cut into half-moons. Sauté in a covered pot over medium heat, stirring occasionally, for about 10 minutes. Use a wooden spoon to scrape off any bits stuck to the bottom of the pot from frying the meat, then add the sweet corn, diced potatoes, and finely chopped garlic. Stir, then sprinkle with dry vegetable seasoning, ground pepper, sweet paprika, and ground ginger. Mix everything well and continue to sauté for another 10 minutes.",
+        "In 400 ml of boiling water, dissolve the tomato puree and pour it over the vegetables. Cook on low heat in a partially covered pot until the soup thickens slightly and the vegetables soften. Towards the end, add the chopped pepper (I like it when the pepper remains crunchy, so I add it towards the end of cooking), stir, then return the fried meat. Simmer the dish for another five minutes, sprinkle with finely chopped parsley, and remove from heat.",
+        "A very tasty lunch, try it and you'll see for yourself..."
+      ],
+      "image_path": "data/images/9f46200f-cc35-4fef-9d52-8a64b5ca1811.jpg"
+    },
+    {
+      "name": "Stuffed Leg Roasted in the Oven",
+      "ingredients": [
+        "about 3 kg pork leg in one piece",
+        "a few cloves of garlic",
+        "2-3 tablespoons mustard",
+        "about 150 g dry bacon",
+        "2 heaping tablespoons lard",
+        "salt to taste",
+        "pepper"
+      ],
+      "preparation": [
+        "Make incisions in the leg with a knife in as many places as possible and as deep as possible, then coat it with mustard. Rub in salt and sprinkle with pepper. In each cut, place chopped garlic and a piece of cut dry bacon. Cover the prepared leg with foil and let it sit for at least 3-4 hours, or overnight. In the baking tray where you will roast the leg, place 2-3 beech wood planks and lay the leg on top. Coat the entire leg well with lard, pour 2 glasses of water into the tray, cover with foil, and place it in an oven preheated to 220 degrees. After 15 minutes, reduce the temperature to 180 degrees and continue roasting for at least 90 minutes. If necessary, add a glass of water to the tray to prevent burning. During roasting, spoon the liquid (juices) from the tray over the leg. After 90 minutes of roasting, remove the foil and roast until browned on top, continuously spooning the liquid from the tray over the leg. Check if the leg is done by piercing it deeply with a knife; if no blood comes out, it means it is cooked. Enjoy!"
+      ],
+      "image_path": "data/images/3ab524d9-47dd-4722-bb09-deeec2c6d752.jpg"
+    },
+    {
+      "name": "Lenten Sarma (in Oil)",
+      "ingredients": [
+        "20 leaves of sour cabbage",
+        "1 cup (200 ml) washed rice",
+        "2 heads of onion",
+        "2 larger carrots",
+        "dry vegetable seasoning to taste",
+        "1 teaspoon sweet paprika",
+        "ground pepper to taste",
+        "bay leaf to taste",
+        "water as needed (for pouring)"
+      ],
+      "preparation": [
+        "Prepare the leaves; if they are large, cut them in half. Wash the rice, finely chop the onion, sauté in a little oil, add grated carrot, then add the washed rice, a tablespoon of dry vegetable seasoning, a little pepper, and a teaspoon of sweet paprika. You can also add a few tablespoons of ground walnuts, but it is tasty even without them. Place one tablespoon of this mixture in the center of each leaf and roll it into a sarma, arranging them in a medium pot.",
+        "Press the arranged sarma with a small plate and pour in just enough water to cook. Add a few bay leaves around. Cook for two to three hours, or a little longer for the lenten version than for the meaty one. Add water during cooking as needed. Towards the end of cooking, make a roux. In a little oil, add two tablespoons of flour and sweet paprika, pour over the sarma, and add a little more water, letting it simmer a bit longer."
+      ],
+      "image_path": "data/images/2253780f-df5f-4e51-b33d-bb6e64850939.jpg"
+    },
+    {
+      "name": "Zucchini with Oregano",
+      "ingredients": [
+        "1 young zucchini",
+        "2 eggs",
+        "breadcrumbs as needed",
+        "flour as needed",
+        "dry vegetable seasoning to taste",
+        "salt to taste",
+        "oregano to taste"
+      ],
+      "preparation": [
+        "First, clean the zucchini and cut it into thin rounds. Salt and let it sit in a colander for about 15 minutes. Then sprinkle with oregano.\r\rIn three different bowls, arrange the eggs, flour, and breadcrumbs. Dip each zucchini round in flour, then in beaten egg with a little seasoning, and finally in breadcrumbs, and fry. After a few minutes, turn each piece to cook evenly on both sides. Once done, place them on a paper towel to drain excess oil. Enjoy!"
+      ],
+      "image_path": "data/images/0ae913aa-6047-4b46-92eb-c214fa81e09a.jpg"
+    },
+    {
+      "name": "Burgers with Red Beans",
+      "ingredients": [
+        "1 can of red beans (net weight 420 g)",
+        "80 g oats",
+        "80 g raw sunflower seeds",
+        "60 g onion",
+        "3 medium cloves of garlic",
+        "3 tablespoons olive oil",
+        "3 tablespoons soy sauce",
+        "3 teaspoons ground flaxseed",
+        "6 tablespoons water",
+        "50 ml water",
+        "breadcrumbs as needed",
+        "1 teaspoon smoked sweet paprika",
+        "1/2 teaspoon salt",
+        "1/2 teaspoon dry vegetable seasoning",
+        "1/2 teaspoon cumin",
+        "1/2 teaspoon ground pepper",
+        "1/2 small bunch of parsley"
+      ],
+      "preparation": [
+        "In a small pot, place the ground flaxseed, add 6 tablespoons of cold water, stir, and set aside while preparing the other ingredients. Place the oats and sunflower seeds in a food processor and grind them to a flour-like consistency. In the food processor (or a strong blender), add all the other ingredients (red beans, onion, garlic, olive oil, soy sauce, soaked flaxseed along with the water it didn't absorb, and 50 ml of cold water). Also, add the spices. Rinse the red beans well under cold water before adding. Blend everything well to combine. Transfer the mixture to a suitable bowl, add finely chopped parsley, and mix. Add breadcrumbs until you get a mixture that can be shaped into patties. The mixture should still be slightly sticky. When shaping the patties, sprinkle a little flour on the work surface, and flour your hands. Use a wet spoon (dip the spoon in cold water before each scoop) to take some mixture, place it in the palm of one hand, shape it into a circle, and gently press it to form a patty about 1 cm thick. Always do this with floured hands.",
+        "Place aluminum foil in a suitable dish and arrange the formed patties on top (I made 9 patties). Leave the patties in the refrigerator for one hour.",
+        "In a non-stick skillet, pour in oil to a height of 1 cm and heat it over medium heat. Once the oil is hot, add the patties and fry until golden brown on both sides. Remove the fried patties to a kitchen towel to absorb excess oil. You can also fry the patties on a grill pan, or arrange them in a baking dish lined with parchment paper, which has been greased with oil, brush the patties with oil, and bake at 200 degrees until golden brown.",
+        "Serve these wonderful patties with a side of your choice.",
+        "I made pumpkin flatbreads and crispy potatoes, and we ate them as sandwiches. I will post the recipe for the flatbreads and potatoes in the coming days..."
+      ],
+      "image_path": "data/images/38e04ba6-a38d-4f25-8c66-1d63186c8e72.jpg"
+    },
+    {
+      "name": "Pasta in Pumpkin Sauce",
+      "ingredients": [
+        "300 g pasta (of your choice)",
+        "80 g onion",
+        "2 cloves of garlic",
+        "40 g butter",
+        "300 g pumpkin puree",
+        "200 ml chicken broth",
+        "200 ml cooking cream",
+        "100 g sour cream",
+        "ground nutmeg",
+        "ground black pepper",
+        "salt"
+      ],
+      "preparation": [
+        "First, make the pumpkin puree. Peel the pumpkin, cut it into cubes, and place it in a suitable pot. Cover it with cold water and bring it to a boil. Once the pumpkin is soft, drain it and mash it with a fork to get a puree. Set the prepared pumpkin aside.",
+        "In a larger, deeper non-stick skillet, melt the butter and add finely chopped onion and garlic. Sauté the onion over medium heat, stirring, until it softens. Add the pumpkin puree, chicken broth (or dissolve one chicken bouillon cube in 200 ml of hot water), cooking cream, and sour cream. Mix everything well. Season with nutmeg, pepper, and salt to taste. Cook on low heat for 10 minutes, stirring occasionally.",
+        "While the sauce is cooking, cook the pasta according to the package instructions. I used spaghetti, but you can use any pasta of your choice. Once the pasta is cooked, add it to the sauce in two batches and mix well. Continue cooking the sauce with the pasta for another 3 minutes, or until the sauce thickens. Serve the pasta with pumpkin sauce on plates, sprinkle with parmesan, garnish with parsley, and serve.",
+        "Anyone who loves pumpkin will surely enjoy this wonderful taste of pasta in creamy sauce..."
+      ],
+      "image_path": "data/images/59a10018-c43f-4779-820b-ab12d3be6eba.jpg"
+    },
+    {
+      "name": "Rolled Pork",
+      "ingredients": [
+        "500 g pork schnitzels",
+        "1 package of mortadella",
+        "1 cheese spread",
+        "Spices:",
+        "a little onion powder",
+        "a little pepper",
+        "a little dry vegetable seasoning",
+        "1 egg",
+        "oil for frying",
+        "a little milk",
+        "breadcrumbs"
+      ],
+      "preparation": [
+        "Pound the meat and sprinkle with spices to taste. Then spread the cheese spread as desired (I used Philadelphia) and layer the slices of mortadella. Roll everything up nicely and leave it in the freezer for 5 minutes.",
+        "Beat the egg with a little milk, and prepare breadcrumbs in another bowl.",
+        "Dip the schnitzels first in the egg and milk mixture, then coat in breadcrumbs.\r\rFry in heated oil for a few minutes on both sides until they turn dark golden brown.\rEnjoy!"
+      ],
+      "image_path": "data/images/ecf1ca68-0d79-4b2a-bcf2-dc0555ec481b.jpg"
+    },
+    {
+      "name": "Chicken Stew with Peas and Potatoes",
+      "ingredients": [
+        "500 g chicken (thighs or white meat)",
+        "1 head of onion",
+        "2 carrots",
+        "200 g peas",
+        "5-6 larger potatoes",
+        "1 l water",
+        "2 tablespoons flour",
+        "dry vegetable seasoning to taste",
+        "pepper to taste",
+        "sweet paprika to taste",
+        "oil"
+      ],
+      "preparation": [
+        "Place the chicken in a pot, add the chopped onion (it doesn't have to be finely chopped), carrots cut into rounds, peel the potatoes and cut them into larger cubes, add the peas, and pour in enough water to cover everything. Cook for an hour and a half, and when cooked, make a roux by heating oil in a pan, adding two tablespoons of flour, sweet paprika, stirring, and seasoning to taste. Let it simmer a bit."
+      ],
+      "image_path": "data/images/86e18b05-05e4-486b-9e42-2e2094674ccd.jpg"
+    },
+    {
+      "name": "Sataras (12)",
+      "ingredients": [
+        "400 g yellow peppers",
+        "2 tomatoes",
+        "2 heads of onion",
+        "2 eggs",
+        "a little oil",
+        "salt to taste"
+      ],
+      "preparation": [
+        "Clean the onion, wash it, and finely chop it. Wash the peppers, remove the stems and seeds, and chop them into strips. Wash the tomatoes and slice them. In a pan, heat a little oil and sauté the chopped onion for about five minutes, then add the chopped peppers. When the peppers are sautéed, add the chopped tomatoes and sauté everything together for about 5-7 minutes. Beat the eggs and pour them over the dish, mixing everything well, season with salt, and serve."
+      ],
+      "image_path": "data/images/75b935a7-c730-477f-8a3d-027a5e0f4f39.jpg"
+    },
+    {
+      "name": "Meatballs in Tomato Sauce with Mushrooms",
+      "ingredients": [
+        "400 g ground meat",
+        "1 egg",
+        "1 head of onion",
+        "1 clove of garlic",
+        "2 tablespoons breadcrumbs",
+        "1 piece of stale bread",
+        "a little milk",
+        "red sweet paprika",
+        "pepper to taste",
+        "salt to taste",
+        "dry vegetable seasoning to taste",
+        "a little fresh parsley",
+        "a little flour",
+        "a little oil",
+        "300 g fresh mushrooms",
+        "1-2 cloves of garlic",
+        "500 ml canned tomatoes",
+        "pepper to taste",
+        "salt to taste"
+      ],
+      "preparation": [
+        "Soak a slice of bread in a little milk and then drain it. In the ground meat, add chopped onion and garlic, breadcrumbs, soaked bread, parsley, spices, and the beaten egg. Mix the meat well and form meatballs, coat them in flour, and fry in hot oil until nicely browned.\rRemove the fried meatballs to a plate. Finely chop the mushrooms. Heat oil in a pot, add the chopped mushrooms, chopped garlic, and sauté until the mushrooms release their liquid.",
+        "Pour in the tomatoes and simmer briefly.",
+        "Add the fried meatballs to the tomato sauce. Cook everything together for about 10 minutes until the sauce thickens nicely. Season to taste. Serve the meatballs with cooked pasta and mashed potatoes."
+      ],
+      "image_path": "data/images/6600248c-3b1b-49b7-afeb-a67df9a89bee.jpg"
+    },
+    {
+      "name": "Breaded Burgers with Cheese",
+      "ingredients": [
+        "300 g mixed ground meat",
+        "1 egg",
+        "1/2 head of onion",
+        "2 cloves of garlic",
+        "1/3 teaspoon ground pepper",
+        "1/3 teaspoon sweet paprika",
+        "1/3 teaspoon oregano",
+        "1 teaspoon salt",
+        "80-100 g cheese",
+        "4 tablespoons flour",
+        "2 eggs",
+        "50 ml milk",
+        "about 50 g breadcrumbs",
+        "oil for frying as needed"
+      ],
+      "preparation": [
+        "In the ground meat, add finely chopped onion, finely chopped garlic, salt, pepper, sweet paprika, oregano, and the egg, and mix everything well.",
+        "Flatten the meat on foil into a rectangle about 1 cm thick. Spread grated cheese over the meat. Roll it tightly and place it in the freezer for half an hour to firm up for easier slicing.",
+        "Prepare flour and breadcrumbs for breading, and beat the eggs with milk.",
+        "Cut the meat roll into pieces about 1.5 cm thick.",
+        "Coat each piece of the roll in flour, then in the egg and milk mixture, and finally in breadcrumbs, and fry in hot oil until nicely browned on both sides. Remove the fried breaded burgers to a paper towel to drain excess oil."
+      ],
+      "image_path": "data/images/453f3fce-50d1-41fc-acd0-a6b054dfdc67.jpg"
+    },
+    {
+      "name": "Chicken Fillets in Ajvar Sauce with Mushrooms",
+      "ingredients": [
+        "500 g chicken breast",
+        "1 small head of onion",
+        "2-3 cloves of garlic",
+        "200-250 g fresh mushrooms",
+        "1 dl tomato sauce",
+        "1.5 dl water",
+        "5-6 tablespoons ajvar",
+        "80 g chopped walnuts",
+        "a little fresh parsley",
+        "1 tablespoon mixed dry vegetable seasoning",
+        "pepper to taste",
+        "salt to taste",
+        "a little oil"
+      ],
+      "preparation": [
+        "Cut the chicken into fillets, season with salt and pepper to taste. Finely chop the onion and garlic.",
+        "In heated oil, sauté the chicken fillets, remove them, and wrap them in foil.",
+        "In the same oil, sauté the chopped onion and garlic, then add the sliced mushrooms. Add dry vegetable seasoning, pepper, salt, and sauté until the excess water released by the mushrooms evaporates.",
+        "Then add the tomato sauce, ajvar, and water, mix everything, and season with spices. Cook the sauce for a few more minutes until you reach the desired thickness.",
+        "Finally, return the chicken to the sauce, add finely chopped walnuts and parsley, and briefly sauté everything together. Serve the chicken with potatoes and salad if desired."
+      ],
+      "image_path": "data/images/ce39c619-7235-4a03-b860-642fd1ce7bd0.jpg"
+    },
+    {
+      "name": "Quick Caesar Pasta with Fish Sticks",
+      "ingredients": [
+        "400 g pasta",
+        "10 fish sticks",
+        "1 cup sour cream",
+        "1/2 lemon - juice",
+        "100 g cheese",
+        "1-2 cloves of garlic",
+        "pepper to taste",
+        "salt to taste",
+        "olive oil",
+        "3-4 cherry tomatoes"
+      ],
+      "preparation": [
+        "Cook the pasta in salted water, rinse with cold water, and drain.",
+        "Let the fish sticks thaw, then cut them into pieces and sauté them in heated oil along with finely chopped garlic. In a bowl with pasta, add the sautéed fish sticks and garlic. Then grate cheese into the bowl and gently mix.",
+        "For the sauce, add lemon juice to the sour cream, season with salt and pepper. Serve the pasta on a plate and drizzle with the sauce. Optionally, serve the pasta with cherry tomatoes."
+      ],
+      "image_path": "data/images/66508dae-1559-47b3-b2e7-20a19f6f487f.jpg"
+    },
+    {
+      "name": "Pork Chops in Tomato and Rosemary Sauce",
+      "ingredients": [
+        "4 pieces of pork chops",
+        "2 tablespoons flour",
+        "3 tablespoons oil",
+        "2 cloves of garlic",
+        "300 ml tomato puree",
+        "150 ml water",
+        "1 tablespoon dry vegetable seasoning",
+        "pepper to taste",
+        "salt to taste",
+        "a little fresh parsley"
+      ],
+      "preparation": [
+        "Pound the chops with a meat mallet, season with salt and spices.",
+        "Coat the chops in flour.",
+        "Fry the chops in heated oil until browned on both sides, then remove and wrap in foil.",
+        "In the same skillet, briefly sauté finely chopped garlic. Pour in the tomato puree and water, add chopped rosemary, and return the chops. If necessary, add a cup of water, and simmer until the chops are tender. Finally, add chopped fresh parsley. Serve the chops with potatoes and salad if desired."
+      ],
+      "image_path": "data/images/3a3fa12b-c86d-477d-8415-98388114c1a1.jpg"
+    },
+    {
+      "name": "Chicken in Tomato and Olive Sauce",
+      "ingredients": [
+        "600 g chicken breast",
+        "1 kg onion",
+        "1-2 cloves of garlic",
+        "3-4 tomatoes",
+        "2 dl tomato juice",
+        "6-7 pitted olives",
+        "a little rosemary",
+        "pepper to taste",
+        "salt to taste",
+        "a little olive oil"
+      ],
+      "preparation": [
+        "Cut the chicken breast into fillets, season with salt and pepper (you can also cut the chicken into cubes).",
+        "In a little hot oil in a pot, brown the chicken until golden. Place the cooked meat on absorbent paper.",
+        "In the same oil, sauté chopped onion and garlic until golden.",
+        "Then add the diced tomatoes, tomato juice, and chopped olives. Once everything starts to boil, cook for about 10 minutes.",
+        "Add pepper and salt to taste, return the browned chicken to the tomato sauce. Finally, sprinkle with chopped rosemary. Optionally, serve the chicken with rice or potatoes."
+      ],
+      "image_path": "data/images/5eb44b85-14f3-4bc1-9e93-df3a987e9d64.jpg"
+    },
+    {
+      "name": "Duck Stew",
+      "ingredients": [
+        "400 g duck meat with bones",
+        "50 g (1 small head) onion",
+        "50 g (1 piece) carrot",
+        "25 g (1 small piece) celery root",
+        "50 g (1 piece) unpeeled quince",
+        "1 bay leaf",
+        "1 clove of crushed garlic",
+        "100 ml quality red wine",
+        "about 100 ml duck bone broth",
+        "1 teaspoon pesto (ready-made product)",
+        "1 teaspoon chopped tomato sauce (ready-made product)",
+        "a little olive oil",
+        "a little salt",
+        "a little ground pepper"
+      ],
+      "preparation": [
+        "Remove the skin from the duck and debone it.\rAfter deboning, I got 150 g of pure meat and 250 g of bones and skin.",
+        "Cut the pure meat into strips.\rPlace the bones and skin in a deeper pot and cover with 500 ml of water (to submerge).",
+        "Bring to a boil over low heat, skimming off the foam as it cooks.",
+        "Cook for about 30 minutes, then remove the skin and bones from the broth, leaving the broth aside for pouring over the duck during stewing.",
+        "While the broth is cooking, prepare the vegetables.\rPeel and finely chop the onion.",
+        "Peel the carrot and cut it into rounds.\rPeel the celery, cut it into strips, then into small cubes.",
+        "Cut the quince into slices and then into small cubes.",
+        "In a pot, heat a little olive oil, and when hot, add the chopped onion to sauté briefly over low heat.",
+        "Add the carrot, celery, and quince, and sauté for about 15 minutes.",
+        "Season the duck meat strips with salt and add them to the sautéed vegetables, along with the crushed garlic, and fry for about 10 minutes until the meat changes color.",
+        "Add the red wine and simmer over low heat until the wine evaporates.\rThen add the broth, pesto, chopped tomato sauce, and bay leaf, and stew for another 30 minutes.",
+        "During stewing, if necessary or if you prefer it to be juicier, add broth as desired.\rServe the stewed duck with boiled or roasted potato gnocchi or cooked pasta."
+      ],
+      "image_path": "data/images/5817476f-b0c6-4475-a123-6eb2e708c73b.jpg"
+    },
+    {
+      "name": "Easy and Quick Lunch",
+      "ingredients": [
+        "700 g zucchini",
+        "1 head of onion",
+        "3 cloves of garlic",
+        "1 small carrot",
+        "70 g celery",
+        "350 g potatoes",
+        "2 tomatoes",
+        "1 tablespoon chopped parsley",
+        "3 tablespoons oil",
+        "salt to taste",
+        "pepper to taste",
+        "dry vegetable seasoning to taste",
+        "1 egg",
+        "1 tablespoon flour",
+        "150 g sour cream"
+      ],
+      "preparation": [
+        "Sauté onion, garlic, potatoes cut into cubes, carrot, and celery in oil. Briefly fry and add chopped tomatoes and 200 ml of water.\r\rCook until the vegetables soften, add the chopped zucchini, and add more water and cook. Then add salt, pepper, seasoning, and parsley. Finally, add the beaten egg with flour and sour cream. Cook a little longer and serve alone or with some meat."
+      ],
+      "image_path": "data/images/e67de458-aca6-4893-b6b1-536b61022332.jpg"
+    },
+    {
+      "name": "Stuffed Schnitzel",
+      "ingredients": [
+        "4 pork schnitzels",
+        "salt to taste",
+        "150 g thinly sliced dry neck",
+        "150 g thinly sliced cheese",
+        "100 g kaymak",
+        "flour as needed",
+        "2 eggs",
+        "breadcrumbs as needed",
+        "oil as needed"
+      ],
+      "preparation": [
+        "Cover the schnitzels with cling film and pound them with a kitchen mallet. Season to taste, spread with kaymak, layer with thinly sliced dry neck, then cheese, and roll up. Coat the prepared rolls in flour, then in beaten eggs, and finally in breadcrumbs. Fry in heated oil until browned on both sides. Place on kitchen paper to drain excess fat and serve."
+      ],
+      "image_path": "data/images/5692792d-b19b-4caa-a578-22985b038949.jpg"
+    },
+    {
       "name": "Hake with Peppers and Tomatoes",
       "ingredients": [
         "500 g hake fillets",
@@ -83,7 +1368,7 @@
       ],
       "preparation": [
         "Dredge each chop in flour and fry in oil until browned on both sides.",
-        "Add warm water to the fried chops to cover them. Add the ketchup. According to the recipe, 200 ml of ketchup is needed; I used less, spraying the chops with ketchup from the bottle 3-4 times. Simmer for 60 minutes, adding warm water as needed.",
+        "Add warm water to the fried chops to cover them. Add the ketchup. The recipe calls for 200 ml of ketchup; I used less, spraying the chops with ketchup from the bottle 3-4 times. Simmer for 60 minutes, adding warm water as needed.",
         "Towards the end, add minced garlic and parsley. I didn't have fresh, so I used dried parsley.",
         "I also added a little salt towards the end; taste and adjust to your liking.",
         "I served the chops with sautéed potato slices."
@@ -97,13 +1382,13 @@
         "300 g dried meat",
         "300 g smoked bacon",
         "300 g cheese",
-        "as desired dry vegetable seasoning",
+        "to taste dry vegetable seasoning",
         "to taste pepper",
         "to taste salt",
         "as needed oil"
       ],
       "preparation": [
-        "Cut the chicken breast into chops. Season the chops with salt and pepper, and pound them with a meat mallet. Cut the dried meat and cheese into thin slices, and the smoked bacon into strips. At the end of each chop, place a piece of dried meat and a piece of cheese, then roll it up. Wrap each package in a slice of bacon and secure with a toothpick. Arrange the rolled chicken in a baking dish lined with parchment paper. Brush the chicken with a little oil. Bake in a preheated oven at 220°C for about 50 minutes, covered with foil, and uncover towards the end of baking to allow it to brown nicely. Serve the chicken with potatoes if desired."
+        "Cut the chicken breast into chops. Season the chops with salt and pepper, and pound them with a meat mallet. Cut the dried meat and cheese into thin slices, and the smoked bacon into strips. Place a piece of dried meat and a piece of cheese on each chop, then roll it up. Wrap each package in a strip of bacon and secure with a toothpick. Arrange the rolled chicken in a baking dish lined with parchment paper. Brush the chicken with a little oil. Bake in a preheated oven at 220°C for about 50 minutes, covered with foil, and uncover towards the end to allow it to brown nicely. Serve the chicken with potatoes if desired."
       ],
       "image_path": "data/images/3fe4c165-4fe0-4a86-869c-ae4ba1f701de.jpg"
     },
@@ -121,7 +1406,7 @@
       ],
       "preparation": [
         "In a pan with oil, sauté finely chopped onion, add chicken cut into cubes and one soup cube.",
-        "When browned, add the vegetables and pour in about 200 ml of water. Let it simmer.",
+        "When sautéed, add the vegetables and pour in about 200 ml of water. Let it simmer.",
         "Finally, season and pour in the cream that you previously mixed with flour. Simmer for a few more minutes and serve."
       ],
       "image_path": "data/images/ef5146bb-366e-4f05-ac8a-73c670c6419b.jpg"
@@ -147,7 +1432,7 @@
       ],
       "preparation": [
         "Cut the chicken into chops. Mix the chicken with spices and oil. Let the chicken rest for about 45 minutes in the fridge.",
-        "In another pot, sauté the chicken in a little oil on both sides until it gets a nice golden color.",
+        "In another pot, sauté the chicken on both sides until it gets a nice golden color.",
         "Arrange the chicken in a greased baking dish.",
         "In a little oil, sauté finely chopped onion and garlic, then add diced peppers and sauté briefly. Add sliced mushrooms. Sauté until the water released by the mushrooms evaporates.",
         "Pour in the cooking cream and add one tablespoon of flour, season, and mix well. Let the sauce thicken and remove from heat.",
@@ -172,15 +1457,15 @@
         "1 tablespoon salt"
       ],
       "preparation": [
-        "Wash the eggplant, dry it, and peel it. With a sharp knife, remove the top from the thicker part, leaving the thinner part with the stem. Cut the eggplant lengthwise, but not all the way to the stem. Then cut it in half lengthwise.\r\rSalt the water, and when it starts to boil, add the eggplant slices to cook for about ten minutes on low heat.\rRemove and cool.\r\rIn one bowl, mix flour, breadcrumbs, salt, pepper, and paprika, and in another, beat the eggs with mustard, spices, and paprika.\r\rCoat the eggplant pieces well in the dry mixture, press with your fingers, then dip in the egg mixture to coat well, and fry in well-heated oil.\r\rTurn for a minute or two until nicely browned. Place on a warm plate covered with a paper towel to absorb excess fat."
+        "Wash the eggplant, dry it, and peel it. Cut off the thicker part from the top with a sharp knife, leaving the thinner part with the stem. Cut the eggplant lengthwise, but not all the way to the stem. Then cut it in half lengthwise.\r\rSalt the water, and when it starts to boil, add the eggplant slices to cook for about ten minutes on low heat.\rRemove them and let them cool.\r\rIn one bowl, mix flour, breadcrumbs, salt, pepper, and paprika, and in another, beat the eggs with mustard, spices, and paprika.\r\rCoat the eggplant pieces well in the dry mixture, press with your fingers, then dip in the egg mixture to coat well, and fry in well-heated oil.\r\rTurn them every minute or two until they are nicely browned. Place on a warm plate covered with a paper towel to absorb excess fat."
       ],
       "image_path": "data/images/cb877e13-b0dc-49a6-8dea-f5f71e4a9eba.jpg"
     },
     {
       "name": "Oven-Baked Chicken and Vegetables",
       "ingredients": [
-        "2 chicken drumsticks",
         "2 chicken thighs",
+        "2 chicken drumsticks",
         "2 chicken wings",
         "as needed homemade lard",
         "to taste salt",
@@ -194,7 +1479,7 @@
         "100 ml water"
       ],
       "preparation": [
-        "Separate the drumsticks from the thighs, place them in a suitable dish, add the wings, salt, pepper, and mix. In a pan, heat the lard, then fry the drumsticks, thighs, and wings on both sides and set aside on a plate. In the same fat, sauté finely chopped green onion and chopped carrot. Add peeled and chopped tomatoes, chopped pepper, finely chopped potatoes, salt, pepper, dry seasoning, pour in water, and sauté for about ten minutes, then transfer to a greased baking dish with homemade lard. Distribute the meat over the vegetables, cover with aluminum foil, and bake at 200 degrees for 30 minutes.",
+        "Separate the thighs from the drumsticks, place them in a suitable dish, add the wings, salt, pepper, and mix. In a pan, heat the lard, then fry the thighs, drumsticks, and wings on both sides and set aside on a plate. In the same fat, sauté finely chopped green onion and chopped carrot. Add peeled and chopped tomatoes, chopped pepper, finely chopped potatoes, salt, pepper, dry seasoning, pour in water, and sauté for about ten minutes, then transfer to a greased baking dish with homemade lard. Distribute the meat over the vegetables, cover with aluminum foil, and bake at 200 degrees for 30 minutes.",
         "Then remove the foil and bake at 180 degrees for 20 minutes. Remove the baked dish from the oven, let it cool slightly, and serve."
       ],
       "image_path": "data/images/e559be6c-cecf-4165-b82a-5839282c18f5.jpg"
@@ -220,10 +1505,10 @@
         "to taste dry vegetable seasoning"
       ],
       "preparation": [
-        "Rinse the red lentils well under cold water and place them in a deeper bowl. Pour the lentils with 300 ml of hot water, stir, and let them sit until the lentils swell and absorb almost all the water (I soaked them overnight). Then drain the lentils (if there is a little water left), place them in a food processor, and grind them. Transfer the prepared lentils to a deeper bowl and set aside.",
-        "Finely chop the onion and garlic, grate the carrot on the fine side of the grater, cut the cabbage into thin short strips, and dice the pepper. Heat oil in a deeper non-stick pan. Add the chopped onion to the heated oil and sauté over medium heat until it softens slightly. Then add the garlic, carrot, cabbage, and pepper, and continue frying until the vegetables soften. Add all the listed spices and mix well. Remove from heat and let cool.",
-        "Transfer the cooled vegetables with spices to the bowl with lentils, add breadcrumbs, and mix all the ingredients well by hand (taste to see if you need to add more spices). On a work surface, sprinkle a little flour to dust your hands when shaping the patties. Take a full tablespoon of the mixture, shape it into a ball, then press it down to form a patty about 1 cm thick (don't be confused, the mixture is still a bit sticky...). Arrange the formed patties on a suitable dish lined with aluminum foil. Let the patties rest in the fridge for half an hour before frying. I got 12 patties from this mixture.",
-        "In a deeper non-stick pan, pour oil to a height of 1 cm and heat it over medium heat (for me, it was 7 on a scale of 1-9, although I reduced it to 6 when flipping them). Place the patties in the heated oil and fry until browned on both sides. Remove the fried patties to a kitchen towel to absorb excess fat. Serve with a side dish of your choice.",
+        "Rinse the red lentils well under cold water and place them in a deeper bowl. Pour the lentils with 300 ml of hot water, stir, and let them sit until the lentils swell and absorb almost all the water (I soaked them overnight). Then drain the lentils (since a little water remains), place them in a food processor, and grind them. Transfer the prepared lentils to a deeper bowl and set aside.",
+        "Finely chop the onion and garlic, grate the carrot on the small side of the grater, cut the cabbage into thin short strips, and dice the pepper. Heat oil in a deeper non-stick pan. Add the chopped onion to the heated oil and sauté over medium heat until it softens slightly. Then add the garlic, carrot, cabbage, and pepper, and continue frying until the vegetables soften. Add all the spices and mix well. Remove from heat and let cool.",
+        "Transfer the cooled vegetables with spices to the bowl with lentils, add breadcrumbs, and mix all the ingredients well by hand (taste to see if you need to add more spices). On a work surface, sprinkle a little flour to dust your hands when shaping the patties. Take a full tablespoon of the mixture, first shape it into a ball, then press it to form a patty about 1 cm thick (don't be confused, the mixture is still a bit sticky...). Arrange the formed patties on a suitable dish lined with aluminum foil. Let the patties rest in the fridge for half an hour before frying. I got 12 patties from this mixture.",
+        "In a deeper non-stick pan, pour in oil to a height of 1 cm and heat it over medium heat (for me, this was 7 on a scale of 1-9, although I reduced it to 6 when flipping them). Place the patties in the heated oil and fry until browned on both sides. Remove the fried patties to a kitchen towel to absorb excess fat. Serve with a side dish of your choice.",
         "They are very tasty; I recommend you try them..."
       ],
       "image_path": "data/images/b076df07-20b2-48fe-9a84-fcf20b179e66.jpg"
@@ -278,15 +1563,15 @@
         "1/2 teaspoon dry vegetable seasoning",
         "1/2 teaspoon ground black pepper",
         "1 teaspoon garlic powder",
-        "300 g fatty pork bacon (cut into thin slices)",
+        "300 g meaty bacon (sliced thinly)",
         "4-5 roasted red peppers",
         "100 g coarsely grated cheese",
         "to taste chicken seasoning",
         "as needed oil"
       ],
       "preparation": [
-        "Slice the mushrooms (not too thin), and cut the onion into wedges. In a non-stick pan, pour in a little oil and heat it. Add the chopped onion to the heated oil and sauté over medium heat until it softens slightly. Then add the mushrooms. Sprinkle with dry vegetable seasoning, ground pepper, and garlic powder, and sauté until all the water released by the mushrooms evaporates. Set the sautéed mushrooms aside to cool.",
-        "Cut the white meat into slices about 0.5 cm thick. Place cling film over the meat and pound each piece to a thickness of about 2-3 mm. Spread a larger piece of cling film (or combine two pieces of transparent foil) and arrange the slices of bacon in two rows (one row, then place the second row of bacon underneath, slightly overlapping). I had seven wider slices of bacon in the first row, and in the second row, I cut them in half and arranged them.",
+        "Slice the mushrooms (not too thin), and cut the onion into wedges. In a non-stick pan, pour in a little oil and heat it. Add the chopped onion to the heated oil and sauté over medium heat until it softens slightly. Then add the mushrooms. Sprinkle with dry vegetable seasoning, ground pepper, and garlic powder, and sauté until all the water released by the mushrooms evaporates. Remove the sautéed mushrooms to cool.",
+        "Cut the white meat into chops about 0.5 cm thick. Place cling film over the meat and pound each piece to a thickness of about 2-3 mm. Spread a larger piece of cling film (or use two pieces of transparent foil) and arrange the slices of bacon in two rows (one row, then place the second row of bacon underneath. I had seven wider slices of bacon in the first row, and in the second row, I cut them in half and arranged them) slightly overlapping.",
         "Place the prepared meat over the bacon and sprinkle with chicken seasoning to taste.",
         "Evenly distribute the sautéed mushrooms with onions over the meat.",
         "Peel the roasted red peppers, remove the seeds, and cut each pepper in half. Arrange the halves over the mushrooms, then coarsely grate the cheese.",
@@ -310,7 +1595,7 @@
         "Cut the potatoes and bacon into smaller pieces (1x1 cm).",
         "Sauté the bacon in a heated pan for 2 minutes.",
         "Then add the potatoes.",
-        "Dissolve the contents of the packet in 200 ml of milk and 300 ml of water, mix, and pour over the potatoes and bacon.",
+        "Dissolve the contents of the packet in 200 ml of milk and 300 ml of water, stir, and pour over the potatoes and bacon.",
         "When it boils, pour the mixture into a baking dish and bake in a preheated oven at 200 degrees for 35 minutes.",
         "Sprinkle grated cheese over the dish, if desired, and bake for another 10 minutes."
       ],
@@ -326,7 +1611,7 @@
         "to taste dry vegetable seasoning"
       ],
       "preparation": [
-        "Clean the fish and cut it into pieces of desired size and season with salt to taste.\rIn one bowl, mix the flours, salt, and seasoning to taste, then coat the fish in the mixture.\rFry in plenty of oil over high heat for about 10 minutes on one side, then on the other side for the same amount of time. Place the cooked fish on a napkin to absorb excess fat."
+        "Clean the fish and cut it into pieces of desired size and season with salt to taste.\rIn one bowl, mix the flours, salt, and seasoning to taste, then coat the fish in it.\rFry in plenty of oil over high heat for about 10 minutes on one side, then on the other side for the same amount of time. Place the cooked fish on a napkin to absorb excess fat."
       ],
       "image_path": "data/images/fc12b71c-2ce1-4a88-8e89-6ff0fc004d66.jpg"
     },
@@ -373,9 +1658,9 @@
         "a little parsley"
       ],
       "preparation": [
-        "Add milk to the ground meat and mix well. Then add chopped onion and garlic, breadcrumbs, parsley, spices, and the beaten egg. Mix the meat well and form meatballs.",
-        "Dredge the meatballs in flour and fry in hot oil. Remove the meatballs and set them aside on a plate.",
-        "Roast the bell peppers in the oven, peel, and cut into strips. In the same oil, sauté chopped onion and garlic, then add the peppers and tomato puree.",
+        "Add milk to the ground meat and mix well. Then add chopped onion and garlic, breadcrumbs, parsley, spices, and the beaten egg. Knead the meat well and form meatballs.",
+        "Roll the meatballs in flour, then fry in hot oil. Remove the meatballs and set them aside on a plate.",
+        "Roast the bell peppers in the oven, peel them, and cut them into strips. In the same oil, sauté chopped onion and garlic, then add the peppers and tomato puree.",
         "Pour in water, and when it boils, cook for 10 minutes, then return the meatballs to the sauce. Pour in the white wine and simmer briefly.",
         "Pour everything into a baking dish. Sprinkle with grated cheese and chopped parsley.",
         "Bake the meatballs for about 15 minutes in a preheated oven at 180 degrees. Serve the meatballs with rice or potatoes if desired."
@@ -397,15 +1682,15 @@
         "Season the duck with salt.",
         "In a small bowl, mix honey and chili sauce and coat the duck well on all sides with this mixture. Place the prepared duck in a baking dish with a little olive oil.",
         "Peel, wash, and cut the potatoes into eighths, season with salt, and place around the duck.",
-        "Immediately add 50 ml of water and place the dish in the oven at 180 degrees, baking for about 90 minutes, turning the duck occasionally.",
-        "Slice the roasted duck into larger pieces and serve with a side dish and salad of your choice."
+        "Immediately add 50 ml of water and place the dish in the oven at 180 degrees and bake for about 90 minutes, turning the duck occasionally.",
+        "Cut the roasted duck into larger pieces and serve with a side dish and salad of your choice."
       ],
       "image_path": "data/images/0379dc54-f3e7-4faf-b914-8f3e45cdc3be.jpg"
     },
     {
       "name": "Meat on Vegetables",
       "ingredients": [
-        "4 drumsticks with thighs",
+        "4 thighs with drumsticks",
         "2-3 onions",
         "50 ml oil",
         "4-5 tomatoes",
@@ -415,7 +1700,7 @@
         "garlic powder"
       ],
       "preparation": [
-        "Clean, wash, and dry the meat, season with spices (salt, pepper, dry vegetable seasoning, garlic powder, and a little dried parsley), rub the spices into the meat, and let it rest for a while. In a pot, heat 50 ml of oil, add the meat, and fry it slightly on both sides, then remove it from the pot, and in the same oil, add the onion, season, stir, and sauté for 5-10 minutes. Then add the chopped tomatoes and sauté for another 5-10 minutes. Then add the peppers; when the peppers are halfway done, place the meat in a baking dish, season to taste, and mix. Bake in a preheated oven at 200°C for 45 minutes."
+        "Clean, wash, and dry the meat, season with spices (salt, pepper, dry vegetable seasoning, garlic powder, and a little dried parsley) and rub the spices into the meat, then let it rest for a while. In a pot, heat 50 ml of oil, add the meat, and fry it slightly on both sides, then remove it from the pot, and in the same oil, add the onion, season, stir, and sauté for 5-10 minutes. Then add the chopped tomatoes and sauté for another 5-10 minutes. Then add the peppers; when the peppers are halfway done, place the meat in a baking dish, season to taste, and stir. Bake in a preheated oven at 200°C for 45 minutes."
       ],
       "image_path": "data/images/1e1de76a-82f5-40b6-bdbe-ab32f22531f8.jpg"
     },
@@ -448,895 +1733,6 @@
       "image_path": "data/images/c1cd3b26-84fd-4a87-a2c3-c837dcc82cc4.jpg"
     },
     {
-      "name": "Chicken with Mlinci",
-      "ingredients": [
-        "250 g mlinci",
-        "400 g chicken breast",
-        "a little oil",
-        "50 g butter",
-        "500 ml cooking cream",
-        "180 g sour cream",
-        "200 g cheese",
-        "to taste dry vegetable seasoning",
-        "to taste ground pepper",
-        "1 l hot water",
-        "1 chicken broth cube"
-      ],
-      "preparation": [
-        "In a suitable pot, pour a little oil, add butter, and place it on low heat to melt the butter. Add chicken cut into cubes, sprinkle with dry vegetable seasoning and pepper to taste, stir and fry until the meat is browned. Remove the fried meat with a slotted spoon to a plate and leave it on the stove.",
-        "In the pot where the meat was fried, pour in the cooking cream and sour cream. Briefly bring to a boil while scraping off any remnants stuck from frying the meat with a wooden spoon. Season to taste and turn off the heat.",
-        "Dissolve the chicken broth cube in 1 l of hot water. Break the mlinci into larger pieces and add them to the water. Stir, leave them for about two minutes, and remove them with a slotted spoon to a plate.",
-        "Preheat the oven to 200 degrees. Grease a deeper dish that will go in the oven (my dish was 24cm in size) with butter and arrange a third of the mlinci. Spread half of the fried chicken over them, then pour a third of the cream sauce over it. Again, layer the mlinci, place the second half of the meat, and pour the second third of the cream sauce over it. Finally, add the remaining mlinci, pour the rest of the cream over it, and evenly sprinkle with coarsely grated cheese. Bake until the surface of the dish turns a nice golden color.",
-        "Let the mlinci with chicken cool, cut them into cubes, and serve (they cut very nicely, but we couldn't wait for them to cool, so I cut them while hot).",
-        "Mlinci can be prepared with both chicken and turkey white meat. They are tasty warm and cold..."
-      ],
-      "image_path": "data/images/55848662-b6e2-426f-9346-ce2a3a8c904d.jpg"
-    },
-    {
-      "name": "Lenten Soy Goulash with Vegetables",
-      "ingredients": [
-        "250 g soy steaks",
-        "250 ml vegetable soup or water",
-        "1 onion",
-        "1 carrot",
-        "1 yellow bell pepper",
-        "1/2 zucchini",
-        "1 clove garlic",
-        "1 tablespoon cumin",
-        "1 teaspoon sweet paprika",
-        "a little pepper",
-        "a little salt",
-        "a little fresh parsley",
-        "a little oil"
-      ],
-      "preparation": [
-        "Soak the soy steaks in warm water for 60 minutes, and when they swell, drain them well and cut them into cubes.",
-        "In heated oil, sauté the chopped onion and garlic. Add the cleaned and washed bell pepper, carrot, and zucchini cut into cubes. Then add the sweet paprika and cumin and sauté everything a little. Pour in the soup, season with salt and pepper, cover, and simmer for about ten minutes over medium heat. Then add the cubed soy steaks, pour in a little more water, and continue cooking for another 10 minutes. Before serving, sprinkle the goulash with chopped parsley. Optionally serve with potatoes or pasta."
-      ],
-      "image_path": "data/images/7fd2bb32-5e02-4378-9c2c-bb5cc3c3831c.jpg"
-    },
-    {
-      "name": "Baked Pork Neck with Beer",
-      "ingredients": [
-        "2 kg boneless pork neck",
-        "4 large onions",
-        "5 large cloves of garlic",
-        "1/2 l beer (of your choice)",
-        "3 larger sprigs of fresh rosemary",
-        "as needed pork lard",
-        "to taste dried thyme",
-        "to taste salt",
-        "to taste ground pepper",
-        "1 tablespoon cornstarch",
-        "1 tablespoon honey"
-      ],
-      "preparation": [
-        "Generously grease a large baking tray (40x30 cm) with softened pork lard and set it aside. Clean and slice the onions and spread them over the bottom of the tray. Place the cleaned garlic cloves and rosemary sprigs on top. Season the pork neck with salt and ground pepper to taste on both sides, then take each piece of meat and rub the spices in well with your hands (the meat slices should be about 1 cm thick). Then, arrange the meat over the onions. Sprinkle very lightly with thyme. Drizzle each layer of meat with a little melted lard and pour the beer on the side. Cover the tray well with aluminum foil and bake in a preheated oven at 200 degrees for three hours.",
-        "Then remove the tray, carefully remove the aluminum foil, and transfer the meat to a suitable dish (carefully transfer the meat using two forks, as it is so tender that it may fall apart). In a bowl, take a little of the liquid and dissolve the cornstarch, then pour it into the tray. Add the honey, stir, and mash the onions with a fork to create a sauce. Return the meat, but now the side that was facing the onions should be turned up, and return the tray to the oven to brown the meat.",
-        "The meat is so tender that you won't even need a fork, and without hesitation, dip bread into the sauce directly from the tray, as it is delicious..."
-      ],
-      "image_path": "data/images/bb30b07c-2fdf-432b-a31b-3421c8dd89d8.jpg"
-    },
-    {
-      "name": "Tuna Meatballs",
-      "ingredients": [
-        "1 can of tuna chunks (drained from liquid)",
-        "3 medium potatoes, boiled and mashed",
-        "to taste dry vegetable seasoning",
-        "to taste pepper",
-        "to taste salt",
-        "to taste ground red pepper",
-        "1 egg",
-        "to taste parsley",
-        "100 g breadcrumbs",
-        "1 egg"
-      ],
-      "preparation": [
-        "Mix the tuna, potatoes, salt, pepper, dry seasoning, ground red pepper, and egg until combined. Place in the refrigerator for half an hour, then form small meatballs.\r\rRoll them in breadcrumbs, then in beaten egg, and again in breadcrumbs, and fry in hot oil until browned on all sides.\rNote: add enough oil so that they do not touch the bottom of the pot."
-      ],
-      "image_path": "data/images/6ed1f53a-a1e9-4e59-b335-e16247d96b04.jpg"
-    },
-    {
-      "name": "Oven-Baked Pork Chops",
-      "ingredients": [
-        "4 pork chops",
-        "to taste salt",
-        "to taste pepper",
-        "to taste dry vegetable seasoning",
-        "1 teaspoon sweet paprika",
-        "4 slices of toast cheese",
-        "4 teaspoons sour cream",
-        "4 tablespoons cooking cream",
-        "as needed margarine/butter"
-      ],
-      "preparation": [
-        "Cover the chops with cling film and pound them with a meat mallet. Season both sides of the chops with salt, pepper, and dry vegetable seasoning, then arrange them in a greased baking dish. On each chop, spread 1 tablespoon of cooking cream, cover with a slice of toast cheese, add a teaspoon of sour cream, sprinkle with sweet paprika, and distribute a piece of margarine on top. Bake in a well-heated oven at 200 degrees for about 40 minutes.",
-        "Remove the baked chops from the oven and let them cool before serving."
-      ],
-      "image_path": "data/images/02aa3795-ffe5-44da-863b-c565607483a4.jpg"
-    },
-    {
-      "name": "Sautéed Potatoes with Bacon and Sausages",
-      "ingredients": [
-        "800 g potatoes",
-        "160 g red onion",
-        "2 larger cloves of garlic",
-        "200 g smoked bacon",
-        "2 teaspoons salt",
-        "1 heaping tablespoon paprika",
-        "1 teaspoon ground pepper",
-        "1/2 small bunch of parsley",
-        "about 50 ml oil",
-        "as needed smoked homemade sausages"
-      ],
-      "preparation": [
-        "Peel the potatoes and cut them into cubes. Place them in a deeper pot, cover with cold water, sprinkle with one teaspoon of salt, and bring to a boil. Cut the bacon into thinner strips (I cut the bacon into 0.5 cm thick and 4 cm long) and place it in a deeper non-stick pan without adding fat. Turn on medium heat, and as soon as the bacon starts to fry, reduce the heat and fry until crispy. Remove the fried bacon with a slotted spoon onto a plate.",
-        "In the fat released by the bacon, add about 50 ml of oil and add finely chopped red onion. Fry over medium heat. When the onion has softened, add the chopped garlic and fry until it softens. Then sprinkle with paprika and ground pepper and stir. Add the drained boiled potatoes and mix with a fork while pressing down until mashed. Season with a teaspoon of salt (or to taste) and stir for about another minute. Finally, add finely chopped parsley and mix well.",
-        "Place the sautéed potatoes on a plate (these ingredients are for three hearty servings), sprinkle with crispy bacon, and serve with fried sausage on the side. Sautéed potatoes are excellent with minced schnitzels...",
-        "A simple dish that smells of past times..."
-      ],
-      "image_path": "data/images/ab76eaaf-fac2-411a-881b-02d54ac349fb.jpg"
-    },
-    {
-      "name": "Chicken with Couscous and Dried Apricots",
-      "ingredients": [
-        "300 g chicken",
-        "1 onion",
-        "1 teaspoon fresh ginger",
-        "10 dried apricots",
-        "180 g sweet corn",
-        "250 g raw couscous",
-        "300 ml warm water",
-        "1 tablespoon mixed dry vegetable seasoning",
-        "to taste salt",
-        "a little olive oil"
-      ],
-      "preparation": [
-        "Cut the chicken into small cubes, grate a little fresh ginger. Finely chop the dried apricots.",
-        "In olive oil, sauté the finely chopped onion in a deeper pan. Add the chicken and sauté for about 8-10 minutes, then add the grated ginger and sauté the chicken for another two minutes.",
-        "Wash and drain the sweet corn. Add the drained sweet corn, dried apricots, uncooked couscous, and season to the pan with chicken.",
-        "In a separate pot, bring 300 ml of water to a boil. Pour everything over with hot water and stir. Cover the pan with a lid, leave it on the stove for one minute, then remove it from the heat and leave it covered for another five minutes. Mix the finished dish with a fork before serving."
-      ],
-      "image_path": "data/images/72db8e1f-8dd7-4d06-acf1-98b03614f6e0.jpg"
-    },
-    {
-      "name": "Sausages with Mushrooms in Tomato Sauce",
-      "ingredients": [
-        "400 g mushrooms",
-        "400 g sausages",
-        "500 ml pureed tomatoes",
-        "1 onion",
-        "2 cloves of garlic",
-        "100 ml oil",
-        "to taste salt",
-        "to taste ground black pepper",
-        "1-2 tablespoons flour",
-        "a little oregano",
-        "a little basil"
-      ],
-      "preparation": [
-        "In a little oil, sauté the sausages cut into slices. When they are almost fried, remove them and in the same oil sauté the chopped onion and cleaned chopped mushrooms. Season with salt, pepper, and let it simmer. Stir occasionally to prevent burning. When the liquid has evaporated, add flour and chopped garlic, return the sausages, and pour in the pureed tomatoes. Stir, add spices, and let everything simmer for another twenty minutes.\rServe with cooked tagliatelle or a side dish of your choice.\r\rEnjoy!"
-      ],
-      "image_path": "data/images/ae716acd-86f4-4a88-9160-67738c747e2d.jpg"
-    },
-    {
-      "name": "Baked Chicken with Vegetables",
-      "ingredients": [
-        "2 medium onions",
-        "2 medium potatoes",
-        "2 larger tomatoes",
-        "4-5 cloves of garlic",
-        "3 larger chicken thighs with drumsticks",
-        "200 g smaller mushrooms",
-        "1.5 tablespoons lard",
-        "seasoning for chicken",
-        "500 ml water",
-        "2 teaspoons paprika",
-        "1/2 teaspoon ground pepper",
-        "1/2 teaspoon salt",
-        "to taste dry vegetable seasoning",
-        "1 tablespoon flour"
-      ],
-      "preparation": [
-        "For this dish, I used a deeper pot with a non-stick bottom, 26 cm in size. Clean and slice the onion and potatoes into 0.5 cm thick rounds. Cut the tomatoes to the same thickness. Clean the garlic and just cut it in half. Wash the mushrooms. Separate the chicken meat into thighs and drumsticks and season with chicken seasoning to taste.",
-        "Preheat the oven to 200 degrees. In the pot, first arrange the onion rings in a circle.",
-        "Layer the potatoes over the onions.",
-        "Then place the tomatoes and garlic over the potatoes.",
-        "On top, arrange the seasoned chicken. Distribute the mushrooms in between. Place the lard over the meat.",
-        "For the sauce: In a suitable bowl, pour in 500 ml of warm water, add paprika, pepper, salt, dry vegetable seasoning, and flour. Whisk everything together to avoid lumps from the flour. Pour over the prepared dish. Cover the pot with aluminum foil and press it down well. Poke the foil in two places with a toothpick and place the dish to bake for one hour.",
-        "Then, carefully remove the aluminum foil and return it to the oven to brown the meat.",
-        "Very simple, yet so delicious..."
-      ],
-      "image_path": "data/images/496df79a-7c84-42c4-8b41-57d4d0fbe53f.jpg"
-    },
-    {
-      "name": "Potato Gnocchi",
-      "ingredients": [
-        "700 g potatoes",
-        "300 g flour",
-        "1 teaspoon salt",
-        "1 egg",
-        "100-200 g flour",
-        "1 tablespoon salt"
-      ],
-      "preparation": [
-        "Wash the potatoes well and boil them in their skins. They should not be overcooked and falling apart, but should remain firm yet cooked.\r\rWhile still hot, peel them with a knife (the skin comes off easily). When they cool slightly, mash them so that no lumps remain, or better yet, grate them on the fine side of a grater.",
-        "Add the egg, a teaspoon of salt to the grated (or mashed) potatoes, and mix, then gradually add flour and knead. The mixture will stick to the surface, so add more flour as needed.",
-        "Take pieces of dough and roll them on the table to form sausage shapes about 2 cm wide. Using a floured knife, cut pieces about 2 cm long. Press each piece onto a fork, then roll it to form the gnocchi shape. Repeat the process until all the dough is used, making sure to place the gnocchi on a floured surface to prevent sticking. Sprinkle them with a little flour and shake off the excess flour.",
-        "In a pot, pour water and add one tablespoon of salt. When it boils, add the gnocchi and wait for them to float to the surface. When they float, cook for another half a minute and remove with a slotted spoon. I do not put more than ten pieces at a time to prevent them from sticking while cooking.\rServe the finished gnocchi with sauce of your choice."
-      ],
-      "image_path": "data/images/56e1e75c-80df-4c81-8bbc-d7a2357debbb.jpg"
-    },
-    {
-      "name": "Lenten Sauerkraut with Rice",
-      "ingredients": [
-        "1 head of sauerkraut",
-        "1/2 cup rice",
-        "1 cup oil",
-        "to taste pepper",
-        "to taste ground red pepper",
-        "to taste dry seasoning"
-      ],
-      "preparation": [
-        "Cut the cabbage into larger or smaller pieces as you like and place it in a deeper pot.\r\rAdd 1 cup of cabbage juice and about 3 cups of water to cover the cabbage, add 50 ml of oil and bring to a boil over medium heat.\r\rWhen the cabbage softens, add the washed rice, season, and cook until the rice is also cooked.\r\rIn a shallow dish/pan, pour the remaining oil, heat it, then add the smoked paprika, sauté briefly, and add it to the cabbage, leaving it on the stove to boil, then remove it.\rWhen serving, additionally season with hot ground pepper if you like!!"
-      ],
-      "image_path": "data/images/c6f377af-a56e-44a2-ab36-c94c48a3a31d.jpg"
-    },
-    {
-      "name": "Chicken with Spinach Sauce",
-      "ingredients": [
-        "2 larger chicken thighs with drumsticks",
-        "seasoning for chicken",
-        "3 tablespoons oil",
-        "70 ml hot water",
-        "3 bricks of spinach",
-        "200 ml cooking cream",
-        "30 g finely grated cheese",
-        "1/2 teaspoon garlic powder",
-        "1/2 teaspoon ground pepper",
-        "to taste dry vegetable seasoning",
-        "to taste chili powder"
-      ],
-      "preparation": [
-        "Separate the chicken meat into thighs and drumsticks. Season with chicken seasoning to taste on both sides. Rub each piece of meat well with your hand over the sprinkled seasoning. In a deeper non-stick pan (I used a 24 cm pan), pour in only three tablespoons of oil, as the chicken will release its fat. Place the meat in the heated oil and cover the pan. Fry the meat on low heat (for me, this is 5 out of 9, which is the highest). When it gets a nice golden color, turn the meat to the other side and continue frying, covered. The meat will take a little longer to fry, but it's worth it; it gets a beautiful crispy crust. Remove the fried meat to a plate.",
-        "Spinach sauce: In the fat where the meat was fried, pour in hot water and, using a wooden spoon, scrape off all the remnants from frying the meat (continue to work on low heat). Add the spinach bricks and stir until they thaw. Once the spinach has thawed, add the cooking cream, garlic powder, ground pepper, and chili (omit the chili if you don't like it). Stir, cover, and let the sauce come to a boil. Then add the grated cheese, stir, cover, and let it sit for 3-4 minutes to thicken slightly. During this time, stir the sauce twice. Taste to see if any more seasoning is needed and remove from heat.",
-        "Serve the fried chicken with mashed potatoes, spinach sauce, and salad to taste.",
-        "The wonderfully crispy chicken pairs perfectly with the creamy spinach sauce..."
-      ],
-      "image_path": "data/images/c88a46e6-da02-48f0-8029-b4aad1c84ee4.jpg"
-    },
-    {
-      "name": "Stuffed Zucchini Baked in the Oven",
-      "ingredients": [
-        "3 medium zucchinis",
-        "1 larger onion",
-        "400 g chicken breast",
-        "1 dl oil",
-        "5 tablespoons rice",
-        "to taste dry vegetable seasoning",
-        "to taste salt",
-        "to taste pepper",
-        "3 tablespoons flour",
-        "1 cup sour cream",
-        "1 clove garlic",
-        "3 tablespoons chopped parsley and celery leaves",
-        "1 dl water",
-        "50 g cheese"
-      ],
-      "preparation": [
-        "Peel the zucchinis, wash them, cut them in half, and scoop out the insides and finely chop them. Cut the meat into small cubes. In a pan, pour in the oil, add the chopped onion, add the rice, and gradually add water, cooking until it is half cooked, then add the meat and chopped zucchini insides and sauté for a few minutes.\rGrease a baking dish with oil, arrange the zucchini boats, and fill them to the top with the filling and bake for 20 minutes. Meanwhile, mix the topping of flour, sour cream, cheese, garlic, parsley, and water and pour it over the zucchinis and bake for another 10 minutes."
-      ],
-      "image_path": "data/images/aed7dfc1-4d5e-449f-b641-0dcceca48c64.jpg"
-    },
-    {
-      "name": "Macaroni with Potatoes",
-      "ingredients": [
-        "700 g potatoes",
-        "300 g lentil macaroni",
-        "1 larger onion",
-        "1 tablespoon paprika",
-        "to taste salt",
-        "to taste pepper"
-      ],
-      "preparation": [
-        "Peel the potatoes and cut them into slices and boil them in salted water.\r\rAt the same time, cook the macaroni in salted water.\rChop the onion finely and sauté it in a little oil.\r\rRemove the sautéed onion from the heat and add the paprika.\r\rMix the boiled potatoes and sautéed onion and add the cooked macaroni, mixing well and seasoning with salt and pepper for a delicious meal. Enjoy."
-      ],
-      "image_path": "data/images/dc7058fa-a9c8-4842-9a7a-b3354cd1dda1.jpg"
-    },
-    {
-      "name": "Potato and Spinach Moussaka",
-      "ingredients": [
-        "800 g potatoes",
-        "400 g spinach or young nettles",
-        "100 g cream cheese",
-        "100 g hard cheese",
-        "200 ml neutral cooking cream",
-        "1 tablespoon butter",
-        "2 tablespoons oil",
-        "2 tablespoons flour",
-        "400 ml hot milk",
-        "to taste pepper",
-        "to taste salt"
-      ],
-      "preparation": [
-        "Peel the potatoes and cut them into thinner slices, then partially cook them in salted water.",
-        "Towards the end of cooking, add the nettles to the potatoes and after 5 minutes, drain.",
-        "In a greased baking dish, pour in the potatoes mixed with nettles.",
-        "Melt one tablespoon of butter, add oil, and sauté the flour. Gradually pour in the hot milk while constantly stirring. Add pepper and salt to taste and cook until the sauce thickens.",
-        "Pour the béchamel sauce over the potatoes and mix.",
-        "In another bowl, whisk the neutral cream with cream cheese and season to taste. Pour the cream over the potatoes and sprinkle with grated cheese. Bake in the oven for about 40 minutes at 200 degrees."
-      ],
-      "image_path": "data/images/922df96e-61a2-4da3-a173-d2a6cf025556.jpg"
-    },
-    {
-      "name": "Potato, Cheese, and Dried Meat Moussaka",
-      "ingredients": [
-        "800 g potatoes",
-        "50 g butter",
-        "250 - 300 g dried meat or bacon",
-        "300 g cottage cheese",
-        "1/2 cup sour cream",
-        "a little salt",
-        "2 eggs",
-        "1/2 cup sour cream",
-        "a little pepper",
-        "a little salt"
-      ],
-      "preparation": [
-        "Peel, wash, and boil the potatoes in salted water for 10 to 15 minutes until half cooked, drain, and cut into slices as for moussaka.",
-        "Cut the dried meat into small cubes and place it in a bowl, add the cottage cheese and half a cup of sour cream, and mix everything together.",
-        "Grease a baking dish with butter, layer the sliced potatoes.",
-        "Spread the mixture of dried meat, sour cream, and cheese over the potatoes.",
-        "Layer the remaining potatoes on top and lightly grease with butter. Cover with foil and bake for about 25 minutes at 220°C.",
-        "Towards the end of baking, whisk the two eggs, add the remaining sour cream, season with pepper and salt, and pour over the potatoes.",
-        "Return the moussaka to the oven to brown for another five minutes. The moussaka is done when it gets a nice golden yellow color. Serve the moussaka with salad if desired."
-      ],
-      "image_path": "data/images/723ac9cc-5219-43ee-a1a2-9244754dd0ce.jpg"
-    },
-    {
-      "name": "Homemade Chicken Medallions (Chicken Nuggets)",
-      "ingredients": [
-        "450 g chicken breast",
-        "to taste salt",
-        "to taste pepper",
-        "to taste dry vegetable seasoning",
-        "to taste garlic granules",
-        "as needed flour",
-        "2 eggs",
-        "as needed breadcrumbs",
-        "as needed oil"
-      ],
-      "preparation": [
-        "Cut the chicken breast into slices. Season the slices with salt, add pepper, dry vegetable seasoning, and garlic granules, rub with your hand, then turn to the other side and season it as well. Then chop them in a food processor.",
-        "Form a ball and transfer it to a baking dish with a little oil.",
-        "Cover with cling film, flatten with your hand, and form a rectangular shape. Using a wet knife, cut into 12 pieces (you can also cut them smaller to get 16 pieces).",
-        "Coat the prepared medallions in flour, then in beaten eggs, and finally in breadcrumbs. Fry in heated oil until browned on both sides.",
-        "Place on kitchen paper to drain excess fat.",
-        "Serve with fries or a side dish of your choice."
-      ],
-      "image_path": "data/images/14c6992b-4733-4ab1-9145-61c6ad16a4f1.jpg"
-    },
-    {
-      "name": "Pork Bajadera",
-      "ingredients": [
-        "2 kg pork belly (pork belly, pork side, belly)",
-        "200 ml soy sauce",
-        "1 tablespoon mustard",
-        "2 tablespoons brown sugar",
-        "1 teaspoon garlic powder",
-        "1 teaspoon ginger powder",
-        "1 teaspoon chili powder",
-        "2 teaspoons salt"
-      ],
-      "preparation": [
-        "Place the piece of meat on a cutting board and with a sharp knife or scalpel, make 3-4 cuts in the skin and fat underneath. Place the marinade ingredients in a suitable bowl and mix well. Transfer the meat to a container that will go in the refrigerator and brush it well with the marinade on all sides using a silicone brush. Leave the remaining marinade at room temperature, as we will need it the next day for two more brushings of the meat and for the sauce. Cover the container with cling film (or if it has a lid, cover it) and leave it overnight in the refrigerator.",
-        "The next day, take the meat out of the refrigerator to sit at room temperature for half an hour before baking. Preheat the oven to 180 degrees. Place the meat on the oven rack (the rack does not heat up), brush it with marinade again, but only on the side where the skin is. Lightly cover it with aluminum foil, do not close it completely, just drape the foil over the meat. Place a baking tray with a little water under the rack to collect the juices from the baking and bake for 40 minutes. After 40 minutes, remove the foil and continue baking for another hour.",
-        "Then, brush the meat with marinade again, increase the temperature to 200 degrees, and bake for another 10-15 minutes. Carefully remove the baked meat with gloves, along with the rack (I placed another tray under the rack to be able to transfer it) and let it cool so that we can cut it nicely.",
-        "For the sauce from the remaining marinade: Add three tablespoons of the meat's baking juice and three tablespoons of water to the remaining marinade. Place on low heat and cook until it thickens slightly. Cool and serve with the meat.",
-        "Preparing the meat for pork bajadera is not complicated, it takes a little more time, but your effort will be rewarded with the juiciest bites that melt in your mouth."
-      ],
-      "image_path": "data/images/ef093e2d-4266-44c3-b335-7bf82d5f7293.jpg"
-    },
-    {
-      "name": "Beetroot Patties",
-      "ingredients": [
-        "200 g cooked or roasted beetroot",
-        "100 g grated zucchini",
-        "1 onion",
-        "2 cloves of garlic",
-        "150 g canned chickpeas",
-        "50 g cashews",
-        "1 teaspoon smoked paprika",
-        "1 teaspoon sweet ground paprika",
-        "1 teaspoon mustard",
-        "to taste salt",
-        "to taste ground black pepper",
-        "7 tablespoons oatmeal"
-      ],
-      "preparation": [
-        "In a food processor, combine the beetroot, zucchini, onion, garlic, chickpeas, cashews, sweet paprika, smoked paprika, mustard, salt, pepper, and oatmeal, and form patties. Arrange them in a baking dish lined with parchment paper. Bake for about twenty minutes at 180 degrees.\r\rYou can spray them with oil before baking.\r\rEnjoy!"
-      ],
-      "image_path": "data/images/99586b82-d915-4573-82de-b742de957996.jpg"
-    },
-    {
-      "name": "Quinoa Risotto with Mushrooms",
-      "ingredients": [
-        "1/2 cup cooked quinoa",
-        "5-6 mushrooms sliced",
-        "2 heaping tablespoons sautéed onion from a bag",
-        "1/2 cup grated carrot",
-        "1 bell pepper (diced)",
-        "to taste dry vegetable seasoning",
-        "to taste pepper",
-        "to taste salt",
-        "to taste parsley"
-      ],
-      "preparation": [
-        "Sauté the bell pepper and carrot in a little oil. When they soften, add the mushrooms and sauté. Towards the end of sautéing, add the sautéed onion from the bag, and sauté for another minute. Remove from heat, then add the quinoa, parsley, and seasonings to taste. Enjoy!!!"
-      ],
-      "image_path": "data/images/6787c2ce-a305-42ff-af0d-397dcc57576a.jpg"
-    },
-    {
-      "name": "Chicken with Dried Cherries and Couscous",
-      "ingredients": [
-        "400 g chicken breast",
-        "250 g couscous",
-        "1/2 head of onion",
-        "1 clove of garlic",
-        "100 g dried cherries",
-        "100 g coarsely grated roasted almonds",
-        "2 tablespoons olive oil",
-        "250 ml water",
-        "salt to taste",
-        "a little oil for frying",
-        "1/2 lemon - juice and grated zest",
-        "1/2 teaspoon cumin",
-        "1/2 teaspoon cinnamon",
-        "1/2 teaspoon sweet red paprika",
-        "1/2 teaspoon nutmeg",
-        "salt to taste"
-      ],
-      "preparation": [
-        "Cut the chicken breast into strips 5*1cm. For the marinade, mix the lemon juice and grated zest with crushed cumin, cinnamon, grated nutmeg, sweet red paprika, and salt.",
-        "Pour the marinade over the cut chicken and let it rest for an hour in the refrigerator.",
-        "In a separate pot, bring 250 ml of water to a boil. Place the couscous in another pot and pour boiling water over it, add olive oil, dried cherries, grated almonds, season with salt, and mix. Let it sit covered until the couscous absorbs the water. Once cooled, serve it on a plate.",
-        "Fry the chicken in hot oil. Towards the end, add finely chopped onion and crushed garlic. Continue frying the chicken for another 2-3 minutes. Optionally, serve the chicken with couscous, rice, or potatoes."
-      ],
-      "image_path": "data/images/ba136852-fbd8-46f0-8008-2c880d246570.jpg"
-    },
-    {
-      "name": "Potatoes with Roasted Peppers and Cheese",
-      "ingredients": [
-        "3-4 potatoes",
-        "5 roasted peppers (can be from the freezer)",
-        "100 g cheese",
-        "a few tablespoons of oil",
-        "salt to taste",
-        "ground pepper to taste"
-      ],
-      "preparation": [
-        "Wash the potatoes well and boil them until half cooked. Once cooked, cool them, peel, and cut into rounds. Grease the bottom of a baking dish with oil, arrange half of the potato rounds, season with salt and pepper, then layer four roasted peppers that have been cleaned of stems and seeds. Drizzle with a little oil, place half of the grated cheese on top, then layer the remaining potato rounds and the fifth pepper cut into pieces. Season with salt and pepper, drizzle with a little oil, and bake in an oven preheated to 180 degrees for about 15 minutes, then remove and grate the remaining cheese on top. Return to the oven and bake for another ten minutes. Serve the dish warm."
-      ],
-      "image_path": "data/images/40d04272-48b4-4c2f-8c56-4328fcece746.jpg"
-    },
-    {
-      "name": "Peas with Vegetables and Chicken",
-      "ingredients": [
-        "1/2 kg chicken thighs",
-        "160 g onion",
-        "80 g celery root",
-        "60 g parsnip root",
-        "120 g carrot",
-        "250 g peas",
-        "100 g sweet corn",
-        "200 g potatoes",
-        "2 medium cloves of garlic",
-        "2-3 small peppers",
-        "400 ml water",
-        "2 tablespoons tomato puree",
-        "oil as needed",
-        "3 teaspoons dry vegetable seasoning (or to taste)",
-        "1 teaspoon ground pepper",
-        "2 teaspoons sweet paprika",
-        "1/2 teaspoon ground ginger",
-        "seasoning for chicken",
-        "chopped parsley"
-      ],
-      "preparation": [
-        "Season the chicken thighs (I cut them in half) with chicken seasoning, to taste, on both sides. In the pot where you will prepare the dish, pour in oil and heat it. Once the oil is hot, add the meat and fry until it gets a nice golden color. Remove the fried meat to a plate and leave it on the stove.",
-        "In the fat where the meat was fried, add finely chopped onion, diced celery root, parsnip, and carrot cut into half-moons. Sauté in a covered pot over medium heat, stirring occasionally, for about 10 minutes. Use a wooden spoon to scrape off any bits stuck to the bottom of the pot from frying the meat, then add sweet corn, diced potatoes, and finely chopped garlic. Mix, then sprinkle with dry vegetable seasoning, ground pepper, sweet paprika, and ground ginger. Mix well and continue to sauté for another 10 minutes.",
-        "In 400 ml of boiling water, dissolve the tomato puree and pour it over the vegetables. Cook on low heat, in a partially covered pot, until the soup thickens slightly and the vegetables soften. Towards the end, add the chopped peppers (I like them to stay crunchy, so I add them towards the end of cooking), mix, then return the fried meat. Simmer the dish for another five minutes, sprinkle with finely chopped parsley, and remove from heat.",
-        "A very tasty lunch, try it and you'll see for yourself..."
-      ],
-      "image_path": "data/images/9f46200f-cc35-4fef-9d52-8a64b5ca1811.jpg"
-    },
-    {
-      "name": "Stuffed Leg Roasted in the Oven",
-      "ingredients": [
-        "about 3 kg pork leg in one piece",
-        "a few cloves of garlic",
-        "2-3 tablespoons mustard",
-        "about 150 g dry bacon",
-        "2 heaping tablespoons lard",
-        "salt to taste",
-        "pepper"
-      ],
-      "preparation": [
-        "Make incisions in the leg with a knife as deep and as many as possible and coat it all over with mustard. Then rub in salt and sprinkle with pepper. In each cut, place chopped garlic and a piece of cut dry bacon. Cover the prepared leg with foil and let it sit for at least 3-4 hours, or overnight. In the baking tray where you will roast the leg, place 2-3 beech wood planks and lay the leg on top. Coat the entire leg well with lard, pour 2 cups of water into the tray, cover with foil, and place it in an oven preheated to 220 degrees. After 15 minutes, reduce the temperature to 180 degrees and continue roasting for at least 90 minutes. If necessary, add a cup of water to the tray to prevent burning. During roasting, spoon the liquid (juices) from the tray over the leg. After 90 minutes of roasting, remove the foil and roast until browned on top, continuously spooning the liquid from the tray over the leg. Check if the leg is done by piercing it deeply with a knife; if no blood comes out, it means it is cooked. Enjoy!"
-      ],
-      "image_path": "data/images/3ab524d9-47dd-4722-bb09-deeec2c6d752.jpg"
-    },
-    {
-      "name": "Lenten Sarma (in Oil)",
-      "ingredients": [
-        "20 leaves of sour cabbage",
-        "1 cup (200 ml) washed rice",
-        "2 heads of onion",
-        "2 larger carrots",
-        "dry vegetable seasoning to taste",
-        "1 teaspoon sweet paprika",
-        "ground pepper to taste",
-        "bay leaf to taste",
-        "water as needed (for pouring)"
-      ],
-      "preparation": [
-        "Prepare the leaves; if they are huge, cut them in half. Wash the rice, finely chop the onion, sauté in a little oil, add grated carrot, then add the washed rice, a spoonful of dry vegetable seasoning, a little pepper, and a teaspoon of sweet paprika. You can also add a few tablespoons of ground walnuts, but it's tasty even without them. Place one tablespoon of this mixture in the center of each leaf and roll it into a sarma, arranging them in a medium pot.",
-        "Press the arranged sarma with a small plate and pour in just enough water to cook. Add a few bay leaves around. Cook for two to three hours, it can take a little longer for the lent version than for the meaty one. Add water during cooking as needed. Towards the end of cooking, make a roux. In a little oil, add two tablespoons of flour and sweet paprika, pour over the sarma, and add a little more water, letting it simmer a bit longer."
-      ],
-      "image_path": "data/images/2253780f-df5f-4e51-b33d-bb6e64850939.jpg"
-    },
-    {
-      "name": "Zucchini with Oregano",
-      "ingredients": [
-        "1 young zucchini",
-        "2 eggs",
-        "breadcrumbs as needed",
-        "flour as needed",
-        "dry vegetable seasoning to taste",
-        "salt to taste",
-        "oregano to taste"
-      ],
-      "preparation": [
-        "First, clean the zucchini and cut it into thin rounds. Salt and place in a colander to drain for about 15 minutes. Then sprinkle with oregano.\r\rIn three different bowls, arrange the eggs, flour, and breadcrumbs. Dip each zucchini round in flour, then in beaten egg with a little seasoning, then in breadcrumbs and fry. After a few minutes, turn each one so they are cooked on both sides. Once done, place them on a paper towel to drain excess oil. Enjoy!"
-      ],
-      "image_path": "data/images/0ae913aa-6047-4b46-92eb-c214fa81e09a.jpg"
-    },
-    {
-      "name": "Burgers with Red Beans",
-      "ingredients": [
-        "1 can of red beans (net weight 420 g)",
-        "80 g oatmeal",
-        "80 g raw sunflower seeds",
-        "60 g onion",
-        "3 medium cloves of garlic",
-        "3 tablespoons olive oil",
-        "3 tablespoons soy sauce",
-        "3 teaspoons ground flaxseed",
-        "6 tablespoons water",
-        "50 ml water",
-        "breadcrumbs as needed",
-        "1 teaspoon smoked sweet paprika",
-        "1/2 teaspoon salt",
-        "1/2 teaspoon dry vegetable seasoning",
-        "1/2 teaspoon cumin",
-        "1/2 teaspoon ground pepper",
-        "1/2 small bunch of parsley"
-      ],
-      "preparation": [
-        "In a small pot, place ground flaxseed, add 6 tablespoons of cold water, mix, and set aside while preparing the other ingredients. Place the oatmeal and sunflower seeds in a food processor and grind until a flour-like consistency is achieved. In the food processor (or a strong blender), add all the other ingredients (red beans, onion, garlic, olive oil, soy sauce, soaked flaxseed with the water it didn't absorb, and 50 ml of cold water). Add the spices. Rinse the red beans well under cold water before adding. Blend well to combine all ingredients. Transfer the mixture to a suitable bowl, add finely chopped parsley, and mix. Add breadcrumbs until you get a mixture that can be shaped into a burger. The mixture should still be a little sticky. When shaping the burgers, sprinkle a little flour on the work surface, then flour your hands. Use a wet spoon (dip the spoon in cold water before each scoop) to take some mixture, place it in the palm of one hand, shape it into a circle, and gently press with your fingers to form a burger about 1 cm thick. Always do this with floured hands.",
-        "Place aluminum foil in a suitable dish and arrange the formed burgers (I made 9 burgers). Leave the burgers in the refrigerator for one hour.",
-        "In a non-stick skillet, pour in oil to a height of 1 cm and heat over medium heat. Once the oil is hot, add the burgers and fry until golden brown on both sides. Remove the fried burgers to a kitchen towel to absorb excess oil. You can also fry the burgers on a grill pan, or arrange them in a baking dish lined with parchment paper, previously greased with oil, brush the burgers with oil, and bake at 200 degrees until golden brown.",
-        "Serve these wonderful burgers with a side of your choice.",
-        "I made pumpkin flatbreads and crispy potatoes, and we ate them as sandwiches. I will post the recipe for the flatbreads and potatoes in the coming days..."
-      ],
-      "image_path": "data/images/38e04ba6-a38d-4f25-8c66-1d63186c8e72.jpg"
-    },
-    {
-      "name": "Pasta in Pumpkin Sauce",
-      "ingredients": [
-        "300 g pasta (of your choice)",
-        "80 g onion",
-        "2 cloves of garlic",
-        "40 g butter",
-        "300 g pumpkin puree",
-        "200 ml chicken broth",
-        "200 ml cooking cream",
-        "100 g sour cream",
-        "ground nutmeg",
-        "ground black pepper",
-        "salt"
-      ],
-      "preparation": [
-        "First, make the pumpkin puree. Peel the pumpkin, cut it into cubes, and place it in a suitable pot. Cover it with cold water and bring to a boil. Once the pumpkin is soft, drain it and mash it with a fork to make a puree. Set the prepared pumpkin aside.",
-        "In a larger, deeper non-stick skillet, melt the butter and add finely chopped onion and garlic. Sauté the onion over medium heat, stirring, until it softens. Add the pumpkin puree, chicken broth (or dissolve one chicken bouillon cube in 200 ml of hot water), cooking cream, and sour cream. Mix well. Add nutmeg, pepper, and salt to taste. Cook on low heat for 10 minutes, stirring occasionally.",
-        "While the sauce is cooking, cook the pasta according to the package instructions. I used spaghetti, but you can use any pasta of your choice. Once the pasta is cooked, add it to the sauce in two batches and mix well. Continue cooking the sauce with the pasta for another 3 minutes, or until the sauce thickens. Serve the pasta with pumpkin sauce on plates, sprinkle with parmesan, garnish with parsley, and serve.",
-        "Anyone who loves pumpkin will surely enjoy this wonderful taste of pasta in creamy sauce..."
-      ],
-      "image_path": "data/images/59a10018-c43f-4779-820b-ab12d3be6eba.jpg"
-    },
-    {
-      "name": "Rolled Pork",
-      "ingredients": [
-        "500 g pork schnitzels",
-        "1 package of mortadella",
-        "1 cheese spread",
-        "Spices:",
-        "a little onion powder",
-        "a little pepper",
-        "a little dry vegetable seasoning",
-        "1 egg",
-        "oil for frying",
-        "a little milk",
-        "breadcrumbs"
-      ],
-      "preparation": [
-        "Pound the meat and sprinkle with spices to taste. Then spread with cheese spread of your choice (I used Philadelphia) and layer with slices of mortadella. Roll it all up nicely and leave it in the freezer for 5 minutes.",
-        "Beat the egg with a little milk, and prepare breadcrumbs in another bowl.",
-        "Dip the schnitzels first in the egg and milk mixture, then roll in breadcrumbs.\rFry in heated oil for a few minutes on both sides until they turn dark golden brown.\rEnjoy!"
-      ],
-      "image_path": "data/images/ecf1ca68-0d79-4b2a-bcf2-dc0555ec481b.jpg"
-    },
-    {
-      "name": "Chicken Stew with Peas and Potatoes",
-      "ingredients": [
-        "500 g chicken (thighs or white meat)",
-        "1 head of onion",
-        "2 carrots",
-        "200 g peas",
-        "5-6 larger potatoes",
-        "1 l water",
-        "2 tablespoons flour",
-        "dry vegetable seasoning to taste",
-        "pepper to taste",
-        "sweet paprika to taste",
-        "oil"
-      ],
-      "preparation": [
-        "Place the chicken in a pot, add the chopped onion (it doesn't have to be finely chopped), carrots cut into rounds, peel the potatoes and cut them into larger cubes, add the peas, and pour in enough water to cover everything. Cook for an hour and a half, and when cooked, make a roux by heating oil in a pan, adding two tablespoons of flour, sweet paprika, mixing, and seasoning to taste. Let it simmer a bit."
-      ],
-      "image_path": "data/images/86e18b05-05e4-486b-9e42-2e2094674ccd.jpg"
-    },
-    {
-      "name": "Sataras (12)",
-      "ingredients": [
-        "400 g yellow peppers",
-        "2 tomatoes",
-        "2 heads of onion",
-        "2 eggs",
-        "a little oil",
-        "salt to taste"
-      ],
-      "preparation": [
-        "Clean, wash, and finely chop the onion. Wash the peppers, remove the stems and seeds, and chop them into strips. Wash the tomatoes and cut them into slices. In a pan, heat a little oil and sauté the chopped onion for about five minutes, then add the chopped peppers. When the peppers are sautéed, add the chopped tomatoes and sauté everything together for about 5-7 minutes. Beat the eggs and pour them over the dish, mix everything well, season with salt, and serve."
-      ],
-      "image_path": "data/images/75b935a7-c730-477f-8a3d-027a5e0f4f39.jpg"
-    },
-    {
-      "name": "Meatballs in Tomato Sauce with Mushrooms",
-      "ingredients": [
-        "400 g ground meat",
-        "1 egg",
-        "1 head of onion",
-        "1 clove of garlic",
-        "2 tablespoons breadcrumbs",
-        "1 piece of stale bread",
-        "a little milk",
-        "red sweet paprika",
-        "pepper to taste",
-        "salt to taste",
-        "dry vegetable seasoning to taste",
-        "a little fresh parsley",
-        "a little flour",
-        "a little oil",
-        "300 g fresh mushrooms",
-        "1-2 cloves of garlic",
-        "500 ml canned tomatoes",
-        "pepper to taste",
-        "salt to taste"
-      ],
-      "preparation": [
-        "Soak a slice of bread in a little milk and then drain. In the ground meat, add chopped onion and garlic, breadcrumbs, soaked bread, parsley, spices, and the beaten egg. Mix the meat well and form meatballs, rolling them in flour and frying them in hot oil until nicely browned.\rRemove the fried meatballs to a plate. Finely chop the mushrooms. Heat oil in a pot, add the chopped mushrooms, chopped garlic, and sauté until the mushrooms release their liquid.",
-        "Pour in the tomatoes and simmer briefly.",
-        "Add the fried meatballs to the tomato sauce. Cook everything together for about 10 minutes, until the sauce thickens nicely. Season to taste. Serve the meatballs with cooked pasta and mashed potatoes."
-      ],
-      "image_path": "data/images/6600248c-3b1b-49b7-afeb-a67df9a89bee.jpg"
-    },
-    {
-      "name": "Breaded Burgers with Cheese",
-      "ingredients": [
-        "300 g mixed ground meat",
-        "1 egg",
-        "1/2 head of onion",
-        "2 cloves of garlic",
-        "1/3 teaspoon ground pepper",
-        "1/3 teaspoon sweet paprika",
-        "1/3 teaspoon oregano",
-        "1 teaspoon salt",
-        "80-100 g cheese",
-        "4 tablespoons flour",
-        "2 eggs",
-        "50 ml milk",
-        "about 50 g breadcrumbs",
-        "oil for frying as needed"
-      ],
-      "preparation": [
-        "In the ground meat, add finely chopped onion, finely chopped garlic, salt, pepper, sweet paprika, oregano, and the egg, and mix well.",
-        "Flatten the meat on foil into a rectangle about 1 cm thick. Spread grated cheese over the meat. Roll tightly into a log and place in the freezer for about half an hour to firm up for easier slicing.",
-        "Prepare flour and breadcrumbs for breading, and beat the eggs with milk.",
-        "Slice the meat log into pieces about 1.5 cm thick.",
-        "Dip each piece of the log in flour, then in the egg and milk mixture, and finally in breadcrumbs, frying in hot oil until nicely browned on both sides. Remove the fried breaded burgers to a paper towel to drain excess oil."
-      ],
-      "image_path": "data/images/453f3fce-50d1-41fc-acd0-a6b054dfdc67.jpg"
-    },
-    {
-      "name": "Chicken Schnitzels in Ajvar Sauce with Mushrooms",
-      "ingredients": [
-        "500 g chicken breast",
-        "1 small head of onion",
-        "2-3 cloves of garlic",
-        "200-250 g fresh mushrooms",
-        "1 dl tomato sauce",
-        "1.5 dl water",
-        "5-6 tablespoons ajvar",
-        "80 g chopped walnuts",
-        "a little fresh parsley",
-        "1 tablespoon mixed dry vegetable seasoning",
-        "pepper to taste",
-        "salt to taste",
-        "a little oil"
-      ],
-      "preparation": [
-        "Cut the chicken into schnitzels, season with salt and pepper to taste. Finely chop the onion and garlic.",
-        "In heated oil, fry the chicken schnitzels, remove, and wrap in foil.",
-        "In the same oil, sauté the chopped onion and garlic, then add the sliced mushrooms. Add dry vegetable seasoning, pepper, salt, and sauté until the excess water released by the mushrooms evaporates.",
-        "Then add the tomato sauce, ajvar, and water, mix everything, and season with spices. Cook the sauce for a few more minutes until you achieve the desired thickness.",
-        "Finally, return the chicken to the sauce, add finely chopped walnuts and parsley, and briefly sauté everything. Serve the chicken with potatoes and salad if desired."
-      ],
-      "image_path": "data/images/ce39c619-7235-4a03-b860-642fd1ce7bd0.jpg"
-    },
-    {
-      "name": "Quick Caesar Pasta with Fish Sticks",
-      "ingredients": [
-        "400 g pasta",
-        "10 fish sticks",
-        "1 cup sour cream",
-        "1/2 lemon - juice",
-        "100 g cheese",
-        "1-2 cloves of garlic",
-        "pepper to taste",
-        "salt to taste",
-        "olive oil",
-        "3-4 cherry tomatoes"
-      ],
-      "preparation": [
-        "Cook the pasta in salted water, rinse with cold water, and drain.",
-        "Let the fish sticks thaw, then cut them into pieces and fry them in heated oil along with finely chopped garlic. In a bowl with pasta, add the fried fish sticks and garlic. Then grate cheese into the bowl and gently mix.",
-        "For the sauce, add lemon juice to the sour cream, season with salt and pepper. Serve the pasta on a plate and drizzle with the sauce. Optionally, serve the pasta with cherry tomatoes."
-      ],
-      "image_path": "data/images/66508dae-1559-47b3-b2e7-20a19f6f487f.jpg"
-    },
-    {
-      "name": "Pork Schnitzels in Tomato and Rosemary Sauce",
-      "ingredients": [
-        "4 pieces of pork schnitzels",
-        "2 tablespoons flour",
-        "3 tablespoons oil",
-        "2 cloves of garlic",
-        "300 ml tomato puree",
-        "150 ml water",
-        "1 tablespoon dry vegetable seasoning",
-        "pepper to taste",
-        "salt to taste",
-        "a little fresh parsley"
-      ],
-      "preparation": [
-        "Pound the schnitzels with a meat mallet, season with salt and spices.",
-        "Dredge the schnitzels in flour.",
-        "Fry the schnitzels in heated oil until browned on both sides, then remove and wrap in foil.",
-        "In the same skillet, briefly sauté finely chopped garlic. Pour in the tomato and water, add chopped rosemary, and return the schnitzels. If necessary, add a cup of water, simmer until the schnitzels are tender. Finally, add chopped fresh parsley. Serve the schnitzels with potatoes and salad if desired."
-      ],
-      "image_path": "data/images/3a3fa12b-c86d-477d-8415-98388114c1a1.jpg"
-    },
-    {
-      "name": "Chicken in Tomato and Olive Sauce",
-      "ingredients": [
-        "600 g chicken breast",
-        "1 kg onion",
-        "1-2 cloves of garlic",
-        "3-4 tomatoes",
-        "2 dl tomato juice",
-        "6-7 pitted olives",
-        "a little rosemary",
-        "pepper to taste",
-        "salt to taste",
-        "a little olive oil"
-      ],
-      "preparation": [
-        "Cut the chicken breast into schnitzels, season with salt and pepper (it can also be cut into cubes).",
-        "In a little hot oil in a pot, brown the chicken until golden. Place the cooked meat on absorbent paper.",
-        "In the same oil, sauté chopped onion and garlic until golden.",
-        "Then add the diced tomatoes, tomato juice, and chopped olives. Once everything starts to boil, cook for about 10 minutes.",
-        "Add pepper and salt to taste, return the browned chicken to the tomato sauce. Finally, sprinkle with chopped rosemary. Optionally, serve the chicken with rice or potatoes."
-      ],
-      "image_path": "data/images/5eb44b85-14f3-4bc1-9e93-df3a987e9d64.jpg"
-    },
-    {
-      "name": "Braised Duck",
-      "ingredients": [
-        "400 g duck meat with bones",
-        "50 g (1 small head) onion",
-        "50 g (1 piece) carrot",
-        "25 g (1 small piece) celery root",
-        "50 g (1 piece) unpeeled quince",
-        "1 bay leaf",
-        "1 clove of crushed garlic",
-        "100 ml quality red wine",
-        "about 100 ml duck bone broth",
-        "1 teaspoon pesto (ready-made product)",
-        "1 teaspoon chopped tomato sauce (ready-made product)",
-        "a little olive oil",
-        "a little salt",
-        "a little ground pepper"
-      ],
-      "preparation": [
-        "Remove the skin from the duck and debone it.\rAfter deboning, I got 150 g of pure meat and 250 g of bones and skin.",
-        "Cut the pure meat into strips.\rPlace the bones and skin in a deeper pot and cover with 500 ml of water (to submerge).",
-        "Bring to a boil over low heat, skimming off the foam as it cooks.",
-        "Cook for about 30 minutes, then remove the skin and bones from the broth, leaving the broth aside for pouring over the duck during braising.",
-        "While the broth is cooking, prepare the vegetables.\rPeel and finely chop the onion.",
-        "Peel the carrot and cut it into rounds.\rPeel the celery and cut it into strips, then into small cubes.",
-        "Cut the quince into slices and then into small cubes.",
-        "In a pot, heat a little olive oil, and when hot, add the chopped onion to sauté briefly over low heat.",
-        "Add the carrot, celery, and quince, and sauté for about 15 minutes.",
-        "Season the duck strips with salt and add them to the sautéed vegetables, add the crushed garlic, and fry for about 10 minutes until the meat changes color.",
-        "Add the red wine and simmer over low heat until the wine evaporates.\rThen add the broth, pesto, chopped tomato sauce, and bay leaf, and braise for another 30 minutes.",
-        "During braising, if necessary or if you prefer it to be juicier, add broth as desired.\rServe the braised duck with boiled or roasted potato gnocchi or cooked pasta."
-      ],
-      "image_path": "data/images/5817476f-b0c6-4475-a123-6eb2e708c73b.jpg"
-    },
-    {
-      "name": "Easy and Quick Lunch",
-      "ingredients": [
-        "700 g zucchini",
-        "1 head of onion",
-        "3 cloves of garlic",
-        "1 small carrot",
-        "70 g celery",
-        "350 g potatoes",
-        "2 tomatoes",
-        "1 tablespoon chopped parsley",
-        "3 tablespoons oil",
-        "salt to taste",
-        "pepper to taste",
-        "dry vegetable seasoning to taste",
-        "1 egg",
-        "1 tablespoon flour",
-        "150 g sour cream"
-      ],
-      "preparation": [
-        "Sauté onion, garlic, potatoes cut into cubes, carrot, and celery in oil. Briefly fry and add chopped tomatoes and 200 ml of water.\r\rCook until the vegetables soften, add the chopped zucchini, and add more water and cook. Then add salt, pepper, seasoning, and parsley. Finally, add the beaten egg with flour and sour cream. Cook a little more and serve alone or with some meat."
-      ],
-      "image_path": "data/images/e67de458-aca6-4893-b6b1-536b61022332.jpg"
-    },
-    {
-      "name": "Stuffed Schnitzel",
-      "ingredients": [
-        "4 pork schnitzels",
-        "salt to taste",
-        "150 g thinly sliced dry neck",
-        "150 g thinly sliced cheese",
-        "100 g kaymak (clotted cream)",
-        "flour as needed",
-        "2 eggs",
-        "breadcrumbs as needed",
-        "oil as needed"
-      ],
-      "preparation": [
-        "Cover the schnitzels with cling film and pound them with a kitchen mallet. Season to taste, spread with kaymak, layer with thinly sliced dry neck, then cheese, and roll up. Dredge the prepared rolls in flour, then in beaten eggs, and finally in breadcrumbs. Fry in heated oil until browned on both sides. Place on kitchen paper to drain excess fat and serve."
-      ],
-      "image_path": "data/images/5692792d-b19b-4caa-a578-22985b038949.jpg"
-    },
-    {
       "name": "Zucchini, Potato and Cheese Patties",
       "ingredients": [
         "1 kg zucchini",
@@ -1351,9 +1747,9 @@
         "to taste ground pepper"
       ],
       "preparation": [
-        "Peel the zucchini and grate them coarsely. Sprinkle with 1 teaspoon of salt, mix, let them sit, and then squeeze out the excess moisture with your hands. Peel the potatoes, grate them coarsely, and squeeze out the moisture immediately. Finely chop the onion and garlic. Grate the cheese (I used Edam...).",
+        "Peel the zucchini and grate them coarsely. Sprinkle with 1 teaspoon of salt, mix, let them sit, and then squeeze out the excess water with your hands. Peel the potatoes, grate them coarsely, and squeeze out the excess water immediately. Finely chop the onion and garlic. Grate the cheese (I used Edam...).",
         "In a suitable bowl, combine the grated and drained zucchini and potatoes and mix. Add the onion and garlic, mix, then add the eggs that have been lightly beaten with a fork. Mix well. Add the cheese and combine everything thoroughly. Add the breadcrumbs and mix them with the other ingredients. Add paprika and seasonings to taste and mix well.",
-        "In a non-stick skillet, pour oil to a height of 1 cm and heat it over medium heat. Use a spoon (that can always be dipped into the oil in the skillet) to scoop the mixture and drop it into the heated oil. Gently press with the spoon to form patties. Fry on both sides until nicely browned (adjust the temperature on your stove so they fry well without remaining raw in the middle). Remove the fried patties onto a paper towel to absorb excess fat.",
+        "In a non-stick skillet, pour oil to a height of 1 cm and heat it over medium heat. Use a spoon (that can always be dipped into the oil in the skillet) to scoop the mixture and drop it into the heated oil. Gently press with the spoon to form patties. Fry on both sides until nicely browned (adjust the temperature on your stove so they fry nicely without remaining raw in the middle). Remove the fried patties onto a paper towel to absorb excess fat.",
         "The patties are very tasty. You can serve them on their own with a salad or as a side dish to fried or roasted meat."
       ],
       "image_path": "data/images/5a19d998-2746-43ff-b511-3d88359dc1dc.jpg"
@@ -1370,7 +1766,7 @@
       "preparation": [
         "Cut the cheese into sticks the length of the cannelloni. Place on a larger slice of ham and roll them together.",
         "Stuff the rolled ham into the cannelloni. Repeat with the remaining cannelloni. Pour tomato sauce into the bottom of a baking dish and arrange the cannelloni.",
-        "Pour the cooking cream over them and sprinkle with grated cheese (150g).",
+        "Pour cooking cream over them and sprinkle with grated cheese (150g).",
         "Bake in a preheated oven at 210 degrees for 30-35 minutes."
       ],
       "image_path": "data/images/6999d565-cd89-4462-ac2e-104d5e69c281.jpg"
@@ -1398,7 +1794,7 @@
       "image_path": "data/images/3145f62d-4133-4fa7-b937-c3566038ac8f.jpg"
     },
     {
-      "name": "Bean (4)",
+      "name": "Bean Stew (4)",
       "ingredients": [
         "650 g boneless pork shoulder",
         "200 g white beans",
@@ -1419,7 +1815,7 @@
         "to taste dried parsley"
       ],
       "preparation": [
-        "Wash the white beans, drain, and boil them twice. Then drain again. Cut the meat into cubes. Wash, peel, and chop the vegetables into cubes, then put them in a blender and blend, including the potato. In a pot, add a little oil and a cube of margarine, then add the vegetables and two bay leaves and sauté for five minutes. Then add the meat and season with salt, pepper, vegetable seasoning, and dried parsley. Add the boiled and drained beans, pour in water, and cook for about three hours, stirring occasionally until the beans are cooked. Then season in a skillet with a little oil, add flour, and stir until the flour turns golden yellow, then add ground sweet paprika and let it boil. Pour this into the beans, mix, and let it simmer for about 5-6 minutes, tasting to see if more seasoning is needed."
+        "Wash the white beans, drain, and boil them twice. Then drain again. Cut the meat into cubes. Wash, peel, and chop the vegetables into cubes, then blend them along with the potato. In a pot, heat a little oil and a cube of margarine, then add the vegetables and two bay leaves and sauté for five minutes. Then add the meat and season with salt, pepper, vegetable seasoning, and dried parsley. Add the boiled and drained beans, pour in water, and cook for about three hours, stirring occasionally until the beans are cooked. Then, for the roux, heat a little oil in a skillet, add flour, and stir until it turns golden yellow, then add sweet paprika and let it boil. Pour this into the bean stew, mix, and let it simmer for another 5-6 minutes, tasting to see if more seasoning is needed."
       ],
       "image_path": "data/images/12738b2e-dc97-487c-87fe-a446366abc68.jpg"
     },
@@ -1439,10 +1835,10 @@
         "a little fresh parsley"
       ],
       "preparation": [
-        "Soak the raw chickpeas in cold water overnight. The next day, drain, wash, and add new water. Cook the chickpeas, which will double in volume during cooking. Cook the chickpeas for about 30 minutes, then drain.",
+        "Soak the raw chickpeas in cold water overnight. The next day, drain, wash, and add fresh water. Cook the chickpeas, which will double in size during cooking. Cook for about 30 minutes, then drain.",
         "Finely chop the onion and garlic and sauté in olive oil.",
         "When the onion turns brown, add the tomato cut into smaller cubes.",
-        "Pour in the tomato juice, season with salt, pepper, and add sugar. Let it simmer on low heat for about 10 minutes.",
+        "Pour in the tomato sauce, season with salt, pepper, and add sugar. Let it simmer on low heat for about 10 minutes.",
         "Add the cooked chickpeas to the tomato sauce. Sauté briefly, then add ajvar and let it come to a boil. Finally, sprinkle with chopped parsley. Serve with chicken schnitzels if desired."
       ],
       "image_path": "data/images/d709e2e5-0481-42a9-9fb7-0c75ba5060e9.jpg"
@@ -1457,7 +1853,7 @@
         "to taste vegetable seasoning"
       ],
       "preparation": [
-        "In a little oil, sauté the chopped onion for a few minutes, then add the chopped pepper and the chopped and peeled tomato, and cook (fry) everything together for about 20 minutes. Season to taste. If desired, add one or two eggs towards the end. Serve with a piece of cheese and preferably homemade hot bread. Enjoy!!!"
+        "In a little oil, sauté the chopped onion for a few minutes, then add the chopped pepper and the chopped and peeled tomato, and cook (fry) everything together for about 20 minutes. Season to taste. If desired, add one or two eggs towards the end. Serve with a piece of cheese and preferably some homemade hot bread. Enjoy!!!"
       ],
       "image_path": "data/images/048a9bef-e3db-45b6-af99-a49e422a41e7.jpg"
     },
@@ -1476,7 +1872,7 @@
         "2 eggs"
       ],
       "preparation": [
-        "Arrange the bacon in a dish, slice the potatoes thinly or use a slicer, and cook for about 5-10 minutes. Season the potatoes. Cut the chicken fillet into cubes, add two eggs and the sour cream, season, and mix well. \r\rOnce you have arranged the bacon, place a layer of cooked and seasoned potatoes, a layer of meat filling, then again a layer of potatoes, and a layer of meat filling, and continue until you run out. \r\rCover with bacon, place foil over it, and bake at 200°C for 30 minutes, then remove the foil and bake for another 10 minutes. \r\rEnjoy."
+        "Arrange the bacon in a dish, thinly slice the potatoes or use a slicer, and cook for about 5-10 minutes. Season the potatoes. Cut the chicken fillet into cubes, add two eggs and the sour cream, season, and mix well. \r\rOnce you have arranged the bacon, place a layer of cooked and seasoned potatoes, a layer of the meat mixture, then again a layer of potatoes, and a layer of the meat mixture, continuing until all ingredients are used. \r\rCover with bacon, place foil over it, and bake at 200°C for 30 minutes, then remove the foil and bake for another 10 minutes. \r\rEnjoy."
       ],
       "image_path": "data/images/37959a58-398c-4371-81f2-c35667db6fd6.jpg"
     },
@@ -1494,7 +1890,7 @@
         "2 tablespoons lard"
       ],
       "preparation": [
-        "Wash, peel, and dry the potatoes with a cloth, then cut them into slightly thicker pieces. In a separate bowl, mix corn flour, polenta, dry ground pepper, and all other spices. Add the potatoes and mix well with your hands. \r\rIn a baking dish, place the lard and heat it well in the oven, then remove it and place the potatoes in the hot lard. Cover with foil (I used baking paper) and bake for half an hour. Then remove, stir, and return to bake without foil."
+        "Wash, peel, and dry the potatoes with a cloth, then cut them into slightly thicker pieces. In a separate bowl, mix corn flour, polenta, dry ground pepper, and all other spices. Add the potatoes and mix well with your hands. \r\rIn a baking dish, place the lard and heat it well in the oven, then remove and place the potatoes in the hot lard. Cover with foil (I used baking paper) and bake for half an hour. Then remove, stir, and return to bake without foil."
       ],
       "image_path": "data/images/f2bdee5c-4f44-4cc8-9d8f-1ba3f94c7146.jpg"
     },
@@ -1514,7 +1910,7 @@
         "a little ground pepper"
       ],
       "preparation": [
-        "Put the rice in a small pot with a little olive oil and pour in water to which you have added a little salt and a little Mediterranean herb mix, and cook on low heat until the water evaporates, or until the rice is cooked for about 30 minutes (depending on the type of rice).",
+        "Place the rice in a small pot with a little olive oil and pour in water to which you have added a little salt and a little Mediterranean herb mix, and cook on low heat until the water evaporates, or until the rice is cooked for about 30 minutes (depending on the type of rice).",
         "Cut the turkey breast into cubes. Prepare the marinade.",
         "In a small bowl, combine all the marinade ingredients, mix well, and pour over the turkey, mixing well.",
         "Let the prepared turkey marinate for about 30 minutes. In a wok pan, heat a little olive oil, add the marinated turkey, stir in the pan, add 50 ml of water, and fry until nicely browned for about 10 minutes.",
@@ -1527,7 +1923,7 @@
       "name": "Children's Lunch with Broccoli",
       "ingredients": [
         "500 g broccoli (one head)",
-        "250 g chicken breast fillets",
+        "250 g chicken breast schnitzels",
         "1 cup whole grain rice",
         "20 g butter",
         "1 tablespoon olive oil",
@@ -1535,8 +1931,8 @@
         "black sesame"
       ],
       "preparation": [
-        "Lightly pound the fillets and season with salt. \rSeparate the broccoli into florets and cook. \rWash the rice well and cook it too. \rDrain the cooked rice and rinse it with cold water to keep it fluffy. Drain the cooked broccoli.",
-        "Cut the fillets into strips or cubes and sauté in butter and olive oil for about ten minutes. Then add the rice and combine, then add the broccoli and mix everything well. If needed, season a little more, sprinkle with black sesame, and sauté everything together for another 5 minutes.",
+        "Lightly pound the schnitzels and season with salt. \rSeparate the broccoli into florets and cook. \rWash the rice well and cook it as well. Drain the cooked rice and rinse it with cold water to keep it fluffy. Just drain the cooked broccoli.",
+        "Cut the schnitzels into strips or cubes and sauté in butter and olive oil for about ten minutes. Then add the rice and combine, then add the broccoli and mix everything well. If needed, season a little more, sprinkle with black sesame, and sauté everything together for another 5 minutes.",
         "Serve slightly cooled."
       ],
       "image_path": "data/images/b33aa46a-37fd-4a9f-ba17-720a85d6fcbe.jpg"
@@ -1594,7 +1990,7 @@
         "1 teaspoon vegetable seasoning"
       ],
       "preparation": [
-        "Peel the roasted peppers and remove the seeds. Season with salt and add the herbs. Mix. \rSpread the whole pepper, place a slice of ham and a piece of cheese, then roll it up like a little roll. \rArrange the rolls in a baking dish next to each other. Bake at 200°C for about 10-15 minutes. \rIt has a wonderful taste. Enjoy!",
+        "Peel the roasted peppers and clean them of seeds. Season with salt and add herbs. Mix. \rSpread the whole pepper, place a slice of ham and a piece of cheese, then roll it up like a little roll. \rArrange the rolls in a baking dish next to each other. Bake at 200°C for about 10-15 minutes. \rIt has a wonderful taste. Enjoy!",
         "Instead of ham, you can also use roasted meat."
       ],
       "image_path": "data/images/d5bd0a18-01d8-4dac-81b3-5d2b6a4427da.jpg"
@@ -1612,12 +2008,12 @@
         "to taste dry seasoning"
       ],
       "preparation": [
-        "Finely chop the onion and sauté it, then add the chopped mushrooms and sauté them a little too. Then add the ground red pepper and rice and mix everything well. Season to taste. \rIn a greased baking dish, layer half of the sliced potatoes, then the mushroom mixture, and then another layer of potatoes. Pour in water to cover the potatoes and bake until the potatoes are soft and most of the water has evaporated."
+        "Finely chop the onion and sauté it, then add the chopped mushrooms and sauté them a little as well. Then add the ground red pepper and rice and mix everything well. Season to taste. \rIn a greased baking dish, arrange half of the sliced potatoes, then the mushroom mixture, and then another layer of potatoes. Pour in water to cover the potatoes and bake until the potatoes are soft and most of the water has evaporated."
       ],
       "image_path": "data/images/2d6936df-d94d-4f9d-8c8f-899eec65a3f2.jpg"
     },
     {
-      "name": "Lenten Beans (in Water)",
+      "name": "Lenten Bean Stew (in Water)",
       "ingredients": [
         "500 g colored or yellow beans",
         "1 onion",
@@ -1630,7 +2026,7 @@
         "to taste vegetable seasoning"
       ],
       "preparation": [
-        "Sort the beans, rinse them, add water, and bring to a boil. Drain that water, add new water, add the chopped onion, and add the chopped garlic, and you can also add a carrot, depending on your preference. Let it cook for at least two hours to cook well. \rTowards the end of cooking, make a roux. In a small bowl, add two tablespoons of flour, paprika to taste, and mix with a little water. Add this to the cooked beans as a roux, add a little tomato juice. Season with salt and pepper and add the vegetable seasoning. Let it simmer a little longer. \rServe warm with pickles or other salads you have."
+        "Sort the beans, rinse them, add water, and bring to a boil. Drain that water, add fresh water, add the chopped onion, and add the chopped garlic, and you can also add a carrot, depending on your preference. Let it cook for at least two hours to cook well. \rTowards the end of cooking, make a roux. In a small bowl, mix two tablespoons of flour, paprika to taste, and dilute with a little water. Add this to the cooked beans as a roux, add a little tomato juice. Season with salt and pepper and add vegetable seasoning. Let it simmer a little longer. \rServe hot with pickles or other salads you have."
       ],
       "image_path": "data/images/a06f0509-0253-48e0-b73f-6f19df9059d2.jpg"
     },
@@ -1653,7 +2049,7 @@
         "1 kg tomatoes"
       ],
       "preparation": [
-        "In oil, sauté 3 finely chopped onions, add the carrot sliced into rounds, and the pepper sliced into strips and sauté. \r\rPeel the tomatoes, chop them into cubes, and add them to the vegetables along with the sugar and sauté until the juice evaporates. Season with salt and pepper. \r\rTo the meat, add 1 finely chopped onion and garlic, breadcrumbs, egg, salt, pepper, and mix well to make 12 meatballs. \r\rIn a pot, place a few tablespoons of vegetables, arrange the meatballs, and pour the remaining vegetables over them. Beat the eggs with the milk and add a little salt. Pour over the meatballs. \rBake at 200 degrees for 30 minutes."
+        "In oil, sauté 3 finely chopped onions, add the carrot sliced into rounds, and the pepper sliced into strips and sauté. \r\rPeel the tomatoes, chop them into cubes, and add them to the vegetables along with the sugar and sauté until the juice evaporates. Season with salt and pepper. \r\rTo the meat, add 1 finely chopped onion and garlic, breadcrumbs, egg, salt, pepper, and mix well to form 12 meatballs. \r\rIn a dish, place a few tablespoons of vegetables, arrange the meatballs, and pour the remaining vegetables over them. Beat the eggs with the milk and add a little salt. Pour over the meatballs. \rBake at 200 degrees for 30 minutes."
       ],
       "image_path": "data/images/c7757eb3-7000-4956-a482-b4a5f6312a3d.jpg"
     },
@@ -1698,9 +2094,9 @@
       "image_path": "data/images/2d8bc97d-1fcd-45ab-9fb5-a7313fcc1acc.jpg"
     },
     {
-      "name": "Pounded Cutlets",
+      "name": "Pounded Schnitzels",
       "ingredients": [
-        "4 pork cutlets",
+        "4 pork schnitzels",
         "1 dl white wine",
         "1 dl water",
         "3 to 4 cloves of garlic",
@@ -1708,19 +2104,19 @@
         "as needed breadcrumbs",
         "as needed flour",
         "to taste salt",
-        "to taste vegetable seasoning",
+        "to taste dry seasoning",
         "1/2 bunch of parsley",
         "to taste pepper"
       ],
       "preparation": [
-        "Flatten the cutlets with a meat mallet, but first season with salt and pepper to taste, then sprinkle with breadcrumbs. \r\rIt is necessary to use the mallet to combine the meat and breadcrumbs. \r\rFry the prepared meat. Dredge the meat in flour, then in eggs, and finally in breadcrumbs, and fry in fat until golden brown on both sides. \r\rThen arrange the cutlets in a deep, lightly greased skillet with a lid. \r\rAdd finely chopped garlic, vegetable seasoning, and pour in the wine. Then add water, enough to cover the meat and keep it moist. \r\rLet it simmer for about 30 minutes on low heat. Towards the end of cooking, add finely chopped parsley. Enjoy!! \r\rServe with mashed potatoes."
+        "Flatten the schnitzels with a meat mallet, but first season with salt and pepper to taste, then sprinkle with breadcrumbs. \r\rIt is necessary to combine the meat and breadcrumbs with the mallet. \r\rPrepare the meat for frying. Dredge the meat in flour, then in eggs, and finally in breadcrumbs, and fry in fat until golden brown on both sides. \r\rThen arrange the schnitzels in a deep, lightly greased skillet with a lid. \r\rAdd finely chopped garlic, dry seasoning, and pour in the wine. Then add water, enough to cover the meat and keep it moist. \r\rLet it simmer for about 30 minutes on low heat. Towards the end of cooking, add finely chopped parsley. Enjoy!! \r\rServe with mashed potatoes."
       ],
       "image_path": "data/images/68b62ec9-61d9-4f79-b519-50a82f8e277b.jpg"
     },
     {
-      "name": "Lenten Soy Cutlets with Mustard and Sesame",
+      "name": "Lenten Soy Schnitzels with Mustard and Sesame",
       "ingredients": [
-        "300 g soy cutlets",
+        "300 g soy schnitzels",
         "3-4 tablespoons mustard",
         "2 tablespoons whole wheat flour",
         "2 tablespoons white flour",
@@ -1732,407 +2128,11 @@
         "a little oil"
       ],
       "preparation": [
-        "Soak the soy cutlets in water and leave for 1-2 hours to swell. Then drain and wash the cutlets. Bring 1.5 liters of water to a boil, add pepper, salt, and bay leaf. Add the soy cutlets to the water and boil for about 15 minutes.",
-        "Drain again and squeeze the cutlets well with your hands to remove excess water. Dry and gently pound with a mallet.",
-        "Season the cutlets with pepper, vegetable seasoning, salt, and spread mustard on both sides. In a plate, mix sesame and whole wheat flour, coat each cutlet in the flour, and fry in heated oil. When the cutlets turn golden, reduce the temperature. Serve the soy cutlets with potatoes if desired."
+        "Soak the soy schnitzels in water for 1-2 hours to swell. Then drain and wash the schnitzels. Bring 1.5 liters of water to a boil, add pepper, salt, and bay leaf. Add the soy schnitzels to the water and boil for about 15 minutes.",
+        "Drain again and squeeze the schnitzels well with your hands to remove excess water. Dry and lightly pound with a mallet.",
+        "Season the schnitzels with pepper, vegetable seasoning, salt, and spread mustard on both sides. In a plate, mix sesame and whole wheat flour, coat each schnitzel in the flour, and fry in heated oil. When the schnitzels turn golden, reduce the temperature. Serve the soy schnitzels with potatoes if desired."
       ],
       "image_path": "data/images/520675de-d16a-40a5-99a4-326fe9b9ded5.jpg"
-    },
-    {
-      "name": "Bolognese Zucchini",
-      "ingredients": [
-        "2 larger zucchinis",
-        "500 g ground meat",
-        "500 ml tomato sauce",
-        "1 larger onion",
-        "to taste cheese, mozzarella..",
-        "to taste spices (salt, pepper, oregano, garlic, basil..)"
-      ],
-      "preparation": [
-        "Peel the zucchinis and slice them thinly, then cut them lengthwise to get spaghetti-like strips; there is also a tool available for this at Chinese stores. \r\rLet them drain, and in the meantime, prepare the sauce. \r\rFinely chop the onion, add the meat, and sauté until the meat changes color. Add the tomato sauce and simmer for another 10 minutes on low heat. \r\rAdd the drained zucchinis and sauté together for another 10-15 minutes, finally adding spices to taste and preference. \r\rWhen done, you can immediately grate cheese or serve it on the side."
-      ],
-      "image_path": "data/images/02025193-9834-4033-ba83-47f4068bc135.jpg"
-    },
-    {
-      "name": "Stuffed Peppers with Potatoes",
-      "ingredients": [
-        "7 medium bell peppers",
-        "300 g onion",
-        "4 cloves garlic",
-        "100 g leek",
-        "160 g carrot",
-        "800 g potatoes",
-        "2 heaping tablespoons ajvar",
-        "1 teaspoon salt",
-        "to taste dry vegetable seasoning",
-        "1 teaspoon ground pepper",
-        "1 teaspoon smoked paprika",
-        "2 teaspoons paprika",
-        "1 smaller bunch of parsley",
-        "oil as needed"
-      ],
-      "preparation": [
-        "Clean the onion, garlic, leek, and carrot, and chop everything into small cubes (in a chopper). In a larger pot, pour in oil and heat it (about 150 ml of oil). Add the chopped vegetables to the heated oil and sauté on medium heat just until softened. Add the cleaned and coarsely grated potatoes and sauté for another 10 minutes while stirring. Finally, add ajvar, chopped parsley, and all the listed spices. Mix well, remove from heat, and let cool.",
-        "Clean the seeds and stems from the peppers. Grease a baking dish with oil (you can also use any other non-stick dish). Stuff the peppers, sprinkle flour over each opening (there's no need to close them with tomato or potato), and arrange them in the dish. Distribute the remaining filling between the peppers.",
-        "Preheat the oven to 180 degrees. Just cover the dish with foil, but leave an opening on the side so that the peppers bake instead of boiling. Bake the peppers under foil for 45 minutes. Then, carefully remove the foil, brush the peppers with oil using a silicone brush, and return them to the oven to brown.",
-        "A very tasty lunch..."
-      ],
-      "image_path": "data/images/294a7c66-0bf2-4294-add0-48a7d83075cd.jpg"
-    },
-    {
-      "name": "Crispy Spiced White Meat",
-      "ingredients": [
-        "700 g white meat",
-        "1 cup (2 dl) flour",
-        "1/2 cup milk",
-        "1 teaspoon ground sweet paprika",
-        "1 egg",
-        "oil for frying as needed",
-        "a few tablespoons of breadcrumbs and flour",
-        "1 teaspoon salt",
-        "1 teaspoon dry vegetable seasoning",
-        "1 teaspoon ground paprika",
-        "1 teaspoon turmeric",
-        "1 teaspoon garlic powder"
-      ],
-      "preparation": [
-        "Cut the white meat into smaller pieces, either into steaks or elongated pieces. Place the meat in a bowl and sprinkle it with a mixture of all the spices and mix well.",
-        "In a bowl, pour in the flour, milk, paprika, a little salt, and the egg, and mix well with a fork until you get a smooth mixture.",
-        "Dip each piece of meat into the mixture, drain a little, and roll in the mixture of flour and breadcrumbs, then fry in oil until golden.",
-        "Breadcrumbs are not included in the recipe, but I added them to make the meat even crispier.",
-        "Place the fried meat on a paper towel, and serve with sides, i.e., sauces (dips) and salad."
-      ],
-      "image_path": "data/images/d5eb4096-e021-480d-a18d-e624de79ebef.jpg"
-    },
-    {
-      "name": "Pork Ribs with Potatoes",
-      "ingredients": [
-        "800 g whole pork ribs",
-        "a little salt",
-        "a little Mediterranean herb mix",
-        "1 smallest teaspoon of pesto (ready-made product)",
-        "1 smallest teaspoon of chopped tomato sauce (ready-made product)",
-        "300 g (3 pieces) potatoes",
-        "a little oil",
-        "50 ml quality wine"
-      ],
-      "preparation": [
-        "With a sharp knife, score the skin on the ribs and salt them.\r\rIn a small bowl, mix the pesto, chopped tomato sauce, and Mediterranean herb mix, and rub this mixture all over the pork.",
-        "Peel, wash, and slice the potatoes thinly and salt them.\r\rIn a baking dish, add a little oil, then the sliced potatoes and the ribs.\r\rBake in a preheated oven at 180 degrees for about an hour and a half, basting with wine and a little water during baking."
-      ],
-      "image_path": "data/images/7dcb5db8-f121-4a09-807a-dca20e999561.jpg"
-    },
-    {
-      "name": "Simple: Pilaf",
-      "ingredients": [
-        "1 cup (1.5 dl) rice",
-        "200-300 g chicken white meat",
-        "1 onion",
-        "1 carrot",
-        "2-3 cloves garlic",
-        "to taste salt",
-        "to taste pepper",
-        "to taste dry vegetable seasoning",
-        "to taste parsley",
-        "oil as needed"
-      ],
-      "preparation": [
-        "Cut the meat into smaller pieces and boil: when it starts to boil, cook for about ten minutes. Remove from water to cool, then cut into small cubes, and save the water.\r\rBoil the rice in salted water: the cooking time depends on whether you are preparing glutinous or whole grain rice. It should soften but not overcook as it will continue to simmer in the oven.\r\rIn oil, sauté finely chopped onion, garlic, and carrot.",
-        "To the sautéed onion with carrot, add the chopped meat, boiled rice with not too much liquid from the rice, but if needed, add the broth in which the meat was cooked so that it is mushy but not too runny. Simmer for 5-6 minutes. Season with salt and pepper to taste, add vegetable seasoning and finely chopped parsley (fresh or dried), mix well, and transfer to an oiled baking dish.",
-        "Bake in a preheated oven at 180°C for about 30 minutes to evaporate excess liquid and to blend the flavors."
-      ],
-      "image_path": "data/images/932b1fdf-2d71-43a0-aa90-ef95b9cb9a94.jpg"
-    },
-    {
-      "name": "Baked Beans with Cheese",
-      "ingredients": [
-        "150 g beans",
-        "1 red onion",
-        "150 g cheese",
-        "oil as needed and to taste",
-        "salt",
-        "paprika",
-        "parsley"
-      ],
-      "preparation": [
-        "Cook the beans in the usual way. Soak in water overnight, discard the first cooking water, and cook while occasionally adding hot water until cooked.\rSauté finely chopped red onion in oil, add paprika, briefly fry, add crumbled white cheese, remove from heat, and add finely chopped parsley. Add the cooked and drained beans. Mix and season to taste (depends on how salty the cheese is).",
-        "Pour into a greased smaller baking dish, sprinkle with a little finely chopped fresh or dried parsley, and bake in the oven at 180 degrees for about half an hour."
-      ],
-      "image_path": "data/images/6c7696e8-a84f-45ca-89f2-67d28454279e.jpg"
-    },
-    {
-      "name": "Pizza Macaroni",
-      "ingredients": [
-        "300 g macaroni",
-        "180 g sour cream",
-        "1 tablespoon oil",
-        "2 tablespoons tomato sauce",
-        "250 g cheese",
-        "150 g salami/ham",
-        "to taste salt",
-        "1/2 teaspoon oregano",
-        "to taste pepper",
-        "50 ml milk",
-        "to taste dry vegetable seasoning"
-      ],
-      "preparation": [
-        "Cook the macaroni according to the package instructions, drain, and let cool. Add sour cream, milk, oil, tomato sauce, chopped salami, 100 g grated cheese, oregano, salt, pepper, dry vegetable seasoning to the macaroni, and mix to combine all ingredients. Pour the prepared macaroni into a greased baking dish. Top with 150 g grated cheese and bake in a well-heated oven at 200 degrees for 20 minutes.",
-        "Remove the baked macaroni from the oven, let cool, and serve."
-      ],
-      "image_path": "data/images/625bc394-49cc-4f86-bc2e-69c4043ff378.jpg"
-    },
-    {
-      "name": "Macaroni with Chicken",
-      "ingredients": [
-        "250 g macaroni",
-        "360 g sour cream",
-        "oil as needed",
-        "to taste salt",
-        "pepper",
-        "oregano",
-        "250 g chicken white meat"
-      ],
-      "preparation": [
-        "Cook the macaroni according to the package instructions. Drain and let cool, then add 180 g sour cream and mix. In heated oil, sauté finely chopped chicken white meat. When browned, season with salt and add a little water and simmer briefly until the water evaporates. Then add 180 g sour cream, season to taste (add salt, pepper, and oregano) and simmer for a few minutes before removing from heat. Distribute the macaroni with sour cream on plates, and top with the meat and sour cream sauce. Sprinkle with oregano and serve."
-      ],
-      "image_path": "data/images/6d5e73be-202d-4b2f-9745-596b7847fd12.jpg"
-    },
-    {
-      "name": "Turkey in Soy Sauce",
-      "ingredients": [
-        "1-1.5 kg turkey drumsticks and thighs",
-        "about 80 ml soy sauce",
-        "2 tablespoons honey",
-        "1 orange - juice",
-        "3 tablespoons ketchup",
-        "1-2 teaspoons garlic granules",
-        "to taste salt",
-        "to taste pepper",
-        "1-1.5 kg potatoes"
-      ],
-      "preparation": [
-        "Wash and dry the meat. For the marinade, mix soy sauce with ketchup, orange juice, honey, and spices - be careful with salt, as soy sauce is salty...\rRub the turkey well with the marinade, and let it rest for at least 2 hours, preferably overnight...\rPreheat the oven, arrange the meat in a baking dish, add the marinade if any is left, cover with foil, and bake.\rSomewhere halfway through the time - one to one and a half hours. Remove the baking dish, take out the meat, add the cleaned and seasoned potatoes, return the turkey, cover again with foil, and continue baking. When both the meat and potatoes are cooked, remove the foil and let it brown nicely.\rServe with a seasonal salad."
-      ],
-      "image_path": "data/images/45d7eea5-d7fd-40d4-8792-7ecff0d83442.jpg"
-    },
-    {
-      "name": "Stuffed Peppers Baked in the Oven",
-      "ingredients": [
-        "12-13 fresh bell peppers",
-        "500 g ground mixed meat",
-        "1 onion",
-        "2-3 cloves garlic",
-        "1 carrot",
-        "700 ml cooked tomatoes",
-        "1 teaspoon red ground paprika",
-        "2 teaspoons dry vegetable seasoning",
-        "to taste salt, ground black pepper",
-        "1/2 cup rice",
-        "2 larger tomatoes",
-        "2 tablespoons lard"
-      ],
-      "preparation": [
-        "In a deeper pan, sauté the onion and garlic with 2 tablespoons of lard, then add the ground meat and spices. Finally, add the drained rice and sauté for another 2-3 minutes. Remove from heat and break in 1 egg. Prepare a baking dish for the oven. Grease it with lard.",
-        "Wash the peppers, remove the seeds and hollow them out, then fill the insides with the prepared mixture. Close the peppers with tomato slices. Arrange the stuffed peppers in the baking dish with the opening facing up. Mix the cooked tomatoes with water, add 1 teaspoon of sugar, and pour over the peppers so that the liquid covers them.",
-        "Cover with aluminum foil and bake at 200 degrees for 2 hours. Then remove the foil and bake for another 10 minutes."
-      ],
-      "image_path": "data/images/d4577b35-2df1-4ceb-bb47-c5f77ec331f0.jpg"
-    },
-    {
-      "name": "Shopska Dish with Vegetables and Cheese",
-      "ingredients": [
-        "1 smaller zucchini",
-        "1 onion",
-        "2-3 cloves garlic",
-        "3 peppers",
-        "3-4 tomatoes",
-        "to taste parsley",
-        "1 tablespoon paprika (I also added a little hot paprika)",
-        "about 250 g meaty smoked bacon",
-        "about 250 g cheese",
-        "2 eggs",
-        "1/2 cup yogurt",
-        "a few tablespoons of oil",
-        "to taste salt",
-        "pepper",
-        "dry vegetable seasoning"
-      ],
-      "preparation": [
-        "Clean all the listed vegetables (zucchini, onion, peppers, tomatoes, and garlic), wash them, and cut them into desired pieces and rings, then place them in a baking dish. Season with salt, pepper, add dry seasoning and paprika, and mix everything. Top with sliced meaty smoked bacon. \rSeparately beat the eggs with yogurt and oil, then pour this over the vegetables. Optionally sprinkle with chopped parsley. Place in a preheated oven at 180 degrees and bake for about twenty minutes, then remove from the oven and sprinkle crumbled cheese on top. Return to the oven and bake for another ten minutes.",
-        "Serve the finished dish warm."
-      ],
-      "image_path": "data/images/e279ee2f-54e2-48cf-a182-d327b432bb9c.jpg"
-    },
-    {
-      "name": "Baked Macaroni with Cheese",
-      "ingredients": [
-        "250 g macaroni",
-        "400 ml milk",
-        "2 dl yogurt",
-        "2 eggs",
-        "1 teaspoon salt",
-        "200 g cheese",
-        "100 g bacon",
-        "50 ml oil"
-      ],
-      "preparation": [
-        "Pour milk over the macaroni and leave for half an hour or more in the refrigerator. \r\rWhisk the eggs, cheese, yogurt, oil, salt, and finely chopped bacon, then mix with the milk and macaroni, pour into a lightly greased baking dish size 24 and bake in a preheated oven at 180 degrees for about 40 minutes. Towards the end, remove, grate cheese on top, and return for another 5 minutes. That's it!!!"
-      ],
-      "image_path": "data/images/1b61b308-0ab2-4319-ac76-95d0f11aa8cb.jpg"
-    },
-    {
-      "name": "Lenten Pilaf with Mushrooms",
-      "ingredients": [
-        "1 cup rice",
-        "1 onion",
-        "1 carrot",
-        "300 g mushrooms",
-        "to taste salt",
-        "to taste dry vegetable seasoning",
-        "to taste curry",
-        "oregano",
-        "pepper",
-        "ginger"
-      ],
-      "preparation": [
-        "In oil, sauté the finely chopped onion, then add the carrot sliced into rounds and the mushrooms sliced into pieces. Sauté a little more, then add the rice and fry until the rice starts to clump together.\rPour in 3 cups of water, and when it boils, add one teaspoon of salt, a little dry vegetable seasoning, a little pepper, half a teaspoon of curry, half a teaspoon of ground ginger, and half a teaspoon of oregano."
-      ],
-      "image_path": "data/images/f356300f-8012-4753-b856-01b30f8a7b9e.jpg"
-    },
-    {
-      "name": "Tender and Juicy Stewed Meat",
-      "ingredients": [
-        "700 g pork",
-        "1 heaping tablespoon lard",
-        "1 tablespoon dry seasoning",
-        "to taste ground sweet paprika"
-      ],
-      "preparation": [
-        "Cut the meat into cubes, place it in a pot, cover with water to submerge the meat, add lard and dry seasoning. Let the meat simmer for 2 hours on low heat.\rWhen it starts to fall apart, let all the water evaporate and let it brown a little.\rFinally, add a little ground sweet paprika."
-      ],
-      "image_path": "data/images/2d66c88a-3ca9-467e-849e-ec1a69e4c66d.jpg"
-    },
-    {
-      "name": "Baked Chicken in a Bag",
-      "ingredients": [
-        "4 chicken drumsticks",
-        "potatoes as needed",
-        "carrots as needed",
-        "to taste salt",
-        "to taste dry seasoning",
-        "2 tablespoons oil"
-      ],
-      "preparation": [
-        "Season the drumsticks with salt and spices.\r\rClean and chop the potatoes and carrots to taste, then season and place them together with the chicken in a baking bag and close it.\r\rPuncture the bag in 2-3 places and place it in a baking dish.\r\rBake for about an hour in a preheated oven at 200 degrees."
-      ],
-      "image_path": "data/images/a1e11bb0-09ad-4b21-8ea8-93e0fb3be905.jpg"
-    },
-    {
-      "name": "Tasty Chicken Sticks with Sesame",
-      "ingredients": [
-        "600 g chicken breast",
-        "2 tablespoons soy sauce",
-        "1/2 lemon - juice",
-        "100 g sesame",
-        "2-3 tablespoons breadcrumbs",
-        "1 tablespoon dry vegetable seasoning",
-        "1 egg",
-        "5-6 tablespoons flour",
-        "to taste salt",
-        "to taste pepper",
-        "a little oil"
-      ],
-      "preparation": [
-        "Cut the chicken into larger strips the size of fish sticks (about 8 cm by 3 cm).",
-        "Pour the chicken with the juice of half a lemon and soy sauce. Season with dry vegetable seasoning, salt, and pepper, and let it rest for 30 minutes in the refrigerator. Coat the chicken sticks in flour, then in beaten egg, and finally in sesame mixed with breadcrumbs. Fry the chicken sticks over medium heat until the meat turns a nice golden color. Optionally, you can serve with salad, rice, or potatoes."
-      ],
-      "image_path": "data/images/d148b8d8-c4ed-4d91-9da4-2e18db92ba7b.jpg"
-    },
-    {
-      "name": "Stuffed Peppers (4)",
-      "ingredients": [
-        "14 peppers for stuffing - bell peppers",
-        "300 g ground meat",
-        "1 onion",
-        "2 larger carrots",
-        "1 cup washed rice",
-        "1 teaspoon salt",
-        "1/2 teaspoon pepper",
-        "to taste dry vegetable seasoning",
-        "a little paprika",
-        "water for watering the peppers",
-        "500 ml tomato sauce",
-        "oil for frying",
-        "tomato or potato for closing the peppers"
-      ],
-      "preparation": [
-        "In oil, sauté finely chopped onion, add ground meat and sauté, add grated carrot, sauté a little more, add salt, pepper, dry vegetable seasoning, and paprika, to taste as you like it seasoned. \r\rStuff the peppers with the mixture, close them with tomato or potato, arrange them either in a casserole or a baking dish, pour in enough water to simmer. Cover with aluminum foil and place in the oven at 200 degrees for about 50 minutes, then remove the foil, pour with tomato sauce, and leave for another half an hour. \r\rServe warm with sour milk. Enjoy."
-      ],
-      "image_path": "data/images/f6181771-0dac-42ae-801f-7e9eb5c4e565.jpg"
-    },
-    {
-      "name": "Chicken Paprikash",
-      "ingredients": [
-        "2 chicken drumsticks",
-        "2 medium onions",
-        "3-4 cloves garlic",
-        "3 carrots",
-        "4-5 potatoes",
-        "2 peppers",
-        "500 ml tomato sauce",
-        "to taste spices"
-      ],
-      "preparation": [
-        "Place the drumsticks in a smaller pot to boil.\rIn a larger pot where you will prepare the paprikash, pour in a little oil or lard to heat. \rChop the onion and garlic and sauté until golden. Add the chopped pepper and carrot to the onion, and sauté everything together, adding a little water if necessary. Finally, add the potatoes. \rPour in 500 ml of tomato sauce and 500 ml of water. \rWhen the drumsticks are cooked, remove the meat from the bones and add it to the vegetables to simmer together. When the vegetables soften after 20-30 minutes, add spices to taste. \rI do not make a roux, but you can if you prefer it thicker. I added salt, pepper, parsley, basil, paprika, and dry vegetable seasoning."
-      ],
-      "image_path": "data/images/791f5ffd-0578-4673-9666-38bd3ba922c0.jpg"
-    },
-    {
-      "name": "Summer Moussaka with Zucchini and Carrots",
-      "ingredients": [
-        "300 g young zucchini",
-        "300 g carrots",
-        "1 onion",
-        "3-4 cloves garlic",
-        "6 eggs",
-        "2 dl milk",
-        "oil as needed",
-        "flour as needed",
-        "salt as needed",
-        "pepper as needed",
-        "parsley as needed",
-        "dry vegetable seasoning as needed"
-      ],
-      "preparation": [
-        "Peel the zucchini and cut them lengthwise into thin slices. Salt and let them rest. Drain off excess water.",
-        "Beat three eggs. Heat oil in a pan. Coat the zucchini: flour - eggs - flour - eggs and fry in hot oil until golden on both sides. Remove to a paper towel to drain excess fat.",
-        "Grate the carrot, and finely chop the onion and garlic. Sauté the onion in oil, add the grated carrot, pour in 1 dl of milk, and simmer for about 10 minutes until the carrot softens.",
-        "Add garlic, salt, pepper, and finely chopped parsley, all to taste, and mix in one beaten egg. Sauté briefly and remove from heat.",
-        "In a smaller greased baking dish, layer the fried zucchini, then the carrot filling until you run out of zucchini and filling, finishing with zucchini.",
-        "Beat two eggs with 1 dl of milk and a teaspoon of vegetable seasoning and pour over the moussaka.",
-        "Bake in a preheated oven at 180°C for 20-25 minutes until nicely browned. Serve warm with tomato salad, cheese, sour milk, yogurt,..."
-      ],
-      "image_path": "data/images/f6c33e08-35aa-462c-aa71-f2669099c382.jpg"
-    },
-    {
-      "name": "Lenten Peppers Stuffed with Beans",
-      "ingredients": [
-        "14 dried red peppers",
-        "300 g white beans",
-        "2-3 onions",
-        "2-3 cloves garlic",
-        "1 teaspoon sweet paprika",
-        "1 tablespoon dry vegetable seasoning",
-        "2 tablespoons flour",
-        "to taste salt",
-        "to taste pepper",
-        "2-3 tablespoons oil"
-      ],
-      "preparation": [
-        "Wash the beans and place them to cook in cold water. After 20 minutes of cooking, drain the beans and add new warm water. Add finely chopped onion and garlic, season with salt, and let it cook. When the beans soften but are still whole, remove from heat.",
-        "In another pot, sauté the remaining finely chopped onion in hot oil and add sweet paprika. Pour in the drained beans, add pepper, dry vegetable seasoning, and sauté a little more.\r\rWash the red dried peppers and place them in hot water to soften. Stuff them with beans and arrange them in a pot, closing them with potatoes. If you have leftover beans, distribute them between the peppers. Pour in the water in which you cooked the beans, just enough to cover them. Bake in the oven until about half of the water evaporates. Make a roux from oil and sweet paprika, pour it over the peppers, and bake in the oven."
-      ],
-      "image_path": "data/images/57b3fd2f-4137-4e73-864e-e76d017354ef.jpg"
     }
   ]
 }
