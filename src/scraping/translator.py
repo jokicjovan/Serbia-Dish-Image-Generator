@@ -6,19 +6,19 @@ from openai import AsyncOpenAI
 from tqdm import tqdm
 
 # =============== CONFIG =================
-INPUT_FILE = "../../data/combined/dishes.json"  # Path to input JSON file
-OUTPUT_FILE = "../../data/processed/dishes_processed.json"  # Path to save translated output
-MODEL = "gpt-4o-mini"                                 # OpenAI model to use for translation
+INPUT_FILE = "../../data/combined/dishes.json"              # Path to input JSON file
+OUTPUT_FILE = "../../data/combined/dishes_translated.json"  # Path to save translated output
+MODEL = "gpt-4o-mini"                                       # OpenAI model to use for translation
 
 # TOTAL number of dishes you want translated (including already translated ones).
 # For a full translation run, set this number ABOVE the total number of dishes in your dataset.
 TARGET_TRANSLATION_COUNT = 100
 
-BATCH_SIZE = 20                                       # Number of dishes per API call
-CONCURRENT_REQUESTS = 3                               # Number of parallel translations
-RETRY_DELAY = 3                                       # Seconds to wait before retrying a failed batch
-SAVE_EVERY = 5                                        # Save progress every N batches
-RESUME_FROM_LAST = True                               # Resume from last progress (based on image_path)
+BATCH_SIZE = 20                                             # Number of dishes per API call
+CONCURRENT_REQUESTS = 3                                     # Number of parallel translations
+RETRY_DELAY = 3                                             # Seconds to wait before retrying a failed batch
+SAVE_EVERY = 5                                              # Save progress every N batches
+RESUME_FROM_LAST = True                                     # Resume from last progress (based on image_path)
 # ========================================
 
 # Initialize OpenAI async client
@@ -165,7 +165,7 @@ async def main():
         print("✅ Nothing to translate. All dishes are already translated.")
         return
 
-    # Process all batches concurrently with progress bar
+    # Translate all batches concurrently with progress bar
     with tqdm(total=len(tasks), desc="Translating in batches", unit="batch") as pbar:
         for coro in asyncio.as_completed(tasks):
             batch_index, result = await coro
