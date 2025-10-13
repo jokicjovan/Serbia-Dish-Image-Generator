@@ -13,26 +13,24 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parents[2]
 
 # Input
-INPUT_DIR = BASE_DIR / "data/combined"          # Root folder containing raw data (JSON + images)
-INPUT_JSON = INPUT_DIR / "dishes.json"          # Input JSON file with dishes
+INPUT_DIR = BASE_DIR / "data/combined"          # Root directory containing raw data (JSON + images)
+INPUT_JSON = INPUT_DIR / "dishes.json"          # Input JSON file with dishes array
 
 # Output
-OUTPUT_DIR = BASE_DIR / "data/processed"        # Root folder for LoRA dataset
-OUTPUT_IMAGES_DIR = OUTPUT_DIR / "images"       # Folder to store copied images
-OUTPUT_CAPTIONS_DIR = OUTPUT_DIR / "captions"   # Folder to store generated captions
+OUTPUT_DIR = BASE_DIR / "data/processed"        # Root directory for processed data
+OUTPUT_IMAGES_DIR = OUTPUT_DIR / "images"       # Directory to store images
+OUTPUT_CAPTIONS_DIR = OUTPUT_DIR / "captions"   # Directory to store generated captions
 
 # OpenAI
 MODEL = "gpt-4o-mini"                           # Model for caption generation
 
-# Optional cutoff for number of captions to generate
-TARGET_CAPTIONS_COUNT = 1000
+# TOTAL number of captions to have in the end (including already processed ones)
+CAPTIONS_GENERATE_CUTOFF = 100
 
 # Processing
-BATCH_SIZE = 20
-CONCURRENT_REQUESTS = 3
-RETRY_DELAY = 3
-SAVE_EVERY = 5
-RESUME_FROM_LAST = True
+CONCURRENT_REQUESTS = 3                         # Number of parallel translations
+RETRY_DELAY = 3                                 # Seconds to wait before retrying a failed batch
+RESUME_FROM_LAST = True                         # Resume from last progress (based on image_path)
 # ========================================
 
 # Ensure output folders exist
@@ -41,19 +39,18 @@ OUTPUT_CAPTIONS_DIR.mkdir(parents=True, exist_ok=True)
 
 client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
+
 # =============== Helper functions =================
 
 def load_input_dishes():
     """
     Load dishes from JSON and skip already processed ones if RESUME_FROM_LAST.
     """
+    print("📂 Loading dishes from JSON...")
     with INPUT_JSON.open("r", encoding="utf-8") as f:
-        data = json.load(f)
-        # print(data)
-        # dishes = data.get("dishes", data)
-        dishes = data
+        dishes = json.load(f)
 
-    print(f"Loaded {len(dishes)} total dishes.")
+    print(f"   → Loaded {len(dishes)} total dishes from {INPUT_JSON}")
 
     remaining_dishes = dishes
     if RESUME_FROM_LAST:
@@ -64,31 +61,62 @@ def load_input_dishes():
         ]
         skipped = len(dishes) - len(remaining_dishes)
         if skipped:
-            print(f"Skipping {skipped} already processed dishes.")
+            print(f"   ⚙️  Skipping {skipped} already processed dishes.")
+        else:
+            print("   ✅ No previously processed dishes found — starting fresh.")
 
     return remaining_dishes
+
+
+def apply_cutoff(dishes, cutoff, output_dir):
+    """
+    Applies CAPTIONS_GENERATE_CUTOFF so that total (processed + new) <= cutoff.
+    """
+    if cutoff is None:
+        return dishes  # No limit
+
+    # Count already processed
+    processed_count = len(list(output_dir.glob("*.txt")))
+    remaining_quota = max(0, cutoff - processed_count)
+
+    if remaining_quota == 0:
+        print(f"✅ Target of {cutoff} already reached. Skipping all.")
+        return []
+
+    if len(dishes) > remaining_quota:
+        print(f"📊 Limiting to {remaining_quota} dishes for processing to reach {cutoff} total.")
+        dishes = dishes[:remaining_quota]
+    else:
+        print(f"📊 Processing all {len(dishes)} remaining dishes "
+              f"(target {cutoff}, already {processed_count}).")
+
+    return dishes
+
 
 async def generate_caption(dish, semaphore):
     """
     Generate a caption for a dish using OpenAI and save it as a .txt file.
-    Copy the corresponding image to the images folder.
+    Copy the corresponding image to the images' folder.
     """
     async with semaphore:
         dish_id = Path(dish.get("image_path", "")).stem
+        dish_name = dish.get("name", "Unknown Dish")
+
         if not dish_id:
+            print(f"⚠️ Skipping dish without image_path: {dish_name}")
             return None
 
         prompt_text = f"""
-You are a professional culinary caption writer.
-The following recipe fields are in Serbian:
+            You are a professional culinary caption writer.
+            The following recipe fields are in Serbian:
 
-Name: {dish.get('name')}
-Ingredients: {dish.get('ingredients')}
-Preparation: {dish.get('preparation')}
+            Name: {dish.get('name')}
+            Ingredients: {dish.get('ingredients')}
+            Preparation: {dish.get('preparation')}
 
-Generate a short English caption (1–2 sentences) suitable for a text-to-image AI model.
-Do not include any extra text or JSON. Only output the caption.
-"""
+            Generate a short English caption (1–2 sentences) suitable for a text-to-image AI model.
+            Do not include any extra text or JSON. Only output the caption.
+        """
 
         # Retry logic
         for attempt in range(3):
@@ -110,7 +138,7 @@ Do not include any extra text or JSON. Only output the caption.
                 if src_image.exists():
                     shutil.copy(src_image, dst_image)
                 else:
-                    print(f"⚠️ Image not found for {dish['name']}")
+                    print(f"⚠️ Image missing for '{dish_name}' → {src_image}")
 
                 return dish_id
 
@@ -121,45 +149,38 @@ Do not include any extra text or JSON. Only output the caption.
         print(f"❌ Failed to generate caption for {dish.get('name')}")
         return None
 
+
 # =============== Main Processing Flow =================
 
 async def main():
     remaining_dishes = load_input_dishes()
-
-    # Optional cutoff
-    if TARGET_CAPTIONS_COUNT is not None:
-        remaining_dishes = remaining_dishes[:TARGET_CAPTIONS_COUNT]
-        print(f"Processing only {len(remaining_dishes)} dishes to reach target of {TARGET_CAPTIONS_COUNT}.")
-
-    semaphore = asyncio.Semaphore(CONCURRENT_REQUESTS)
+    remaining_dishes = apply_cutoff(remaining_dishes, CAPTIONS_GENERATE_CUTOFF, OUTPUT_CAPTIONS_DIR)
 
     if not remaining_dishes:
-        print("✅ Nothing to process. All dishes are already processed.")
+        print("✅ Nothing to process. All dishes are already processed or quota reached.")
         return
 
-    completed_batches = 0
-    failed_items = 0
+    semaphore = asyncio.Semaphore(CONCURRENT_REQUESTS)
+    successful = 0
+    failed = 0
 
-    # Create batches
-    batches = [remaining_dishes[i:i+BATCH_SIZE] for i in range(0, len(remaining_dishes), BATCH_SIZE)]
-
-    with tqdm(total=len(batches), desc="Processing batches", unit="batch") as pbar:
-        for batch_index, batch in enumerate(batches):
-            tasks = [generate_caption(d, semaphore) for d in batch]
-            for coro in asyncio.as_completed(tasks):
-                result = await coro
-                if result is None:
-                    failed_items += 1
-
-            completed_batches += 1
-            pbar.set_postfix({"Success": completed_batches, "Failed": failed_items})
+    with tqdm(total=len(remaining_dishes), desc="Generating captions", unit="dish") as pbar:
+        tasks = [generate_caption(d, semaphore) for d in remaining_dishes]
+        for coro in asyncio.as_completed(tasks):
+            result = await coro
+            if result is None:
+                failed += 1
+            else:
+                successful += 1
+            pbar.set_postfix({"Success": successful, "Failed": failed})
             pbar.update(1)
 
-    print(f"\n✅ Processing finished.")
-    print(f"   Completed batches: {completed_batches}")
-    print(f"   Failed items: {failed_items}")
-    print(f"   Captions saved in: {OUTPUT_CAPTIONS_DIR}")
-    print(f"   Images saved in: {OUTPUT_IMAGES_DIR}")
+    print("\n🏁 Caption generation completed.")
+    print(f"   ✅ Successful: {successful}")
+    print(f"   ❌ Failed: {failed}")
+    print(f"📁 Captions saved in: {OUTPUT_CAPTIONS_DIR}")
+    print(f"🖼️ Images copied to: {OUTPUT_IMAGES_DIR}")
+
 
 # Entry point
 if __name__ == "__main__":
