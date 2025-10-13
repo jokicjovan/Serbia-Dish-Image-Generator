@@ -5,6 +5,9 @@ import shutil
 from pathlib import Path
 from openai import AsyncOpenAI
 from tqdm import tqdm
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # =============== CONFIG =================
 BASE_DIR = Path(__file__).resolve().parents[2]
@@ -22,7 +25,7 @@ OUTPUT_CAPTIONS_DIR = OUTPUT_DIR / "captions"   # Folder to store generated capt
 MODEL = "gpt-4o-mini"                           # Model for caption generation
 
 # Optional cutoff for number of captions to generate
-TARGET_CAPTIONS_COUNT = 20
+TARGET_CAPTIONS_COUNT = 1000
 
 # Processing
 BATCH_SIZE = 20
@@ -46,7 +49,9 @@ def load_input_dishes():
     """
     with INPUT_JSON.open("r", encoding="utf-8") as f:
         data = json.load(f)
-        dishes = data.get("dishes", data)
+        # print(data)
+        # dishes = data.get("dishes", data)
+        dishes = data
 
     print(f"Loaded {len(dishes)} total dishes.")
 
