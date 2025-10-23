@@ -483,3 +483,5 @@ images.rar
 images.zip
 data/*
 refined_data/**
+/test
+src/processing/image-processing.py
