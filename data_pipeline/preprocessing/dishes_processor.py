@@ -25,7 +25,7 @@ OUTPUT_CAPTIONS_DIR = OUTPUT_DIR / "captions"   # Directory to store generated c
 MODEL = "gpt-4o-mini"                           # Model for caption generation
 
 # TOTAL number of captions to have in the end (including already processed ones)
-CAPTIONS_GENERATE_CUTOFF = 100
+CAPTIONS_GENERATE_CUTOFF = 10000
 
 # Processing
 CONCURRENT_REQUESTS = 3                         # Number of parallel translations

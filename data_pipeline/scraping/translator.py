@@ -2,12 +2,15 @@ import asyncio
 import json
 import os
 import re
+from pathlib import Path
+
 from openai import AsyncOpenAI
 from tqdm import tqdm
 
 # =============== CONFIG =================
-INPUT_FILE = "../../data/combined/dishes.json"              # Path to input JSON file
-OUTPUT_FILE = "../../data/combined/dishes_translated.json"  # Path to save translated output
+BASE_DIR = Path(__file__).resolve().parents[1]
+INPUT_FILE = BASE_DIR / "data/combined/dishes.json"  # Path to input JSON file
+OUTPUT_FILE = BASE_DIR / "data/combined/dishes_translated.json"  # Path to save translated output
 MODEL = "gpt-4o-mini"                                       # OpenAI model to use for translation
 
 # TOTAL number of dishes you want translated (including already translated ones).
