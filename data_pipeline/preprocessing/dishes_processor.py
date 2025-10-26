@@ -10,14 +10,14 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # =============== CONFIG =================
-BASE_DIR = Path(__file__).resolve().parents[2]
+BASE_DIR = Path(__file__).resolve().parents[1]
 
 # Input
 INPUT_DIR = BASE_DIR / "data/combined"          # Root directory containing raw data (JSON + images)
 INPUT_JSON = INPUT_DIR / "dishes.json"          # Input JSON file with dishes array
 
 # Output
-OUTPUT_DIR = BASE_DIR / "data/processed"        # Root directory for processed data
+OUTPUT_DIR = BASE_DIR / "data/preprocessed"     # Root directory for processed data
 OUTPUT_IMAGES_DIR = OUTPUT_DIR / "images"       # Directory to store images
 OUTPUT_CAPTIONS_DIR = OUTPUT_DIR / "captions"   # Directory to store generated captions
 
@@ -109,13 +109,14 @@ async def generate_caption(dish, semaphore):
         prompt_text = f"""
             You are a professional culinary caption writer.
             The following recipe fields are in Serbian:
-
+    
             Name: {dish.get('name')}
             Ingredients: {dish.get('ingredients')}
             Preparation: {dish.get('preparation')}
-
-            Generate a short English caption (1–2 sentences) suitable for a text-to-image AI model.
-            Do not include any extra text or JSON. Only output the caption.
+    
+            Generate a short, vivid English caption (1–2 sentences) suitable as a text-to-image AI prompt.
+            Focus on the dish's appearance, key ingredients, texture, and presentation style.
+            Include visual cues such as plating, color, or texture, but do not include any extra text or JSON. Only output the caption.
         """
 
         # Retry logic
