@@ -471,3 +471,16 @@ tags
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/python,pycharm,visualstudiocode,vim,intellij+all,flask
+/data_recepti
+/data_coolinarika/*
+/Data/images/*
+
+
+.DS_store
+/data_merged/images
+data_merged/images.zip
+images.rar
+images.zip
+data_pipeline/data/*
+models_pipeline/sd_lora/dataset/*
+models_pipeline/sd_lora/testing/generated_test_images/*
