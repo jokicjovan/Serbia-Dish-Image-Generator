@@ -3,7 +3,7 @@ import os
 import shutil
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parents[2]
+BASE_DIR = Path(__file__).resolve().parents[1]
 RAW_DIR = BASE_DIR / "data" / "raw"
 INTERIM_DIR = BASE_DIR / "data" / "combined"
 

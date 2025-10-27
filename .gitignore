@@ -487,3 +487,6 @@ refined_data/**
 /test
 /src/cvae/checkpoints
 /src/cvae/results
+data_pipeline/data/*
+models_pipeline/sd_lora/dataset/*
+models_pipeline/sd_lora/testing/generated_test_images/*
