@@ -483,3 +483,7 @@ images.rar
 images.zip
 data/*
 refined_data/**
+/test/images
+/test
+/src/cvae/checkpoints
+/src/cvae/results
