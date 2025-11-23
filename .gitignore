@@ -484,6 +484,7 @@ images.zip
 data_pipeline/data/*
 models_pipeline/sd_lora/dataset/*
 models_pipeline/sd_lora/testing/generated_test_images/*
+models_pipeline/sd_lora/outputs/*
 /data/images_cropped
 /data/processed
 /src/cvae/checkpoints
