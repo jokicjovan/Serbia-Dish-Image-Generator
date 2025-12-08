@@ -33,12 +33,49 @@ class CaptionImageSet(Dataset):
 
     def __getitem__(self, i):
         id_ = self.ids[i]
-        img = Image.open(os.path.join(self.img_dir, id_ + ".jpg")).convert("RGB") \
-              if os.path.exists(os.path.join(self.img_dir, id_ + ".jpg")) \
-              else Image.open(next(p for p in glob.glob(os.path.join(self.img_dir, id_ + ".*")) if os.path.splitext(p)[1].lower() in IMG_EXTS)).convert("RGB")
 
-        x = self.tf(img)                          # [3,H,W], in [-1,1]
-        e = np.load(os.path.join(self.emb_dir, id_ + ".npy")).astype("float32")
-        e /= (np.linalg.norm(e) + 1e-8)
-        e = torch.from_numpy(e)                   # [d_clip]
+        # Improved image loading with proper error handling
+        try:
+            img_path = os.path.join(self.img_dir, id_ + ".jpg")
+            if os.path.exists(img_path):
+                img = Image.open(img_path).convert("RGB")
+            else:
+                # Look for other supported formats
+                alt_paths = [os.path.join(self.img_dir, id_ + ext) for ext in IMG_EXTS]
+                found_path = next((p for p in alt_paths if os.path.exists(p)), None)
+
+                if found_path is None:
+                    raise FileNotFoundError(f"No image found for ID '{id_}' in {self.img_dir}")
+
+                img = Image.open(found_path).convert("RGB")
+        except Exception as e:
+            raise RuntimeError(f"Failed to load image for ID '{id_}': {str(e)}")
+
+        # Improved embedding loading with error handling
+        try:
+            emb_path = os.path.join(self.emb_dir, id_ + ".npy")
+            if not os.path.exists(emb_path):
+                raise FileNotFoundError(f"No embedding found for ID '{id_}' at {emb_path}")
+
+            e = np.load(emb_path).astype("float32")
+
+            if e.size == 0:
+                raise ValueError(f"Empty embedding file for ID '{id_}'")
+
+            # Normalize embedding
+            norm = np.linalg.norm(e)
+            if norm < 1e-8:
+                raise ValueError(f"Zero or near-zero embedding norm for ID '{id_}'")
+
+            e /= norm
+            e = torch.from_numpy(e)
+        except Exception as e:
+            raise RuntimeError(f"Failed to load embedding for ID '{id_}': {str(e)}")
+
+        # Apply image transform
+        try:
+            x = self.tf(img)
+        except Exception as e:
+            raise RuntimeError(f"Failed to transform image for ID '{id_}': {str(e)}")
+
         return x, e

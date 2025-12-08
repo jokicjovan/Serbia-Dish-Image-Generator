@@ -52,7 +52,7 @@ def main(args):
 
     ema = EMA(G, decay=args.ema)
 
-    scaler = torch.cuda.amp.GradScaler(enabled=(device=="cuda"))
+    scaler = torch.amp.GradScaler('cuda', enabled=(device=="cuda"))
 
     os.makedirs(args.out_dir, exist_ok=True)
     fixed = next(iter(dl))
@@ -67,8 +67,12 @@ def main(args):
             x, e = x.to(device, non_blocking=True), e.to(device, non_blocking=True)
             B = x.size(0)
 
-            # Create mismatched text by rolling (no fixed points)
-            e_mis = torch.roll(e, shifts=1, dims=0)
+            # Create mismatched text by random permutation (better entropy than fixed roll)
+            perm_idx = torch.randperm(B)
+            # Ensure at least some mismatches by rerolling if permutation is identity
+            while torch.equal(perm_idx, torch.arange(B)):
+                perm_idx = torch.randperm(B)
+            e_mis = e[perm_idx]
 
             # ----------------- D update -----------------
             for _ in range(args.n_disc):
@@ -82,33 +86,39 @@ def main(args):
                     xf = diff_augment(xf)
 
                 xr.requires_grad_(True)
-                with torch.cuda.amp.autocast(enabled=(device=="cuda")):
+                with torch.amp.autocast('cuda', enabled=(device=="cuda")):
                     real_logits = D(xr, e)
                     fake_logits = D(xf, e)
                     mis_logits  = D(xr, e_mis) if args.use_mismatch else None
                     d_loss = hinge_d(real_logits, fake_logits, mis_logits, mis_weight=args.mismatch_w)
 
+                # Compute total discriminator loss (including R1 if needed)
+                total_d_loss = d_loss
+                if (step % args.r1_every) == 0:
+                    with torch.amp.autocast('cuda', enabled=False):
+                        r1 = r1_penalty(xr, real_logits)
+                    total_d_loss = d_loss + (args.r1_gamma/2) * r1
+
                 optD.zero_grad(set_to_none=True)
                 if device=="cuda":
-                    scaler.scale(d_loss).backward()
+                    scaler.scale(total_d_loss).backward()
                 else:
-                    d_loss.backward()
-
-                # Lazy R1
-                if (step % args.r1_every) == 0:
-                    with torch.cuda.amp.autocast(enabled=False):
-                        r1 = r1_penalty(xr, real_logits)
-                    (args.r1_gamma/2) * r1.backward()
+                    total_d_loss.backward()
 
                 if device=="cuda":
+                    if args.grad_clip > 0:
+                        scaler.unscale_(optD)
+                        torch.nn.utils.clip_grad_norm_(D.parameters(), args.grad_clip)
                     scaler.step(optD)
                     scaler.update()
                 else:
+                    if args.grad_clip > 0:
+                        torch.nn.utils.clip_grad_norm_(D.parameters(), args.grad_clip)
                     optD.step()
 
             # ----------------- G update -----------------
             z = torch.randn(B, args.z_dim, device=device)
-            with torch.cuda.amp.autocast(enabled=(device=="cuda")):
+            with torch.amp.autocast('cuda', enabled=(device=="cuda")):
                 x_fake = G(z, e)
                 xf = diff_augment(x_fake) if args.diffaugment else x_fake
                 g_loss = hinge_g(D(xf, e))
@@ -116,9 +126,15 @@ def main(args):
             optG.zero_grad(set_to_none=True)
             if device=="cuda":
                 scaler.scale(g_loss).backward()
+                if args.grad_clip > 0:
+                    scaler.unscale_(optG)
+                    torch.nn.utils.clip_grad_norm_(G.parameters(), args.grad_clip)
                 scaler.step(optG); scaler.update()
             else:
-                g_loss.backward(); optG.step()
+                g_loss.backward()
+                if args.grad_clip > 0:
+                    torch.nn.utils.clip_grad_norm_(G.parameters(), args.grad_clip)
+                optG.step()
 
             # EMA update
             ema.update(G)
@@ -165,6 +181,7 @@ if __name__ == "__main__":
     ap.add_argument("--n_disc", type=int, default=1)
     ap.add_argument("--g_lr", type=float, default=2e-4)
     ap.add_argument("--d_lr", type=float, default=2e-4)
+    ap.add_argument("--grad_clip", type=float, default=0.0, help="Gradient clipping norm (0 = disabled)")
     ap.add_argument("--num_workers", type=int, default=4)
     ap.add_argument("--diffaugment", action="store_true")
     ap.add_argument("--use_mismatch", action="store_true")

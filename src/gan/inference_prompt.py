@@ -14,10 +14,24 @@ def load_checkpoint(ckpt_path, device):
 def create_generator(ckpt, device):
     """Create generator from checkpoint."""
     args = ckpt['args']
-    
+
+    # Get embedding dimension from checkpoint args or generator state dict
+    cond_in = args.get('cond_in')  # Try to get from saved args first
+    if cond_in is None:
+        # Fallback: infer from generator's embed layer weight shape
+        gen_state = ckpt['G']
+        if 'embed.0.weight' in gen_state:
+            cond_in = gen_state['embed.0.weight'].shape[1]
+        else:
+            print("WARNING: Could not determine embedding dimension from checkpoint.")
+            print("Note: CLIP ViT-B/32 produces 512-dim embeddings, ViT-L/14 produces 768-dim")
+            cond_in = 512  # Default to CLIP ViT-B/32
+
+    print(f"Using embedding dimension: {cond_in}")
+
     G = Generator(
         z_dim=args.get('z_dim', 128),
-        cond_in=512,  # CLIP embeddings are 512-dim
+        cond_in=cond_in,
         cond_hidden=args.get('cond_dim', 256),
         base_ch=args.get('base_ch', 64),
         out_size=args.get('img_size', 128)

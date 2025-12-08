@@ -24,6 +24,12 @@ class EMA:
                 self.backup[name] = p.data.clone()
                 p.data = self.shadow[name].clone()
 
+    def copy_to(self, model):
+        """Copy shadow weights to model without creating backup."""
+        for name, p in model.named_parameters():
+            if p.requires_grad:
+                p.data = self.shadow[name].clone()
+
     def restore(self, model):
         for name, p in model.named_parameters():
             if p.requires_grad:
