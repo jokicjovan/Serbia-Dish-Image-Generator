@@ -13,12 +13,24 @@ def load_checkpoint(ckpt_path, device):
 def create_generator(ckpt, device):
     """Create generator from checkpoint."""
     args = ckpt['args']
-    
-    # Get embedding dimension from checkpoint
-    # Assuming it's stored or we can infer from embed layer
+
+    # Get embedding dimension from checkpoint args or generator state dict
+    cond_in = args.get('cond_in')  # Try to get from saved args first
+    if cond_in is None:
+        # Fallback: infer from generator's embed layer weight shape
+        gen_state = ckpt['G']
+        if 'embed.0.weight' in gen_state:
+            cond_in = gen_state['embed.0.weight'].shape[1]
+        else:
+            print("WARNING: Could not determine embedding dimension from checkpoint.")
+            print("Defaulting to 512. If inference fails, check your embedding files.")
+            cond_in = 512
+
+    print(f"Using embedding dimension: {cond_in}")
+
     G = Generator(
         z_dim=args.get('z_dim', 128),
-        cond_in=512,  # Your embeddings are 512-dim
+        cond_in=cond_in,
         cond_hidden=args.get('cond_dim', 256),
         base_ch=args.get('base_ch', 64),
         out_size=args.get('img_size', 128)
@@ -126,8 +138,9 @@ def main(args):
     # Mode 3: Random generation with random embeddings
     else:
         print(f"\nGenerating {args.num_samples} random images...")
-        # Create random embeddings (512-dim)
-        random_embeddings = torch.randn(args.num_samples, 512, device=device)
+        # Create random embeddings with correct dimension
+        cond_in = ckpt['args'].get('cond_in') if ckpt['args'].get('cond_in') else 512
+        random_embeddings = torch.randn(args.num_samples, cond_in, device=device)
         z = torch.randn(args.num_samples, z_dim, device=device)
         
         with torch.no_grad():

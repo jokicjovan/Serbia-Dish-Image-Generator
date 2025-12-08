@@ -72,11 +72,11 @@ class AdaptiveCfg:
     cool_down: int = 400          # steps between adjustments
 
 class EWMA:
-    def _init_(self, beta: float): self.beta, self.val = beta, None
+    def __init__(self, beta: float): self.beta, self.val = beta, None
     def update(self, x: float): self.val = x if self.val is None else self.beta*self.val + (1-self.beta)*x; return self.val
 
 class AdaptiveController:
-    def _init_(self, cfg: AdaptiveCfg):
+    def __init__(self, cfg: AdaptiveCfg):
         self.cfg = cfg
         self.ewma_d = EWMA(beta=1 - 1/cfg.window)
         self.last_tune = -10**9
@@ -145,6 +145,7 @@ def main():
     # optim
     ap.add_argument('--g_lr', type=float, default=2e-4)
     ap.add_argument('--d_lr', type=float, default=2e-4)
+    ap.add_argument('--grad_clip', type=float, default=0.0, help="Gradient clipping norm (0 = disabled)")
     ap.add_argument('--betas', type=float, nargs=2, default=(0.0, 0.9))
     # reg
     ap.add_argument('--r1_gamma', type=float, default=0.5)
@@ -247,8 +248,13 @@ def main():
                 xr.requires_grad_(False)
 
             if device == 'cuda':
+                if args.grad_clip > 0:
+                    scalerD.unscale_(optD)
+                    torch.nn.utils.clip_grad_norm_(D.parameters(), args.grad_clip)
                 scalerD.step(optD); scalerD.update()
             else:
+                if args.grad_clip > 0:
+                    torch.nn.utils.clip_grad_norm_(D.parameters(), args.grad_clip)
                 optD.step()
 
             controller.ewma_d.update(d_loss.detach().item())
@@ -272,9 +278,15 @@ def main():
         optG.zero_grad(set_to_none=True)
         if device == 'cuda':
             scalerG.scale(g_loss).backward()
+            if args.grad_clip > 0:
+                scalerG.unscale_(optG)
+                torch.nn.utils.clip_grad_norm_(G.parameters(), args.grad_clip)
             scalerG.step(optG); scalerG.update()
         else:
-            g_loss.backward(); optG.step()
+            g_loss.backward()
+            if args.grad_clip > 0:
+                torch.nn.utils.clip_grad_norm_(G.parameters(), args.grad_clip)
+            optG.step()
 
         ema.update(G)
 

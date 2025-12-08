@@ -67,8 +67,12 @@ def main(args):
             x, e = x.to(device, non_blocking=True), e.to(device, non_blocking=True)
             B = x.size(0)
 
-            # Create mismatched text by rolling (no fixed points)
-            e_mis = torch.roll(e, shifts=1, dims=0)
+            # Create mismatched text by random permutation (better entropy than fixed roll)
+            perm_idx = torch.randperm(B)
+            # Ensure at least some mismatches by rerolling if permutation is identity
+            while torch.equal(perm_idx, torch.arange(B)):
+                perm_idx = torch.randperm(B)
+            e_mis = e[perm_idx]
 
             # ----------------- D update -----------------
             for _ in range(args.n_disc):
@@ -101,9 +105,14 @@ def main(args):
                     (args.r1_gamma/2) * r1.backward()
 
                 if device=="cuda":
+                    if args.grad_clip > 0:
+                        scaler.unscale_(optD)
+                        torch.nn.utils.clip_grad_norm_(D.parameters(), args.grad_clip)
                     scaler.step(optD)
                     scaler.update()
                 else:
+                    if args.grad_clip > 0:
+                        torch.nn.utils.clip_grad_norm_(D.parameters(), args.grad_clip)
                     optD.step()
 
             # ----------------- G update -----------------
@@ -116,9 +125,15 @@ def main(args):
             optG.zero_grad(set_to_none=True)
             if device=="cuda":
                 scaler.scale(g_loss).backward()
+                if args.grad_clip > 0:
+                    scaler.unscale_(optG)
+                    torch.nn.utils.clip_grad_norm_(G.parameters(), args.grad_clip)
                 scaler.step(optG); scaler.update()
             else:
-                g_loss.backward(); optG.step()
+                g_loss.backward()
+                if args.grad_clip > 0:
+                    torch.nn.utils.clip_grad_norm_(G.parameters(), args.grad_clip)
+                optG.step()
 
             # EMA update
             ema.update(G)
@@ -165,6 +180,7 @@ if __name__ == "__main__":
     ap.add_argument("--n_disc", type=int, default=1)
     ap.add_argument("--g_lr", type=float, default=2e-4)
     ap.add_argument("--d_lr", type=float, default=2e-4)
+    ap.add_argument("--grad_clip", type=float, default=0.0, help="Gradient clipping norm (0 = disabled)")
     ap.add_argument("--num_workers", type=int, default=4)
     ap.add_argument("--diffaugment", action="store_true")
     ap.add_argument("--use_mismatch", action="store_true")
