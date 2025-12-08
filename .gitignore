@@ -483,3 +483,7 @@ images.rar
 images.zip
 data/*
 refined_data/**
+/checkpoints
+/src2
+data.zip
+*.zip

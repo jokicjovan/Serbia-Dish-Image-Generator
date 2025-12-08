@@ -39,5 +39,6 @@ class CaptionImageSet(Dataset):
 
         x = self.tf(img)                          # [3,H,W], in [-1,1]
         e = np.load(os.path.join(self.emb_dir, id_ + ".npy")).astype("float32")
+        e /= (np.linalg.norm(e) + 1e-8)
         e = torch.from_numpy(e)                   # [d_clip]
         return x, e
