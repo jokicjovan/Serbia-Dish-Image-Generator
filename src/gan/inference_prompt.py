@@ -29,6 +29,23 @@ def create_generator(ckpt, device):
 
     print(f"Using embedding dimension: {cond_in}")
 
+    # Determine CLIP model based on embedding dimension
+    if cond_in <= 512:
+        clip_model_name = "ViT-B/32"
+        expected_dim = 512
+    elif cond_in <= 768:
+        clip_model_name = "ViT-L/14"
+        expected_dim = 768
+    elif cond_in <= 1024:
+        clip_model_name = "ViT-H/14"
+        expected_dim = 1024
+    else:
+        clip_model_name = "ViT-B/32"  # fallback
+        expected_dim = 512
+        print(f"WARNING: Unusual embedding dim {cond_in}, using ViT-B/32 as fallback")
+
+    print(f"Recommended CLIP model: {clip_model_name} (produces {expected_dim}D embeddings)")
+
     G = Generator(
         z_dim=args.get('z_dim', 128),
         cond_in=cond_in,
@@ -36,7 +53,7 @@ def create_generator(ckpt, device):
         base_ch=args.get('base_ch', 64),
         out_size=args.get('img_size', 128)
     ).to(device)
-    
+
     # Load EMA weights if available
     if 'ema' in ckpt:
         print("Loading EMA weights")
@@ -47,11 +64,11 @@ def create_generator(ckpt, device):
     else:
         print("Loading regular generator weights")
         G.load_state_dict(ckpt['G'])
-    
-    G.eval()
-    return G, args
 
-def load_clip_model(device):
+    G.eval()
+    return G, args, clip_model_name
+
+def load_clip_model(device, model_name="ViT-B/32"):
     """Load CLIP model for text encoding."""
     try:
         import clip
@@ -59,43 +76,58 @@ def load_clip_model(device):
         print("ERROR: CLIP not installed!")
         print("Install with: pip install git+https://github.com/openai/CLIP.git")
         exit(1)
-    
-    print("Loading CLIP model...")
-    model, preprocess = clip.load("ViT-B/32", device=device)
+
+    print(f"Loading CLIP model: {model_name}...")
+    model, preprocess = clip.load(model_name, device=device)
     return model, preprocess
 
-def encode_text(clip_model, text, device):
+def encode_text(clip_model, text, device, target_dim=None):
     """Encode text prompt to CLIP embedding."""
     import clip
-    
+
     # Tokenize and encode
     text_tokens = clip.tokenize([text]).to(device)
-    
+
     with torch.no_grad():
         text_features = clip_model.encode_text(text_tokens)
         # Normalize (CLIP outputs normalized features)
         text_features = text_features / text_features.norm(dim=-1, keepdim=True)
-    
-    # Convert to float32 to match generator
-    return text_features.squeeze(0).float()  # [512]
 
-def generate_from_prompt(G, clip_model, prompt, z_dim=128, num_samples=1, device='cuda'):
+    # Convert to float32 to match generator
+    embedding = text_features.squeeze(0).float()
+
+    # Check dimension compatibility
+    if target_dim is not None and embedding.shape[0] != target_dim:
+        print(f"WARNING: CLIP embedding dim ({embedding.shape[0]}) != target dim ({target_dim})")
+        if embedding.shape[0] < target_dim:
+            # Pad with zeros if CLIP embedding is smaller
+            padding = torch.zeros(target_dim - embedding.shape[0], device=device)
+            embedding = torch.cat([embedding, padding])
+            print(f"Padded embedding to {target_dim}D")
+        else:
+            # Truncate if CLIP embedding is larger
+            embedding = embedding[:target_dim]
+            print(f"Truncated embedding to {target_dim}D")
+
+    return embedding
+
+def generate_from_prompt(G, clip_model, prompt, z_dim=128, num_samples=1, device='cuda', target_dim=None):
     """Generate images from text prompt."""
     print(f"\nPrompt: '{prompt}'")
-    
+
     # Encode prompt
-    embedding = encode_text(clip_model, prompt, device)
-    
+    embedding = encode_text(clip_model, prompt, device, target_dim)
+
     with torch.no_grad():
         # Repeat embedding for batch
         e = embedding.unsqueeze(0).repeat(num_samples, 1)
-        
+
         # Sample random noise
         z = torch.randn(num_samples, z_dim, device=device)
-        
+
         # Generate
         imgs = G(z, e)
-    
+
     return imgs
 
 def save_samples(imgs, output_path, nrow=4):
@@ -112,47 +144,47 @@ def save_individual(imgs, output_dir, prefix="sample"):
         save_image(img_normalized, os.path.join(output_dir, f"{prefix}_{i:04d}.png"))
     print(f"Saved {len(imgs)} individual images to {output_dir}")
 
-def interactive_mode(G, clip_model, z_dim, output_dir, device):
+def interactive_mode(G, clip_model, z_dim, output_dir, device, cond_in):
     """Interactive prompt entry mode."""
     print("\n" + "="*60)
     print("Interactive Generation Mode")
     print("="*60)
     print("Enter prompts to generate images. Type 'quit' or 'exit' to stop.")
     print("Type 'help' for options.\n")
-    
+
     prompt_count = 0
-    
+
     while True:
         try:
             prompt = input("Prompt > ").strip()
-            
+
             if not prompt:
                 continue
-            
+
             if prompt.lower() in ['quit', 'exit', 'q']:
                 print("Goodbye!")
                 break
-            
+
             if prompt.lower() == 'help':
                 print("\nCommands:")
                 print("  - Enter any text to generate images")
                 print("  - 'quit' or 'exit' to stop")
                 print("  - 'help' for this message\n")
                 continue
-            
+
             # Generate images
-            imgs = generate_from_prompt(G, clip_model, prompt, z_dim, 
-                                       num_samples=16, device=device)
-            
+            imgs = generate_from_prompt(G, clip_model, prompt, z_dim,
+                                       num_samples=16, device=device, target_dim=cond_in)
+
             # Save with sanitized filename
-            safe_name = "".join(c if c.isalnum() or c in (' ', '_') else '_' 
+            safe_name = "".join(c if c.isalnum() or c in (' ', '_') else '_'
                                for c in prompt)[:50]
             output_path = os.path.join(output_dir, f"{prompt_count:04d}_{safe_name}.png")
-            
+
             save_samples(imgs, output_path, nrow=4)
             prompt_count += 1
             print()
-            
+
         except KeyboardInterrupt:
             print("\n\nGoodbye!")
             break
@@ -162,66 +194,67 @@ def interactive_mode(G, clip_model, z_dim, output_dir, device):
 def main(args):
     device = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"Using device: {device}")
-    
+
     # Load models
     ckpt = load_checkpoint(args.checkpoint, device)
-    G, train_args = create_generator(ckpt, device)
+    G, train_args, clip_model_name = create_generator(ckpt, device)
     z_dim = train_args.get('z_dim', 128)
-    
-    clip_model, _ = load_clip_model(device)
-    
-    print(f"Generator loaded (z_dim={z_dim}, img_size={train_args.get('img_size', 128)})")
+    cond_in = train_args.get('cond_in') or G.embed[0].in_features
+
+    clip_model, _ = load_clip_model(device, clip_model_name)
+
+    print(f"Generator loaded (z_dim={z_dim}, embedding_dim={cond_in}, img_size={train_args.get('img_size', 128)})")
     print("CLIP model loaded\n")
-    
+
     # Setup output directory
     os.makedirs(args.output_dir, exist_ok=True)
-    
+
     # Interactive mode
     if args.interactive:
-        interactive_mode(G, clip_model, z_dim, args.output_dir, device)
-    
+        interactive_mode(G, clip_model, z_dim, args.output_dir, device, cond_in)
+
     # Single prompt mode
     elif args.prompt:
-        imgs = generate_from_prompt(G, clip_model, args.prompt, z_dim, 
-                                    args.num_samples, device)
-        
+        imgs = generate_from_prompt(G, clip_model, args.prompt, z_dim,
+                                    args.num_samples, device, cond_in)
+
         if args.save_grid:
-            save_samples(imgs, 
+            save_samples(imgs,
                         os.path.join(args.output_dir, "generated_grid.png"),
                         nrow=int(np.sqrt(args.num_samples)))
-        
+
         if args.save_individual:
             save_individual(imgs, args.output_dir, prefix="sample")
-    
+
     # Prompts from file
     elif args.prompts_file:
         print(f"Reading prompts from {args.prompts_file}")
         with open(args.prompts_file, 'r') as f:
             prompts = [line.strip() for line in f if line.strip()]
-        
+
         print(f"Found {len(prompts)} prompts\n")
-        
+
         for i, prompt in enumerate(prompts):
-            imgs = generate_from_prompt(G, clip_model, prompt, z_dim, 
-                                       args.num_samples, device)
-            
-            safe_name = "".join(c if c.isalnum() or c in (' ', '_') else '_' 
+            imgs = generate_from_prompt(G, clip_model, prompt, z_dim,
+                                       args.num_samples, device, cond_in)
+
+            safe_name = "".join(c if c.isalnum() or c in (' ', '_') else '_'
                                for c in prompt)[:50]
-            
+
             if args.save_grid:
-                output_path = os.path.join(args.output_dir, 
+                output_path = os.path.join(args.output_dir,
                                           f"{i:04d}_{safe_name}_grid.png")
-                save_samples(imgs, output_path, 
+                save_samples(imgs, output_path,
                            nrow=int(np.sqrt(args.num_samples)))
-            
+
             if args.save_individual:
                 img_dir = os.path.join(args.output_dir, f"{i:04d}_{safe_name}")
                 save_individual(imgs, img_dir, prefix="sample")
-    
+
     else:
         print("ERROR: Must specify --prompt, --prompts_file, or --interactive")
         print("Run with --help for usage information")
-    
+
     print(f"\nDone! Check {args.output_dir}")
 
 if __name__ == "__main__":
