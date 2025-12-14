@@ -80,22 +80,35 @@ def create_generator(ckpt, device):
 def load_clip_model(device, model_name="ViT-B/32"):
     """Load CLIP model for text encoding."""
     try:
-        import clip
+        import open_clip
     except ImportError:
-        print("ERROR: CLIP not installed!")
-        print("Install with: pip install git+https://github.com/openai/CLIP.git")
+        print("ERROR: open_clip_torch not installed!")
+        print("Install with: pip install open_clip_torch")
         exit(1)
 
-    print(f"Loading CLIP model: {model_name}...")
-    model, preprocess = clip.load(model_name, device=device)
-    return model, preprocess
+    # Map model names to correct pretrained weights
+    model_pretraining_map = {
+        "ViT-B/32": "laion2b_s34b_b79k",
+        "ViT-L/14": "laion2b_s32b_b82k",  # This is the correct one for your model!
+        "ViT-H/14": "laion2b_s32b_b79k",
+    }
 
-def encode_text(clip_model, text, device, target_dim=None):
+    pretrained = model_pretraining_map.get(model_name, "laion2b_s34b_b79k")
+
+    print(f"Loading CLIP model: {model_name} ({pretrained})...")
+    model, _, preprocess = open_clip.create_model_and_transforms(
+        model_name, pretrained=pretrained, device=device
+    )
+    tokenizer = open_clip.get_tokenizer(model_name)
+
+    return model, tokenizer
+
+def encode_text(clip_model, tokenizer, text, device, target_dim=None):
     """Encode text prompt to CLIP embedding."""
-    import clip
+    import open_clip
 
     # Tokenize and encode
-    text_tokens = clip.tokenize([text]).to(device)
+    text_tokens = tokenizer([text]).to(device)
 
     with torch.no_grad():
         text_features = clip_model.encode_text(text_tokens)
@@ -120,12 +133,12 @@ def encode_text(clip_model, text, device, target_dim=None):
 
     return embedding
 
-def generate_from_prompt(G, clip_model, prompt, z_dim=128, num_samples=1, device='cuda', target_dim=None):
+def generate_from_prompt(G, clip_model, tokenizer, prompt, z_dim=128, num_samples=1, device='cuda', target_dim=None):
     """Generate images from text prompt."""
     print(f"\nPrompt: '{prompt}'")
 
     # Encode prompt
-    embedding = encode_text(clip_model, prompt, device, target_dim)
+    embedding = encode_text(clip_model, tokenizer, prompt, device, target_dim)
 
     with torch.no_grad():
         # Repeat embedding for batch
@@ -153,7 +166,7 @@ def save_individual(imgs, output_dir, prefix="sample"):
         save_image(img_normalized, os.path.join(output_dir, f"{prefix}_{i:04d}.png"))
     print(f"Saved {len(imgs)} individual images to {output_dir}")
 
-def interactive_mode(G, clip_model, z_dim, output_dir, device, cond_in):
+def interactive_mode(G, clip_model, tokenizer, z_dim, output_dir, device, cond_in):
     """Interactive prompt entry mode."""
     print("\n" + "="*60)
     print("Interactive Generation Mode")
@@ -182,7 +195,7 @@ def interactive_mode(G, clip_model, z_dim, output_dir, device, cond_in):
                 continue
 
             # Generate images
-            imgs = generate_from_prompt(G, clip_model, prompt, z_dim,
+            imgs = generate_from_prompt(G, clip_model, tokenizer, prompt, z_dim,
                                        num_samples=16, device=device, target_dim=cond_in)
 
             # Save with sanitized filename
@@ -219,7 +232,7 @@ def main(args):
         else:
             cond_in = 512  # fallback
 
-    clip_model, _ = load_clip_model(device, clip_model_name)
+    clip_model, tokenizer = load_clip_model(device, clip_model_name)
 
     print(f"Generator loaded (z_dim={z_dim}, embedding_dim={cond_in}, img_size={train_args.get('img_size', 128)})")
     print("CLIP model loaded\n")
@@ -229,11 +242,11 @@ def main(args):
 
     # Interactive mode
     if args.interactive:
-        interactive_mode(G, clip_model, z_dim, args.output_dir, device, cond_in)
+        interactive_mode(G, clip_model, tokenizer, z_dim, args.output_dir, device, cond_in)
 
     # Single prompt mode
     elif args.prompt:
-        imgs = generate_from_prompt(G, clip_model, args.prompt, z_dim,
+        imgs = generate_from_prompt(G, clip_model, tokenizer, args.prompt, z_dim,
                                     args.num_samples, device, cond_in)
 
         if args.save_grid:
@@ -253,7 +266,7 @@ def main(args):
         print(f"Found {len(prompts)} prompts\n")
 
         for i, prompt in enumerate(prompts):
-            imgs = generate_from_prompt(G, clip_model, prompt, z_dim,
+            imgs = generate_from_prompt(G, clip_model, tokenizer, prompt, z_dim,
                                        args.num_samples, device, cond_in)
 
             safe_name = "".join(c if c.isalnum() or c in (' ', '_') else '_'
