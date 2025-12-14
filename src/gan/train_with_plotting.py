@@ -1,4 +1,3 @@
-# train.py
 import os, math, argparse, torch, torch.nn.functional as F
 from torch.utils.data import DataLoader
 from torchvision.utils import save_image, make_grid
@@ -119,8 +118,10 @@ def main(args):
 
     os.makedirs(args.out_dir, exist_ok=True)
     fixed = next(iter(dl))
-    fixed_e = fixed[1][:args.n_sample].to(device)
-    fixed_z = torch.randn(args.n_sample, args.z_dim, device=device)
+    actual_n_sample = min(args.n_sample, args.batch)
+    fixed_e = fixed[1][:actual_n_sample].to(device)
+    fixed_z = torch.randn(actual_n_sample, args.z_dim, device=device)
+    print(f"Using {actual_n_sample} samples for visualization (n_sample={args.n_sample}, batch={args.batch})")
 
     # Logging
     log_data = []

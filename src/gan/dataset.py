@@ -24,14 +24,13 @@ class CaptionImageSet(Dataset):
         self.ids = ids
         self.img_dir, self.emb_dir = img_dir, emb_dir
 
-        # Print embedding info for first sample
         if ids:
             first_emb_path = os.path.join(emb_dir, ids[0] + ".npy")
             try:
                 first_emb = np.load(first_emb_path)
-                print(f"📊 Dataset info: {len(ids)} samples, embedding dim: {first_emb.shape}")
+                print(f"Dataset info: {len(ids)} samples, embedding dim: {first_emb.shape}")
             except:
-                print(f"📊 Dataset info: {len(ids)} samples")
+                print(f"Dataset info: {len(ids)} samples")
 
         self.tf = T.Compose([
             T.Resize(size, interpolation=T.InterpolationMode.BICUBIC),
