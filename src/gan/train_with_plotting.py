@@ -87,7 +87,7 @@ def main(args):
     print(f"Using device: {device}")
 
     # ----- Data
-    ds = CaptionImageSet(args.data_root, size=args.img_size)
+    ds = CaptionImageSet(args.data_root, size=args.img_size, embeddings_dir=args.embeddings_dir)
     emb_dim = ds[0][1].numel()
     dl = DataLoader(ds, batch_size=args.batch, shuffle=True,
                     num_workers=args.num_workers, drop_last=True, pin_memory=True)
@@ -270,10 +270,12 @@ def main(args):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--data_root", type=str, default="data/processed")
+    ap.add_argument("--embeddings_dir", type=str, default="embedds",
+                   help="Name of embeddings folder within data_root")
     ap.add_argument("--out_dir", type=str, default="runs/cgan")
     ap.add_argument("--img_size", type=int, default=128)
     ap.add_argument("--z_dim", type=int, default=128)
-    ap.add_argument("--cond_dim", type=int, default=256)
+    ap.add_argument("--cond_dim", type=int, default=512, help="Hidden dim for text conditioning (should be >= embedding_dim)")
     ap.add_argument("--base_ch", type=int, default=64)
     ap.add_argument("--batch", type=int, default=32)
     ap.add_argument("--iters", type=int, default=200_000)

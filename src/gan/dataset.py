@@ -6,9 +6,10 @@ from torchvision import transforms as T
 IMG_EXTS = (".jpg", ".jpeg", ".png", ".webp")
 
 class CaptionImageSet(Dataset):
-    def __init__(self, root="data/processed", size=128):
+    def __init__(self, root="data/processed", size=128, embeddings_dir="embedds"):
         img_dir = os.path.join(root, "images")
-        emb_dir = os.path.join(root, "embedds")
+        # Allow custom embeddings directory name
+        emb_dir = os.path.join(root, embeddings_dir)
 
         ids = []
         for p in glob.glob(os.path.join(img_dir, "*")):
@@ -18,10 +19,20 @@ class CaptionImageSet(Dataset):
         ids.sort()
 
         if not ids:
-            raise RuntimeError("No image/embedding pairs found. Check data/processed/images and embedds.")
+            raise RuntimeError(f"No image/embedding pairs found. Check {img_dir} and {emb_dir}.")
 
         self.ids = ids
         self.img_dir, self.emb_dir = img_dir, emb_dir
+
+        # Print embedding info for first sample
+        if ids:
+            first_emb_path = os.path.join(emb_dir, ids[0] + ".npy")
+            try:
+                first_emb = np.load(first_emb_path)
+                print(f"📊 Dataset info: {len(ids)} samples, embedding dim: {first_emb.shape}")
+            except:
+                print(f"📊 Dataset info: {len(ids)} samples")
+
         self.tf = T.Compose([
             T.Resize(size, interpolation=T.InterpolationMode.BICUBIC),
             T.CenterCrop(size),
