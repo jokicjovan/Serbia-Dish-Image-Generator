@@ -6,22 +6,17 @@ from models import Generator
 from ema import EMA
 
 def load_checkpoint(ckpt_path, device):
-    """Load checkpoint and extract model state and args."""
     print(f"Loading checkpoint from {ckpt_path}")
     ckpt = torch.load(ckpt_path, map_location=device)
     return ckpt
 
 def create_generator(ckpt, device):
-    """Create generator from checkpoint."""
     args = ckpt['args']
 
-    # Get embedding dimension from checkpoint args or generator state dict
-    cond_in = args.get('cond_in')  # Try to get from saved args first
+    cond_in = args.get('cond_in')
     if cond_in is None:
-        # Fallback: infer from generator's conditioning layer weight shape
         gen_state = ckpt['G']
         if 'cond.0.weight' in gen_state:
-            # The conditioning layer input size tells us the embedding dimension
             cond_in = gen_state['cond.0.weight'].shape[1]
             print(f"Detected embedding dimension from cond.0.weight: {cond_in}")
         elif 'embed.0.weight' in gen_state:
@@ -29,12 +24,9 @@ def create_generator(ckpt, device):
             print(f"Detected embedding dimension from embed.0.weight: {cond_in}")
         else:
             print("WARNING: Could not determine embedding dimension from checkpoint.")
-            print("Analyzing generator state dict keys...")
-            # Print available keys to help debug
             cond_keys = [k for k in gen_state.keys() if 'cond' in k or 'embed' in k]
             print(f"Available conditioning keys: {cond_keys}")
-            print("Note: CLIP ViT-B/32 produces 512-dim embeddings, ViT-L/14 produces 768-dim")
-            cond_in = 512  # Default to CLIP ViT-B/32
+            cond_in = 512
 
     print(f"Using embedding dimension: {cond_in}")
 
@@ -63,7 +55,6 @@ def create_generator(ckpt, device):
         out_size=args.get('img_size', 128)
     ).to(device)
 
-    # Load EMA weights if available
     if 'ema' in ckpt:
         print("Loading EMA weights")
         G.load_state_dict(ckpt['G'])
@@ -78,7 +69,6 @@ def create_generator(ckpt, device):
     return G, args, clip_model_name
 
 def load_clip_model(device, model_name="ViT-B/32"):
-    """Load CLIP model for text encoding."""
     try:
         import open_clip
     except ImportError:
@@ -86,10 +76,9 @@ def load_clip_model(device, model_name="ViT-B/32"):
         print("Install with: pip install open_clip_torch")
         exit(1)
 
-    # Map model names to correct pretrained weights
     model_pretraining_map = {
         "ViT-B/32": "laion2b_s34b_b79k",
-        "ViT-L/14": "laion2b_s32b_b82k",  # This is the correct one for your model!
+        "ViT-L/14": "laion2b_s32b_b82k",
         "ViT-H/14": "laion2b_s32b_b79k",
     }
 
@@ -104,7 +93,6 @@ def load_clip_model(device, model_name="ViT-B/32"):
     return model, tokenizer
 
 def encode_text(clip_model, tokenizer, text, device, target_dim=None):
-    """Encode text prompt to CLIP embedding."""
     import open_clip
 
     # Tokenize and encode
