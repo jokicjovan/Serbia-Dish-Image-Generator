@@ -208,7 +208,16 @@ def main(args):
     ckpt = load_checkpoint(args.checkpoint, device)
     G, train_args, clip_model_name = create_generator(ckpt, device)
     z_dim = train_args.get('z_dim', 128)
-    cond_in = train_args.get('cond_in') or G.embed[0].in_features
+
+    # Get embedding dimension from training args or detect from model
+    cond_in = train_args.get('cond_in')
+    if cond_in is None:
+        # Try to get from generator state if not in args
+        gen_state = ckpt['G']
+        if 'cond.0.weight' in gen_state:
+            cond_in = gen_state['cond.0.weight'].shape[1]
+        else:
+            cond_in = 512  # fallback
 
     clip_model, _ = load_clip_model(device, clip_model_name)
 
