@@ -104,6 +104,19 @@ def main(args):
 
     scaler = torch.amp.GradScaler('cuda', enabled=(device=="cuda"))
 
+    # Resume from checkpoint if specified
+    start_step = 0
+    if args.resume_from:
+        print(f"Loading checkpoint from {args.resume_from}")
+        checkpoint = torch.load(args.resume_from, map_location=device)
+        G.load_state_dict(checkpoint["G"])
+        D.load_state_dict(checkpoint["D"])
+        optG.load_state_dict(checkpoint["optG"])
+        optD.load_state_dict(checkpoint["optD"])
+        ema.shadow = checkpoint["ema"]
+        start_step = checkpoint["step"]
+        print(f"Resumed from step {start_step}")
+
     os.makedirs(args.out_dir, exist_ok=True)
     fixed = next(iter(dl))
     fixed_e = fixed[1][:args.n_sample].to(device)
@@ -113,8 +126,18 @@ def main(args):
     log_data = []
     log_file = os.path.join(args.out_dir, 'training_log.json')
 
-    step = 0
-    pbar = tqdm(total=args.iters, desc="training")
+    # Load existing log data if resuming
+    if args.resume_from and os.path.exists(log_file):
+        try:
+            with open(log_file, 'r') as f:
+                log_data = json.load(f)
+            print(f"Loaded {len(log_data)} existing log entries")
+        except:
+            print("Could not load existing log data, starting fresh")
+            log_data = []
+
+    step = start_step
+    pbar = tqdm(total=args.iters, desc="training", initial=start_step)
 
     while step < args.iters:
         for x, e in dl:
@@ -270,5 +293,6 @@ if __name__ == "__main__":
     ap.add_argument("--n_sample", type=int, default=8)
     ap.add_argument("--log_every", type=int, default=10, help="Log metrics every N steps")
     ap.add_argument("--plot_every", type=int, default=500, help="Update plots every N steps")
+    ap.add_argument("--resume_from", type=str, default="", help="Path to checkpoint file to resume from")
     args = ap.parse_args()
     main(args)
