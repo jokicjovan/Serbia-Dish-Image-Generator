@@ -18,12 +18,21 @@ def create_generator(ckpt, device):
     # Get embedding dimension from checkpoint args or generator state dict
     cond_in = args.get('cond_in')  # Try to get from saved args first
     if cond_in is None:
-        # Fallback: infer from generator's embed layer weight shape
+        # Fallback: infer from generator's conditioning layer weight shape
         gen_state = ckpt['G']
-        if 'embed.0.weight' in gen_state:
+        if 'cond.0.weight' in gen_state:
+            # The conditioning layer input size tells us the embedding dimension
+            cond_in = gen_state['cond.0.weight'].shape[1]
+            print(f"Detected embedding dimension from cond.0.weight: {cond_in}")
+        elif 'embed.0.weight' in gen_state:
             cond_in = gen_state['embed.0.weight'].shape[1]
+            print(f"Detected embedding dimension from embed.0.weight: {cond_in}")
         else:
             print("WARNING: Could not determine embedding dimension from checkpoint.")
+            print("Analyzing generator state dict keys...")
+            # Print available keys to help debug
+            cond_keys = [k for k in gen_state.keys() if 'cond' in k or 'embed' in k]
+            print(f"Available conditioning keys: {cond_keys}")
             print("Note: CLIP ViT-B/32 produces 512-dim embeddings, ViT-L/14 produces 768-dim")
             cond_in = 512  # Default to CLIP ViT-B/32
 
