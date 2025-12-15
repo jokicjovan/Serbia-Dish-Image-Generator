@@ -485,8 +485,7 @@ data_pipeline/data/*
 models_pipeline/sd_lora/dataset/*
 models_pipeline/sd_lora/testing/generated_test_images/*
 models_pipeline/sd_lora/outputs/*
-/data/images_cropped
-/data/processed
+/data/*
 /src/cvae/checkpoints
 /src/cvae/results
 /test/images
