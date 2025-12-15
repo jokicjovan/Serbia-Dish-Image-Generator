@@ -481,6 +481,11 @@ tags
 data_merged/images.zip
 images.rar
 images.zip
+data/*
+refined_data/**
+/checkpoints
+data.zip
+*.zip
 data_pipeline/data/*
 models_pipeline/sd_lora/dataset/*
 models_pipeline/sd_lora/testing/generated_test_images/*
