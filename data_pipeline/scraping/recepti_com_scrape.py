@@ -1,6 +1,6 @@
 import re
 import uuid
-from uuid import uuid4
+from pathlib import Path
 
 import requests
 import time
@@ -8,6 +8,9 @@ from bs4 import BeautifulSoup
 from PIL import Image
 from concurrent.futures import ThreadPoolExecutor
 import threading
+
+
+BASE_DIR = Path(__file__).resolve().parents[1]
 
 class Dish:
     def __init__(self, name=None, ingredients=None, preparation=None, image_path=None):
@@ -85,7 +88,7 @@ def process_page(pageCounter):
             img = li_dish.find('img')
             dish.image_path = image_folder + str(uuid.uuid4()) + ".jpg"
             image = Image.open(requests.get(main_url + img['src'], stream=True).raw)
-            image.save("data/raw/recepti/" + dish.image_path)
+            image.save(BASE_DIR / "data/raw/recepti/" / dish.image_path)
 
             dish_url = main_url + li_dish.find('a')['href']
             dish_response = requests.get(dish_url)
@@ -105,7 +108,7 @@ pages = 606
 with ThreadPoolExecutor() as executor:
     executor.map(process_page, range(pages))
 
-with open("data/raw/recepti/dishes.json", "w", encoding="utf-8") as file:
+with open(BASE_DIR / "data/raw/recepti/dishes.json", "w", encoding="utf-8") as file:
     file.write(str(dishes).replace("'", "\""))
 
 print(f"Execution time for {16*pages} images: {time.time() - start_time} seconds")
