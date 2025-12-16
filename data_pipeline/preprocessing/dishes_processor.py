@@ -10,10 +10,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # =============== CONFIG =================
-BASE_DIR = Path(__file__).resolve().parents[1]
+BASE_DIR = Path(__file__).resolve().parents[2]
 
 # Input
-INPUT_DIR = BASE_DIR / "data/combined"          # Root directory containing raw data (JSON + images)
+INPUT_DIR = BASE_DIR / "data/raw"               # Root directory containing raw data (JSON + images)
 INPUT_JSON = INPUT_DIR / "dishes.json"          # Input JSON file with dishes array
 
 # Output

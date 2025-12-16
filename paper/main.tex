@@ -1,0 +1,388 @@
+\documentclass[conference]{IEEEtran}
+
+% --- PAKETI ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[serbian]{babel} % Srpski jezik
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{subcaption}
+\usepackage{url}
+
+% Linkovi
+\definecolor{lightblue}{RGB}{0,191,255}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=lightblue,
+    citecolor=black
+}
+
+% --- KOD BLOKOVI (ako zatrebaju) ---
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{red},
+  showstringspaces=false,
+  frame=single,
+  breaklines=true,
+  language=Python
+}
+
+% --- POČETAK DOKUMENTA ---
+\begin{document}
+
+\title{Implementacija softverskog rešenja za generisanje slika srpskih tradicionalnih jela analizom recepata i sastojaka}
+
+\author{%
+\IEEEauthorblockN{Bojan Mijanović, Vukašin Bogdanović, Jovan Jokić}
+\IEEEauthorblockA{\textit{Softversko inženjerstvo i informacione tehnologije}\\
+\textit{Univerzitet u Novom Sadu, Fakultet tehničkih nauka}\\
+Novi Sad, Srbija\\
+\href{mailto:mijanovic.r23.2024@uns.ac.rs}{mijanovic.r23.2024@uns.ac.rs}\quad
+\href{mailto:bogdanovic.r212.2024@uns.ac.rs}{bogdanovic.r212.2024@uns.ac.rs}\quad
+\href{mailto:jokic.r219.2024@uns.ac.rs}{jokic.r219.2024@uns.ac.rs}}
+}
+
+\maketitle
+
+% \begin{abstract}
+% Ovde treba ubaciti kratak apstrakt rada.
+% \end{abstract}
+
+\section{Uvod}
+
+U eri digitalne transformacije, veštačka inteligencija (AI) i mašinsko učenje postaju ključni alati u različitim sferama ljudskog delovanja, uključujući i očuvanje kulturnog nasleđa. Gastronomija, kao fundamentalni deo kulturnog identiteta jednog naroda, doživljava novu renesansu kroz digitalizaciju. Generativni modeli, posebno u domenu sinteze slike iz teksta (eng. \textit{text-to-image}), otvorili su revolucionarne mogućnosti za vizuelizaciju, edukaciju i promociju, omogućavajući kreiranje vizuelnog sadržaja iz prostog tekstualnog opisa.
+
+Srpska tradicionalna kuhinja, sa svojom bogatom istorijom i raznovrsnošću, predstavlja značajan deo nacionalne baštine. Međutim, dok moderna kulinarska produkcija ima snažnu vizuelnu komponentu, ogroman deo tradicionalnog gastronomskog nasleđa, sačuvan u starim kuvarima, digitalizovanim arhivama i porodičnim beleškama, postoji isključivo u tekstualnoj formi. Ovi stariji recepti, prenošeni generacijama, često nemaju prateću sliku, što predstavlja ključnu prepreku za njihovu popularizaciju i očuvanje u digitalnom dobu. Bez vizuelne reprezentacije, korisnicima je teško da steknu pravu predstavu o krajnjem rezultatu jela, što smanjuje atraktivnost ovih recepata i otežava njihovo prenošenje novim generacijama koje su prevashodno vizuelno orijentisane.
+
+Iako postoje moćni, opšte namenski generativni modeli trenirani na ogromnim skupovima podataka (npr. \textit{Stable Diffusion}, \textit{DALL-E}), oni često ne uspevaju da adekvatno generišu specifične, kulturološki nijansirane koncepte. Generisanje autentičnog prikaza lokalnih jela zahteva specifično poznavanje sastojaka i izgleda koji opšti modeli ne poseduju. Postoji jasna potreba za razvojem specijalizovanog rešenja koje može precizno interpretirati tekstualne opise (sastojke i korake pripreme) na srpskom jeziku i generisati fotorealistične prikaze koji odgovaraju tradicionalnoj srpskoj kuhinji.
+
+Ovaj rad stoga predlaže razvoj i evaluaciju sistema koji transformiše tekstualni ulaz, specifično listu sastojaka i korake pripreme na srpskom jeziku u fotorealistični vizuelni izlaz koji predstavlja finalno jelo. Da bi se model obučio da razume semantičku vezu između teksta i slike u domenu srpske kuhinje, kreiraće se namenski skup podataka prikupljanjem recepata sa postojećih kulinarskih portala. Centralni deo istraživanja biće komparativna analiza različitih generativnih pristupa. Rad će uporediti performanse modela zasnovanih na arhitekturama kao što su kondicioni varijacioni autoenkoderi (cVAE) i kondicione generativne adversarijalne mreže (cGAN), treniranih na prikupljenom skupu podataka, sa rezultatima dobijenim finim podešavanjem (eng. \textit{fine-tuning}) velikih, prethodno obučenih modela (\textit{Stable Diffusion}) koristeći moderne i resursno efikasne tehnike poput LoRA (\textit{Low-Rank Adaptation}).
+
+\section{Teorijske osnove}
+Ovo poglavlje pruža teorijski pregled generativnih modela i tehnika koje se koriste u ovom radu.
+
+\subsection{Varijacioni Autoenkoderi (VAE)}
+Varijacioni autoenkoderi (VAE), koje su uveli Kingma i Welling \cite{ref1}, su generativni modeli koji pripadaju klasi modela zasnovanih na verovatnoći. Osnovna ideja VAE je da nauči latentnu reprezentaciju ($z$) ulaznih podataka ($x$). Sastoje se od dve glavne komponente: enkodera $q(z|x)$ i dekodera $p(x|z)$.
+
+VAE se trenira maksimizacijom donje granice verovatnoće (eng. \textit{Evidence Lower Bound} - ELBO), što je ekvivalentno minimizaciji funkcije gubitka koja se sastoji od gubitka rekonstrukcije i Kullback-Leibler (KL) divergencije, koja deluje kao regularizator \cite{ref1}. Funkcija gubitka (ELBO) za VAE je:
+
+\begin{equation} \label{eq:vae}
+\mathcal{L}_{VAE} = \mathbb{E}_{q(z|x)}[\log p(x|z)] - D_{KL}(q(z|x) || p(z))
+\end{equation}
+
+Gde prvi član predstavlja očekivani logaritam verovatnoće rekonstrukcije, a drugi član je KL divergencija.
+
+\subsection{Kondicioni Varijacioni Autoenkoderi (cVAE)}
+
+Kondicioni varijacioni autoenkoderi (cVAE) su proširenje VAE modela koje omogućava kontrolisano generisanje \cite{ref2}. Ovo se postiže uslovljavanjem (eng. \textit{conditioning}) kako enkodera tako i dekodera dodatnim informacijama $c$ (npr. tekstualni embeding). Enkoder uči distribuciju $q(z|x, c)$, a dekoder $p(x|z, c)$. Funkcija gubitka se prilagođava da uključi ovaj uslov:
+
+\begin{equation} \label{eq:cvae}
+\mathcal{L}_{cVAE} = \mathbb{E}_{q(z|x, c)}[\log p(x|z, c)] - D_{KL}(q(z|x, c) || p(z|c))
+\end{equation}
+
+\subsection{Generativne Adversarijalne Mreže (GAN)}
+
+Generativne adversarijalne mreže (GAN), koje je uveo Goodfellow et al. \cite{ref3}, predstavljaju pristup zasnovan na teoriji igara. GAN se sastoji od dve suprotstavljene neuronske mreže: Generatora ($G$) koji kreira podatke iz šuma $z$, i Diskriminatora ($D$) koji pokušava da razlikuje stvarne podatke ($x$) od lažnih ($G(z)$). Ove dve mreže igraju "minimax" igru definisanu ciljnom funkcijom:
+
+\begin{equation} \label{eq:gan}
+\begin{split}
+\min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{data}(x)}[\log D(x)] \\ + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]
+\end{split}
+\end{equation}
+
+\subsection{Kondicione Generativne Adversarijalne Mreže (cGAN)}
+
+Mirza i Osindero \cite{ref4} su predložili kondicione generativne adversarijalne mreže (cGAN) kao proširenje koje omogućava kontrolu nad izlazom. I generatoru $G(z, c)$ i diskriminatoru $D(x, c)$ se prosleđuje dodatni uslov $c$. Ovo omogućava modelu da generiše slike koje odgovaraju specifičnom ulaznom tekstu, što je osnova za mnoge \textit{text-to-image} modele pre pojave difuzije.
+
+\subsection{Difuzioni Modeli (Diffusion Models)}
+
+Difuzioni modeli \cite{ref5}, \cite{ref6} su klasa generativnih modela koji postižu vrhunske rezultate (eng. \textit{state-of-the-art}) u sintezi slika. Rade na principu dva procesa: (1) proces unapred, gde se Gausov šum postepeno dodaje slici $x_0$ kroz $T$ koraka dok ne postane čisti šum $x_T$, i (2) proces unazad, gde se neuronska mreža (tipično U-Net) trenira da poništi ovaj proces, iterativno predviđajući i uklanjajući šum iz $x_T$ da bi se rekonstruisala $x_0$. Generisanje je uslovljeno (npr. tekstom) ubacivanjem vektora uslova $c$ u U-Net tokom procesa uklanjanja šuma.
+
+\subsection{Stable Diffusion}
+
+Standardni difuzioni modeli su računarski zahtevni jer rade u prostoru piksela. Rombach et al. \cite{ref7} su predstavili \textit{Latentne Difuzione Modele} (LDM), arhitekturu koja stoji iza \textit{Stable Diffusion} modela. LDM primenjuje difuzioni proces ne u prostoru piksela, već u \textit{latentnom prostoru} niže dimenzije. Slika se prvo kompresuje pomoću enkodera pre-treniranog VAE modela. Difuzija se vrši na ovoj latentnoj reprezentaciji, a zatim se rezultat dekodira nazad u prostor piksela pomoću VAE dekodera. Ovo drastično smanjuje računarsku složenost \cite{ref7}.
+
+\subsection{LoRA (Low-Rank Adaptation)}
+
+Fino podešavanje (\textit{fine-tuning}) modela sa milijardama parametara, kao što je \textit{Stable Diffusion}, je izuzetno skupo. LoRA (\textit{Low-Rank Adaptation}) \cite{ref8} je tehnika za efikasno fino podešavanje. LoRA zamrzava originalne težine modela ($W_0$) i ubacuje dve male, trenabilne matrice niskog ranga ($A$ i $B$) u ključne slojeve (npr. \textit{attention} slojeve). Tokom treninga, ažuriraju se samo parametri $A$ i $B$, gde je $\Delta W = BA$. Pošto je $r \ll d$ (gde je $r$ rang, a $d$ dimenzija), broj parametara za treniranje je drastično smanjen \cite{ref8}.
+
+\subsection{FID (Fréchet Inception Distance)}
+
+\textit{Fréchet Inception Distance} (FID) \cite{ref9} je standardna metrika za evaluaciju kvaliteta i raznovrsnosti generisanih slika. FID meri sličnost između distribucije stvarnih slika ($x$) i distribucije generisanih slika ($g$). Obe grupe slika se propuštaju kroz pre-treniranu Inception-v3 mrežu da bi se dobili embedinzi (aktivacije). Zatim se te dve distribucije embedinga modeliraju kao multivarijantne Gausove distribucije, izračunavanjem njihovih srednjih vrednosti ($\mu$) i kovarijansnih matrica ($\Sigma$). FID se izračunava kao Fréchet distanca između ove dve distribucije:
+
+\begin{equation} \label{eq:fid}
+FID(x, g) = ||\mu_x - \mu_g||^2 + \text{Tr}(\Sigma_x + \Sigma_g - 2(\Sigma_x \Sigma_g)^{1/2})
+\end{equation}
+
+Niža FID vrednost ukazuje na veću sličnost između distribucija stvarnih i generisanih slika \cite{ref9}.
+
+\subsection{CLIPScore}
+
+CLIPScore je metrika za procenu semantičke usklađenosti između generisane slike i pripadajućeg tekstualnog opisa. Zasniva se na CLIP (\textit{Contrastive Language–Image Pretraining}) modelu, koji zajednički uči reprezentacije teksta i slike mapirajući ih u isti latentni prostor \cite{ref10}.
+
+Za datu sliku i tekstualni opis, CLIP enkoderi proizvode odgovarajuće vektorske reprezentacije koje se zatim upoređuju. CLIPScore se računa kao skalirana kosinusna sličnost između embeddinga slike i embeddinga teksta, pri čemu veće vrednosti ukazuju na jaču semantičku povezanost generisanog vizuelnog sadržaja i ulaznog opisa.
+
+Za razliku od metrika koje mere samo vizuelni kvalitet ili statističku sličnost distribucija (npr. FID), CLIPScore direktno procenjuje koliko generisana slika odgovara značenju teksta, što ga čini posebno pogodnim za evaluaciju \textit{text-to-image} modela.
+
+\subsection{CLIP Cosine Similarity}
+
+CLIP cosine similarity predstavlja osnovnu meru sličnosti između tekstualnog i slikovnog embeddinga dobijenih iz CLIP modela. Izračunava se kao kosinus ugla između dva vektora u zajedničkom latentnom prostoru:
+
+\begin{equation} \label{eq:clip_cosine}
+\text{cos\_sim}(t, i) = \frac{t \cdot i}{\|t\|\|i\|}
+\end{equation}
+
+gde su $t$ i $i$ embedding vektori teksta i slike, respektivno. Vrednosti kosinusne sličnosti se nalaze u intervalu $[-1, 1]$, pri čemu veće vrednosti označavaju bolju semantičku usklađenost.
+
+Ova metrika omogućava finiju analizu poravnanja teksta i slike i često se koristi zajedno sa CLIPScore-om kako bi se dobila stabilnija i interpretabilnija evaluacija generisanih rezultata.
+
+\section{Srodni radovi}
+Generisanje slika hrane na osnovu tekstualnog opisa predstavlja aktuelan izazov u domenu multimodalnog mašinskog učenja. Raniji pristupi, kao što je \textit{ChefGAN} koji su predložili Pan et al. \cite{pan2020chefgan}, uspešno su koristili kondicione generativne adversarijalne mreže (cGAN) za sintezu slika iz recepata, primenom kaskadnih modula za postizanje veće rezolucije i namenskih enkodera za tekst. Novija istraživanja se u velikoj meri oslanjaju na superiorne performanse difuzionih modela. Rad Ma et al. \cite{ma2024memory} predstavlja \textit{MLA-Diff} model, koji koristi difuziju poboljšanu memorijskim modulima i unapređenim CLIP enkoderom za rešavanje \textit{few-shot} problema generisanja na osnovu liste sastojaka. Pored samog generisanja, srodni radovi poput \textit{Foodfusion} (Shi et al. \cite{shi2024foodfusion}) bave se problemom kompozicije slika hrane, ali i, što je za ovaj rad posebno relevantno, rigoroznim metodologijama za kreiranje i preprocesiranje velikih skupova podataka, uključujući automatsku procenu i filtriranje slika lošeg kvaliteta. Ovaj rad se nadovezuje na ovu literaturu tako što direktno poredi klasične cGAN pristupe \cite{pan2020chefgan} sa modernim tehnikama finog podešavanja difuzionih modela (LoRA), koristeći CLIP kao centralni multimodalni enkoder po uzoru na \cite{ma2024memory}, ali na novom, specifičnom skupu podataka tradicionalne srpske kuhinje.
+
+\section{Skup podataka}
+Kvalitet i relevantnost skupa podataka su od presudnog značaja za uspešno treniranje generativnih modela, posebno u specifičnom domenu kao što je nacionalna kuhinja. S obzirom na to da ne postoji javno dostupan, anotiran skup podataka fokusiran na srpska tradicionalna jela pogodan za \textit{text-to-image} zadatke, kreiran je sopstveni skup podataka.
+
+\subsection{Prikupljanje podataka}
+Podaci su prikupljeni sa popularnih domaćih kulinarskih portala \textit{recepti.com} i \textit{coolinarica.com}, koji poseduju bogatu bazu recepata koje su postavljali korisnici. Za potrebe automatskog preuzimanja podataka, razvijene su namenske skripte za struganje podataka (eng. \textit{web scraping}) u programskom jeziku Python, koristeći biblioteke \textit{BeautifulSoup} i \textit{Selenium}.
+
+Proces prikupljanja obuhvatio je preuzimanje slika jela, naziva recepata, liste sastojaka i tekstualnog opisa pripreme. Inicijalnim pokretanjem skripti prikupljen je sirovi skup podataka koji je brojao približno 30.000 unosa. Svi podaci su objedinjeni i strukturirani u jedinstveni JSON format, gde svaki objekat predstavlja instancu jela sa pratećim metapodacima.
+
+\subsection{Filtriranje i čišćenje podataka}
+Sirovi podaci prikupljeni sa interneta po prirodi sadrže veliku količinu šuma. Analizom inicijalnog skupa uočeni su sledeći problemi:
+\begin{itemize}
+    \item Slike izuzetno niske rezolucije ili lošeg osvetljenja.
+    \item Slike koje ne prikazuju hranu (npr. slike ambalaže, pribora ili lica).
+    \item Generičke slike preuzete sa interneta (stock fotografije) koje ne odgovaraju receptu.
+    \item Duplikati istih jela pod različitim nazivima.
+\end{itemize}
+
+Zbog toga je sproveden proces ručnog čišćenja i verifikacije. Cilj je bio zadržati samo one slike koje su vizuelno jasne, estetski prihvatljive i koje verodostojno predstavljaju koncept tradicionalne kuhinje. Nakon eliminacije neadekvatnih primera, veličina skupa podataka je redukovana sa 30.000 na finalnih 7.000 visokokvalitetnih parova slika i teksta. Iako je ovo značajno smanjenje kvantiteta, kvalitet podataka je drastično povećan, što je ključno za stabilnost treninga i vernost generisanih rezultata.
+
+\subsection{Preprocesiranje teksta i augmentacija}
+Sirovi tekstualni podaci (sastojci i priprema) zahtevali su značajnu obradu pre upotrebe u modelima. Prvi korak podrazumevao je čišćenje teksta od HTML tagova, suvišnih razmaka i nestandardnih karaktera.
+
+S obzirom na to da su osnovni modeli korišćeni u ovom radu (kao što je \textit{Stable Diffusion}) i njihovi tekstualni enkoderi (CLIP) primarno trenirani na engleskom jeziku, direktna upotreba srpskog jezika dovela bi do suboptimalnih rezultata. Takođe, originalni recepti su često predugački i sadrže narativne elemente nepotrebne za vizuelno generisanje.
+
+Za rešavanje ovog problema korišćen je veliki jezički model GPT-4o (OpenAI). Implementiran je automatizovani \textit{pipeline} u kojem se modelu prosleđuje originalni naziv, sastojci i opis na srpskom jeziku, uz sistemsku instrukciju (eng. \textit{system prompt}) da izvrši dva zadatka:
+\begin{enumerate}
+    \item Prevod ključnih vizuelnih elemenata na engleski jezik.
+    \item Sažimanje (eng. \textit{summarization}) teksta u koncizan opis (eng. \textit{caption}) koji je optimizovan za \textit{text-to-image} modele (fokus na boje, teksture, oblike i serviranje, a ne na proces kuvanja).
+\end{enumerate}
+
+\subsection{Generisanje embedinga}
+Kao finalni korak pripreme podataka, tekstualni opisi dobijeni od GPT-4o modela konvertovani su u vektorski prostor (embedinge). Za ovu svrhu korišćen je CLIP (\textit{Contrastive Language-Image Pre-Training}) model \cite{radford2021learning}. CLIP projektuje tekst i sliku u zajednički latentni prostor, omogućavajući modelu da razume semantičku povezanost između vizuelnih i tekstualnih podataka. Ovi pre-komputirani embedinzi su korišćeni kao uslovni ulaz (kondicioniranje) tokom treniranja generativnih modela opisanih u sekciji Metodologija.
+
+\section{Metodologija}
+Ovo poglavlje opisuje tehničku implementaciju predloženog sistema. Proces se sastoji od tri ključne faze: (1) kodiranje tekstualnih opisa u vektorski prostor, (2) treniranje osnovnih generativnih modela (cVAE i cGAN) od nule na prikupljenom skupu podataka, i (3) fino podešavanje (eng. \textit{fine-tuning}) savremenog difuzionog modela korišćenjem tehnike LoRA.
+
+\subsection{Pregled arhitekture sistema}
+Ulaz u sistem predstavljaju preprocesirani tekstualni opisi jela na engleskom jeziku (dobijeni metodom opisanom u poglavlju 4). Ovi opisi se prvo propuštaju kroz pre-trenirani enkoder teksta kako bi se dobila bogata semantička reprezentacija (embeding). Dobijeni vektori služe kao uslov (kondicioniranje) za generativne modele koji na izlazu produku finalnu sliku jela.
+
+\subsection{Kodiranje teksta i kondicioniranje}
+Za razumevanje semantike teksta korišćen je \textit{CLIP (Contrastive Language-Image Pre-Training)} model \cite{radford2021learning}. Konkretno, korišćena je varijanta ViT-L/14 koja tekstualni opis preslikava u vektor fiksne dužine od 768 dimenzija.
+Ovaj vektor se koristi kao uslovni ulaz $c$ u svim eksperimentima. S obzirom na to da je CLIP treniran na stotinama miliona parova slika-tekst, on omogućava modelima da razumeju koncepte (npr. "crvena boja", "tanjir", "čorba") mnogo bolje nego što bi to bilo moguće učenjem samo na našem ograničenom skupu podataka.
+
+\subsection{Implementacija osnovnih modela}
+U prvoj fazi eksperimenta, implementirani su i trenirani cVAE i cGAN modeli "od nule" (eng. \textit{from scratch}) na prikupljenom skupu podataka. Cilj je bio uspostaviti osnovnu liniju performansi (eng. \textit{baseline}). Slike su za potrebe ovih modela skalirane na rezoluciju od 128x128 piksela.
+
+\subsubsection{Arhitektura cVAE}
+Za implementaciju kondicionog varijacionog autoenkodera je korišćena konvuoluciona arhitektura zasnovana na CLIP embedinzima kao uslovnom signalu. Model se sastoji iz enkodera i dekodera, i adaptirani su za generisanje slika dimenzija 64x64. U daljem tekstu ćemo se osvrnuti na komponente \textit{cVAE} modela:
+
+\paragraph{Enkoder} Arhitektura enkodera ima za cilj da transformiše ulazne slike u latentni prostor zadate dimenzionalnosti.\textit{CLIP} embedinzi se prostorno repliciraju i konkateniraju sa ulaznom slikom duž kanalne dimenzije. Enkoder se sastoji od četiri konvoluciona bloka. Nakon svakog konvolucionog bloka izuzev prvog, prisutna je \textit{batch} normalizacija i kao i deaktivacija određenog procenta neurona. Korišćena je ReLU aktivacija. Dva linearna sloja generišu parametre latentne distribucije (μ i log σ²). Uzorkovanje iz latentnog prostora vrši se pomoću reparametrizacionog trika: z = μ + σ · ε. 
+
+\paragraph{Dekoder} Ulaz u dekoder predstavlja latentni vektor koji se konkatenira sa \textit{CLIP} embedingom. Dekoder se sastoji iz četiri konvoluciona transponovana bloka koji uvećavaju prostornu dimenzionalnost. Ovde se, kao i u enkoderu, koriste ReLU aktivacija i \textit{batch} normalizacija. Izuzetak predstavlja finalni sloj koji koristi Tanh aktivaciju. 
+Trening je izvršen kroz 35 epoha, dok funkcija gubitka kombinuje \textit{MSE} (\textit{eng. Mean Squared Error}) i Kullback-Leibler divergenciju 
+\subsubsection{Arhitektura cGAN}
+Za implementaciju kondicionog GAN-a korišćena je arhitektura zasnovana na rezidualnim blokovima sa CLIP embedinzima kao uslovom, uz primenu naprednih tehnika stabilizacije.
+
+\paragraph{Generator} Sastoji se od niza ResNet blokova sa uzorkovanjem naviše (4×4 → 128×128). Ključna komponenta je Conditional Batch Normalization (CondBN) gde se parametri $\gamma$ i $\beta$ generišu direktno iz 768-dimenzionalnih tekstualnih embedinga. Koristi se ReLU aktivacija u skrivenim slojevima i Tanh na izlazu.
+
+\paragraph{Diskriminator} Implementiran je kao \textit{Projection Discriminator} sa ResNet blokovima. Za obezbeđivanje Lipschitz-ovog ograničenja, ključnog za stabilnost GAN treninga, primenjena je spektralna normalizacija (eng. \textit{Spectral Normalization}) na svim slojevima.
+
+\paragraph{Trening} Koristi Hinge Loss funkciju i Adam optimizator ($\beta_1=0.0$, $\beta_2=0.9$). Radi sprečavanja preprilagođavanja diskriminatora na malom skupu podataka, primenjena je diferencijabilna augmentacija (DiffAug) koja uključuje nasumične promene boja i geometrijske transformacije tokom samog treninga. Dodatno, koristi se R1 \textit{gradient penalty} i eksponencijalni pokretni prosek (EMA) težina generatora za stabilniju inferenciju.
+
+\subsection{Fino podešavanje latentnog difuzionog modela}
+Zbog visoke računske zahtevnosti potpunog treniranja difuzionih modela, u ovom radu je primenjen pristup efikasnog finog podešavanja (eng. \textit{Parameter-Efficient Fine-Tuning} - PEFT) korišćenjem tehnike LoRA na \textit{Stable Diffusion v1.5} modelu.
+
+Umesto ažuriranja svih težina, LoRA ubacuje trenabilne matrice niskog ranga u slojeve unakrsne pažnje (eng. \textit{cross-attention}). Definisana su dva eksperimentalna okvira kako bi se ispitala uloga semantičkog razumevanja:
+\begin{itemize}
+    \item \textbf{UNet-only:} Fino podešavanje isključivo vizuelnog dela modela (U-Net), dok tekstualni enkoder ostaje zamrznut.
+    \item \textbf{UNet + Text Encoder:} Istovremeno ažuriranje vizuelnog modela i CLIP tekstualnog enkodera, kako bi se model bolje prilagodio specifičnoj terminologiji srpske kuhinje.
+\end{itemize}
+
+Ovaj pristup omogućava komparativnu analizu između stabilnosti vizuelnog generisanja i fleksibilnosti semantičkog razumevanja.
+
+\subsection{Eksperimentalno okruženje}
+Treniranje je sprovedeno u hibridnom hardverskom okruženju. Modeli trenirani od nule (cVAE, cGAN) razvijani su na lokalnoj radnoj stanici sa NVIDIA GeForce RTX 5060 Ti grafičkom karticom. Za fino podešavanje \textit{Stable Diffusion} modela korišćeno je \textit{cloud} okruženje (Google Colab) sa NVIDIA T4 GPU-om, radi optimizacije korišćenjem \textit{xFormers} biblioteke i efikasnije manipulacije memorijom. Implementacija se oslanja na \textit{PyTorch} i \textit{Diffusers} biblioteke.
+
+Hiperparametri treninga za cVAE model su bili sledeći:
+\begin{itemize}
+    \item Trajanje treninga: 35 epoha sa priodom čuvanja kontrolnih tačaka na svakih 5 epoha.
+    \item Veličina paketa (eng. \textit{batch size}): 64. 
+    \item Stopa učenja (eng. \textit{learning rate}):
+     $2 \times 10^{-4}$, sa AdamW optimizatorom i weight decay faktorom od  $1 \times 10^{-5}$ za regularizaciju .
+    \item Optimizator: Korišćen je AdamW optimizator sa parametrima $\beta_1=0.9$ i $\beta_2=0.999$.
+    \item Regularizacija: Korišćeno je sečenje gradijenta (eng. \textit{gradient clipping}) sa normom $1.0$ kao i deaktivacija neurona sa stopom $1.0$ u enkoderu.
+    \item Beta parametar: $\beta=0.5$ za ponderisanje \textit{KL} divergencije u funkciji gubitka.
+    \item \textit{KL} zagrevanje: Primenjeno je linearno zagrevanje u periodu od 10 epoha za postepenu aktivaciju \textit{KL} divergencije u cilju sprečavanja kolapsa latentnog prostora u ranim fazama treninga.
+    \item CLIP kondicioniranje: Korišćeni su  512-dimenzianalnih iz ViT-B/32 .
+\end{itemize}
+
+Hiperparametri treninga za cGAN model su bili sledeći:
+\begin{itemize}
+    \item Trajanje treninga: 40,000 iteracija.
+    \item Veličina paketa (eng. \textit{batch size}): 4. Ova vrednost je odabrana zbog optimizacije za memorijska ograničenja RTX 5060 Ti GPU-a.
+    \item Stopa učenja (eng. \textit{learning rate}):
+    Za generator je korišćena konzervativna stopa od $5 \times 10^{-5}$, dok je za diskriminator korišćena nešto veća stopa od $1.5 \times 10^{-4}$ radi održavanja stabilnosti treninga.
+    \item Optimizator: Korišćen je Adam optimizator sa parametrima $\beta_1=0.0$ i $\beta_2=0.9$.
+    \item Regularizacija: Primenjen je R1 penal nad gradijentima ($\lambda=2.0$) radi stabilizacije diskriminatora, kao i sečenje gradijenta (eng. \textit{gradient clipping}) sa normom $1.0$.
+    \item EMA (Exponential Moving Average): Korišćen je faktor opadanja od $0.999$ za težine generatora tokom inferencije, što je omogućilo stabilniju generaciju.
+    \item Kapacitet modela: Osnovni broj kanala (eng. \textit{base channels}) je postavljen na 32 (umanjeno sa standardnih 64) kako bi se zadovoljila memorijska ograničenja hardvera.
+    \item CLIP kondicioniranje: Korišćeni su 768-dimenzionalni embedinzi iz ViT-L/14 modela umesto standardnih 512-dimenzianalnih iz ViT-B/32 za bogatiju semantičku reprezentaciju.
+\end{itemize}
+Za fino podešavanje difuzionog modela korišćeni su sledeći parametri:
+\begin{itemize}
+    \item Osnovni model: Stable Diffusion v1.5.
+    \item Trajanje treninga: 2,000 iteracija.
+    \item Stopa učenja: Konstantna stopa od $1 \times 10^{-4}$.
+    \item Rezolucija: Slike su redimenzionirane na $512 \times 512$ piksela.
+    \item Optimizacija memorije: Korišćena je \textit{mixed-precision} (fp16) tehnika kako bi se smanjilo zauzeće memorije tokom treninga.
+\end{itemize}
+
+\section{Rezultati i diskusija}
+
+\subsection{cVAE rezultati}
+
+Proces treniranja cVAE modela kroz 35 epoha pokazuje uspešnu konvergenciju i stabilnost varijacionog učenja. Ukupan gubitak ({eng. total loss}) na početku treninga iznosi približno 2700 i rapidno opada tokom prvih 10 epoha, dostigavši vrednost oko 800. Nakon toga, model nastavlja da se postepeno poboljšava, sa finalnim vrednostima od približno 600 za trening skup i 680 za validacioni skup. Iako stabilan, cVAE model generiše slike koje su generalno mutnije i sa manje detalja u poređenju sa adversarijalnim i difuzionim pristupima, što je očekivano ograničenje MSE funkcije gubitka.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\columnwidth]{docs/images/cvae/losses_epoch_35.png}
+\caption{Funkcija gubitka tokom treniranja cVAE kroz 35 epoha}
+\label{fig:cvae_training}
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\columnwidth]{docs/images/cvae/generation_35.png}
+\caption{Primeri slika srpskih jela nastalih korišćenjem cVAE modela.}
+\label{fig:cgan_samples}
+\end{figure}
+
+\subsection{cGAN rezultati}
+
+Proces treniranja cGAN modela kroz 40.000 iteracija pokazuje uspešnu adversarijalnu stabilizaciju. Generator loss se kreće u opsegu 0.5-2.0, dok diskriminator loss osciluje oko 1.0-1.5, što ukazuje na zdravu konkurenciju između komponenti. Ključni faktor za uspeh bila je upotreba bogatijih, 768-dimenzionalnih CLIP embeddinga (ViT-L/14) umesto standardnih 512-dimenzionalnih, što je omogućilo preciznije semantičko uslovljavanje.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\columnwidth]{docs/images/cgan/training_losses_final.png}
+\caption{Dinamika treninga cGAN modela kroz finalne korake (~32k iteracija). Prikazani su generator loss, discriminator loss i discriminator outputs (real/fake logits).}
+\label{fig:cgan_training}
+\end{figure}
+
+Model dostiže stabilnu konvergenciju oko 32.000 koraka bez znakova kolapsa moda (eng. \textit{mode collapse}), zahvaljujući primeni spektralne normalizacije i konzervativnih stopa učenja.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\columnwidth]{docs/images/cgan/generated_samples_grid.png}
+\caption{Primeri generisanih slika srpskih jela i slika je korišćenjem cGAN modela. Grid prikazuje raznovrsnost generisanih jela uključujući sarmu, ćevape, gulaš, tradicionalne čorbe i pečena mesa.}
+\label{fig:cgan_samples}
+\end{figure}
+
+\subsection{LoRA rezultati}
+
+LoRA fine-tuning Stable Diffusion v1.5 modela evaluiran je kroz različite korake treninga, poredeći dve strategije: treniranje samo UNet-a i zajedničko treniranje UNet-a i tekstualnog enkodera.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\columnwidth]{docs/images/sd_lora/training_loss.png}
+\caption{Dinamika treninga LoRA modela. Prikazani su raw loss, EMA loss i rolling average kroz 500+ koraka treninga, demonstrirajući stabilnu konvergenciju.}
+\label{fig:lora_training}
+\end{figure}
+
+Analiza metrika prikazana u Tabeli \ref{tab:lora_results} otkriva interesantnu dinamiku: treniranje tekstualnog enkodera pruža rani skok u performansama (najbolji FID 155.17 na koraku 200), verovatno zbog boljeg prilagođavanja specifičnoj terminologiji skupa podataka. Međutim, nastavak treniranja tekstualnog enkodera dovodi do blagog pada performansi, sugerišući preprilagođavanje (eng. \textit{overfitting}). Nasuprot tome, treniranje samo UNet-a pokazuje veću stabilnost kroz epohe.
+
+\begin{table}[htbp]
+\caption{Rezultati LoRA finog podešavanja}
+\begin{center}
+% \columnwidth osigurava da tabela ne prelazi sirinu kolone/teksta
+\resizebox{\columnwidth}{!}{%
+    \begin{tabular}{|l|c|c|c|c|}
+    \hline
+    \textbf{Konfiguracija} & \textbf{Korak} & \textbf{FID ↓} & \textbf{CLIPScore ↑} & \textbf{CLIP cos sim ↑} \\
+    \hline
+    UNet only & 200 & 165.43 & 64.52 & 0.2904 \\
+    UNet only & 400 & 158.30 & 64.45 & 0.2890 \\
+    \hline
+    UNet + Text Encoder & 200 & \textbf{155.17} & \textbf{64.68} & \textbf{0.2936} \\
+    UNet + Text Encoder & 400 & 164.53 & 64.42 & 0.2884 \\
+    \hline
+    \end{tabular}%
+}
+\label{tab:lora_results}
+\end{center}
+\end{table}
+
+Posebno je značajan nalaz iz proširenog eksperimenta sa 7.000 uzoraka, gde je postignut izuzetno nizak FID od 113.24. Iako numerički superioran, kvalitativna analiza otkrila je snažan \textit{overfitting}: model je počeo da "memoriše" trening primere, generišući slike koje su gotovo identične originalima u smislu kompozicije i osvetljenja, gubeći sposobnost generalizacije i varijacije. Ovo potvrđuje da FID metrika mora biti praćena vizuelnom inspekcijom.
+
+\newpage
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\columnwidth]{docs/images/sd_lora/fid_steps.png}
+\caption{Evolucija FID metrike kroz korake treninga za različite LoRA konfiguracije. UNet + Text Encoder konfiguracija postiže najbolje performanse na 200 koraka.}
+\label{fig:lora_metrics}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}[b]{0.45\columnwidth}
+    \includegraphics[width=\columnwidth]{docs/images/sd_lora/prompt_0_base.png}
+    \caption{Bazni Stable Diffusion}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.45\columnwidth}
+    \includegraphics[width=\columnwidth]{docs/images/sd_lora/prompt_0_lora.png}
+    \caption{LoRA fine-tuned}
+\end{subfigure}
+\caption{Poređenje generisanja sarme: bazni model vs LoRA fine-tuned model. LoRA model pokazuje bolje razumevanje srpskog jela i tradicinalnog načina serviranja.}
+\label{fig:lora_comparison}
+\end{figure}
+
+\subsection{Komparativna analiza i diskusija}
+
+Poređenje cVAE, cGAN i LoRA pristupa otkriva jasne kompromise između resursa, kontrole i kvaliteta:
+
+\paragraph{Kvalitet slike i realizam} LoRA je ubedljivo superiorna, generišući slike visoke rezolucije (512x512) sa realističnim teksturama, zahvaljujući transferu znanja sa LAION-5B skupa. cGAN i cVAE, ograničeni treniranjem od nule na malom skupu, bore se sa generisanjem finih detalja i često proizvode geometrijske deformacije.
+
+\paragraph{Stabilnost treninga} cVAE se pokazao kao najstabilniji, ali po cenu oštrine slike. cGAN zahteva pažljivo podešavanje hiperparametara (R1 penalty, learning rate) kako bi se izbegao kolaps moda, ali nudi bolju oštrinu od cVAE. LoRA je stabilna i brzo konvergira, ali nosi rizik od katastrofalnog zaboravljanja ili overfittinga ako se predugo trenira na malom skupu.
+
+\paragraph{Efikasnost resursa} Iako deluje kontraintuitivno, LoRA je najefikasnija za postizanje visokog kvaliteta. Da bi cGAN dostigao sličan nivo realizma, zahtevao bi eksponencijalno više podataka i vremena za trening. LoRA omogućava demokratizaciju generativnih modela, postižući vrhunske rezultate na potrošačkom hardveru.
+
+Zaključno, za specifične domene sa ograničenim podacima poput nacionalne kuhinje, adaptacija velikih modela (LoRA) predstavlja optimalnu strategiju, dok su arhitekture trenirane od nule (cGAN, cVAE) primerenije za scenarije gde je dostupna ogromna količina specifičnih podataka ili gde su hardverski resursi za inferenciju ekstremno ograničeni.
+\section{Zaključak}
+
+Ovaj rad je predstavio sveobuhvatnu studiju o primeni generativnih modela veštačke inteligencije za digitalno očuvanje srpskog kulinarskog nasleđa. Temeljni doprinos istraživanja predstavlja razvoj prvog kuriranog multimodalnog skupa podataka od 7.000 parova slika i teksta. Analiza je pokazala da je semantički kvalitet opisa, postignut integracijom GPT i CLIP modela, bio presudan za uspešno uslovljavanje generativnih procesa.
+
+Rezultati nedvosmisleno potvrđuju primat \textit{transfer learning} pristupa kroz LoRA fino podešavanje. Međutim, studija je otkrila važne nijanse u procesu treniranja: dok je uključivanje tekstualnog enkodera donelo inicijalna poboljšanja, dugotrajno treniranje na ograničenom skupu dovelo je do gubitka generalizacije. Posebno je značajan nalaz da puko povećanje skupa podataka i produženo treniranje mogu dovesti do "memorisanja" uzoraka, gde numerički bolji FID skor prikriva kvalitativni pad u raznovrsnosti generisanih jela. Ovo naglašava potrebu za balansom između adaptacije modela i očuvanja njegovog prethodnog znanja.
+
+S druge strane, arhitekture trenirane od nule (cGAN i cVAE) su, uprkos nižoj vizuelnoj vernosti, demonstrirale važnost arhitektonskih izbora. Implementacija 768-dimenzionalnih CLIP embeddinga u cGAN modelu pokazala se kao ključna za stabilizaciju adversarijalnog treninga i precizno semantičko mapiranje, nudeći putokaz za buduće lake modele specifične namene.
+
+Zaključno, dok LoRA nudi trenutno najviši kvalitet za vizuelizaciju kulturne baštine, dugoročno rešenje leži u hibridnom pristupu: korišćenju moćnih pre-treniranih osnova uz pažljivo kurirane, manje skupove podataka i rigoroznu kvalitativnu, a ne samo kvantitativnu evaluaciju.
+
+% Bibliografija
+\newpage
+\bibliographystyle{IEEEtran}
+\bibliography{bibliography}
+
+\end{document}
