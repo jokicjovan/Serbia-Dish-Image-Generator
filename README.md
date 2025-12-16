@@ -248,7 +248,73 @@ Notice how the generated image:
 ---
 
 ## ⚡ CVAE Model
-*Details to be added*
+### 🔍 Architecture Overview
+
+- Conditional VAE: Generates and reconstructs images conditioned on CLIP text embeddings
+- Encoder-Decoder Structure: Convolutional architecture with latent space bottleneck
+- Embedding Dimension: 512-dimensional CLIP embeddings guide both encoding and generation
+
+### 🧩 Why use a Conditional VAE (CVAE)?
+- Pros
+
+  - Stable and predictable training (no adversarial setup)
+  - Explicit latent space enables smooth interpolation and controlled variation
+  - Lightweight and suitable for training on consumer GPUs
+
+- Cons
+  - Generates blurrier images compared to GAN- or diffusion-based models
+  - Limited scalability to high resolutions due to convolutional and memory constraints
+  - Less capable of modeling fine-grained textures and high-frequency details
+
+### 🔧 Training Setup
+
+- Device: CUDA GPU (fallback to CPU)
+- Optimizer: AdamW with weight decay (1e-5) for stable training
+- Learning Rate: 2e-4 with ReduceLROnPlateau scheduler
+- Loss Components:
+  - Reconstruction Loss (MSE): ensures visual fidelity
+  - KL Divergence: regularizes latent space distribution 
+  - Beta-VAE weighting: configurable β parameter (default: 0.5)
+
+
+- KL Warmup: gradual introduction of KL loss over first 10 epochs to prevent posterior collapse
+Gradient Clipping: max norm 1.0 for training stability
+Training script location: train.py
+Model architecture: model.py (Encoder, Decoder, ConvCVAE)
+Dataset handler: dataset.py (CaptionImageSet)
+
+### 🧾 Dataset Input Format
+
+- Each training example: image + pre-computed CLIP embedding (512-dim .npy file)
+- Supported formats: .jpg, .jpeg, .png, .webp
+- Dataset structure:
+  - */images/: image files
+  - */embeds/: corresponding .npy embedding files
+- Data split: 90% training / 10% testing (configurable)
+- Preprocessing: Resize to 64×64, normalize to [-1, 1] range
+- CLIP embeddings are generated beforehand and guide the conditional generation process
+
+
+### How to use this model
+
+- Training from scratch
+  - `python train.py \
+    --data_root data/processed \
+    --img_size 64 \
+    --batch_size 128 \
+    --latent_dim 128 \
+    --beta 0.5 \
+    --epochs 100 \
+    --lr 2e-4`
+- Resume from checkpoint
+  - `python train.py --checkpoint path/to/checkpoint.pt`
+- Generate image from existing checkpoint:
+  - `python generate_images.py \
+  --checkpoint path/to/best_checkpoint.pt \
+  --prompt "Sarma, a traditional Serbian dish of cabbage rolls served in a clay pot" \
+  --num_samples 8 \
+  --output my_sarma.png`
+  
 
 ## ⚡ cGAN Model
 

@@ -486,6 +486,10 @@ refined_data/**
 /checkpoints
 data.zip
 *.zip
+/test/images
+/test
+/src/cvae/checkpoints
+/src/cvae/results
 data_pipeline/data/*
 models_pipeline/sd_lora/dataset/*
 models_pipeline/sd_lora/testing/generated_test_images/*
