@@ -1,257 +1,139 @@
-import numpy as np
-import tensorflow as tf
-from keras import Model
-from keras.initializers import he_normal
-from keras.layers import BatchNormalization, Conv2D, Conv2DTranspose, Flatten, Dense, InputLayer, Reshape
-from keras.src.losses import binary_crossentropy
+import torch
+from torch import cat, clamp
+from torch import nn
+from torch.nn import Module, Sequential, Conv2d, Dropout2d, BatchNorm2d, Flatten, Linear, ConvTranspose2d, ReLU, Tanh, \
+    LeakyReLU, init
 
 
-class Encoder(Model):
-
-    def __init__(self, latent_dim, concat_input_and_condition=True):
-
+class Encoder(Module):
+    """Encoder component"""
+    def __init__(self, latent_dim, img_dim):
         super(Encoder, self).__init__()
-        self.use_cond_input = concat_input_and_condition
-        self.enc_block_1 = Conv2D(
-            filters=32,
-            kernel_size=3,
-            strides=(2, 2),
-            padding='same',
-            kernel_initializer=he_normal())
+        self.latent_dim = latent_dim
+        self.img_dim = img_dim
+        self.encoder_input = self.img_dim[-1] + 512
+        self.layers = Sequential(
+            Conv2d(self.encoder_input, 64, kernel_size=4, stride=2, padding=1),
+            LeakyReLU(0.2),
+            Dropout2d(0.1),
 
-        self.enc_block_2 = Conv2D(
-            filters=64,
-            kernel_size=3,
-            strides=(2, 2),
-            padding='same',
-            kernel_initializer=he_normal())
+            Conv2d(64, 128, kernel_size=4, stride=2, padding=1),
+            BatchNorm2d(128),
+            LeakyReLU(0.2),
+            Dropout2d(0.1),
 
-        self.enc_block_3 = Conv2D(
-            filters=128,
-            kernel_size=3,
-            strides=(2, 2),
-            padding='same',
-            kernel_initializer=he_normal())
+            Conv2d(128, 256, kernel_size=4, stride=2, padding=1),
+            BatchNorm2d(256),
+            LeakyReLU(0.2),
+            Dropout2d(0.1),
 
-        self.enc_block_4 = Conv2D(
-            filters=256,
-            kernel_size=3,
-            strides=(2, 2),
-            padding='same',
-            kernel_initializer=he_normal())
+            Conv2d(256, 512, kernel_size=4, stride=2, padding=1),
+            BatchNorm2d(512),
+            LeakyReLU(0.2),
+            Flatten(),
+        )
 
-        self.enc_block_5 = Conv2D(
-            filters=512,
-            kernel_size=3,
-            strides=(2, 2),
-            padding='same',
-            kernel_initializer=he_normal())
+        self.mean = Linear(512 * 4 * 4, latent_dim)
+        self.log_of_variance = Linear(512 * 4 * 4, latent_dim)
 
-        self.bn5 = BatchNormalization()
-        self.bn1 = BatchNormalization()
-        self.bn2 = BatchNormalization()
-        self.bn3 = BatchNormalization()
-        self.bn4 = BatchNormalization()
 
-        self.flatten = Flatten()
-        self.dense = Dense(2* latent_dim)
+    def forward(self, img, embedding):
+        embedding = embedding.view(embedding.size(0), 512, 1, 1).repeat(1, 1, self.img_dim[0], self.img_dim[1])
+        result = cat((img, embedding), dim=1)
+        x = self.layers(result)
+        mean = self.mean(x)
+        log_of_var = clamp(self.log_of_variance(x), min=-10, max=10)
+        return mean, log_of_var
 
-    def __call__(self, input_img, input_label, conditional_input, is_train):
-        x = conditional_input if self.use_cond_input else input_img
 
-        x = self.enc_block_1(x)
-        x = BatchNormalization(trainable=is_train)(x)
-        x = tf.nn.leaky_relu(x)
+class Decoder(Module):
+    '''Decoder component'''
+    def __init__(self, latent_dim):
+        super(Decoder, self).__init__()
+        self.decoder_input = Linear(latent_dim + 512, 512 * 4 * 4)
+        self.layers = Sequential(
+            ConvTranspose2d(512, 256, kernel_size=4, stride=2, padding=1),
+            BatchNorm2d(256),
+            ReLU(),
 
-        x = self.enc_block_2(x)
-        x = BatchNormalization(trainable=is_train)(x)
-        x = tf.nn.leaky_relu(x)
+            ConvTranspose2d(256, 128, kernel_size=4, stride=2, padding=1),
+            BatchNorm2d(128),
+            ReLU(),
 
-        x = self.enc_block_3(x)
-        x = BatchNormalization(trainable=is_train)(x)
-        x = tf.nn.leaky_relu(x)
+            ConvTranspose2d(128, 64, kernel_size=4, stride=2, padding=1),
+            BatchNorm2d(64),
+            ReLU(),
 
-        x = self.enc_block_4(x)
-        x = BatchNormalization(trainable=is_train)(x)
-        x = tf.nn.leaky_relu(x)
+            ConvTranspose2d(64, 3, kernel_size=4, stride=2, padding=1),
+            Tanh()
+        )
 
-        x = self.enc_block_5(x)
-        x = BatchNormalization(trainable=is_train)(x)
-        x = tf.nn.leaky_relu(x)
-
-        if not self.use_cond_input:
-            cond = tf.reshape(input_label, [tf.shape(input_img)[0], 4, 4, -1])
-            x = tf.concat([x, cond], axis=3)
-
-        x = self.dense(self.flatten(x))
-
+    def forward(self, z, clip_embedding):
+        z = cat([z, clip_embedding], dim=1)
+        x = self.decoder_input(z)
+        x = x.view(-1, 512, 4, 4)
+        x = self.layers(x)
         return x
 
-class Decoder(Model):
 
-    def __init__(self, batch_size=32):
-        super(Decoder, self).__init__()
+class ConvCVAE(Module):
+    """Conditional Variational Autoencoder."""
 
-        self.batch_size = batch_size
-        self.dense = Dense(4 * 4 * 512)
-        self.reshape = Reshape(target_shape=(4, 4, 512))
-
-        self.dec_block_1 = Conv2DTranspose(
-            filters=256,
-            kernel_size=3,
-            strides=(2, 2),
-            padding='same',
-            kernel_initializer=he_normal())
-
-        self.dec_block_2 = Conv2DTranspose(
-            filters=128,
-            kernel_size=3,
-            strides=(2, 2),
-            padding='same',
-            kernel_initializer=he_normal())
-
-        self.dec_block_3 = Conv2DTranspose(
-            filters=64,
-            kernel_size=3,
-            strides=(2, 2),
-            padding='same',
-            kernel_initializer=he_normal())
-
-        self.dec_block_4 = Conv2DTranspose(
-            filters=32,
-            kernel_size=3,
-            strides=(2, 2),
-            padding='same',
-            kernel_initializer=he_normal())
-
-        self.dec_block_5 = Conv2DTranspose(
-            filters=16,
-            kernel_size=3,
-            strides=(2, 2),
-            padding='same',
-            kernel_initializer=he_normal())
-
-        self.dec_block_out = Conv2DTranspose(
-            filters=3,
-            kernel_size=3,
-            strides=(1, 1),
-            padding='same',
-            kernel_initializer=he_normal())
-
-        self.bn1 = BatchNormalization()
-        self.bn2 = BatchNormalization()
-        self.bn3 = BatchNormalization()
-        self.bn4 = BatchNormalization()
-        self.bn5 = BatchNormalization()
-
-    def __call__(self, z_cond, is_train):
-        x = self.dense(z_cond)
-        x = tf.nn.leaky_relu(x)
-        x = self.reshape(x)
-
-        x = self.dec_block_1(x)
-        x = BatchNormalization(trainable=is_train)(x)
-        x = tf.nn.leaky_relu(x)
-
-        x = self.dec_block_2(x)
-        x = BatchNormalization(trainable=is_train)(x)
-        x = tf.nn.leaky_relu(x)
-
-        x = self.dec_block_3(x)
-        x = BatchNormalization(trainable=is_train)(x)
-        x = tf.nn.leaky_relu(x)
-
-        x = self.dec_block_4(x)
-        x = BatchNormalization(trainable=is_train)(x)
-        x = tf.nn.leaky_relu(x)
-
-        x = self.dec_block_5(x)
-        x = BatchNormalization(trainable=is_train)(x)
-        x = tf.nn.leaky_relu(x)
-
-        return self.dec_block_out(x)
-
-
-class ConvCVAE(Model):
-
-    def __init__(self,
-                 encoder,
-                 decoder,
-                 label_dim,
-                 latent_dim,
-                 batch_size=32,
-                 beta=1,
-                 image_dim= [128,128,3]):
+    def __init__(self, img_dim=[64, 64, 3], latent_dim=128):
         super(ConvCVAE, self).__init__()
-
-        self.encoder = encoder
-        self.decoder = decoder
-        self.label_dim = label_dim
+        self.img_size = img_dim[0]
         self.latent_dim = latent_dim
-        self.batch_size = batch_size
-        self.beta = beta
-        self.image_dim = image_dim
 
-    def __call__(self, inputs, is_train):
-        input_img, input_label, conditional_input = self.conditional_input(inputs)
+        self.encoder = Encoder(img_dim=img_dim,latent_dim=latent_dim)
 
-        z_mean, z_log_var = tf.split(self.encoder(input_img, input_label, conditional_input, is_train), num_or_size_splits=2, axis=1)
-        z_cond = self.reparametrization(z_mean, z_log_var, input_label)
-        logits = self.decoder(z_cond, is_train)
+        self.decoder = Decoder(latent_dim=latent_dim)
 
-        recon_img = tf.nn.sigmoid(logits)
+        self.apply(self._init_weights)
 
-        latent_loss = - 0.5 * tf.reduce_sum(1 + z_log_var - tf.square(z_mean) - tf.exp(z_log_var),
-                                            axis=-1)
-        reconstr_loss = np.prod((128, 128)) * binary_crossentropy(Flatten()(input_img), Flatten()(recon_img))  # over weighted MSE
-        loss = reconstr_loss + self.beta * latent_loss  # weighted ELBO loss
-        loss = tf.reduce_mean(loss)
+    def _init_weights(self, m):
+        if isinstance(m, (Conv2d, ConvTranspose2d)):
+            init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='leaky_relu')
+            if m.bias is not None:
+                init.constant_(m.bias, 0)
+        elif isinstance(m, BatchNorm2d):
+            init.constant_(m.weight, 1)
+            init.constant_(m.bias, 0)
+        elif isinstance(m, Linear):
+            init.xavier_normal_(m.weight)
+            init.constant_(m.bias, 0)
 
-        return {
-            'recon_img': recon_img,
-            'latent_loss': latent_loss,
-            'reconstr_loss': reconstr_loss,
-            'loss': loss,
-            'z_mean': z_mean,
-            'z_log_var': z_log_var
-        }
+    def reparameterize(self, mean, log_var):
+        std = torch.exp(0.5 * log_var)
+        e = torch.randn_like(std)
+        z = mean + e * std
+        return z
 
-    def conditional_input(self, inputs):
-        input_img = inputs[0]
-        input_label = inputs[1]
-        labels = tf.reshape(input_label, [-1, 1, 1, self.label_dim])
-        ones = tf.ones([tf.shape(input_img)[0]] + self.image_dim[0:-1] + [self.label_dim])
-        labels = ones * labels
-        conditional_input = tf.concat([input_img, labels], axis=3)
+    def encode(self, x, embedding):
+        return self.encoder(x, embedding)
 
-        return input_img, input_label, conditional_input
+    def decode(self, z, embedding):
+        return self.decoder(z, embedding)
 
-    def reparametrization(self, z_mean, z_log_var, input_label):
-        batch_size = tf.shape(input_label)[0]
-        eps = tf.random.normal(shape=(batch_size, self.latent_dim), mean=0.0, stddev=1.0)
-        z = z_mean + tf.math.exp(z_log_var * .5) * eps
-        z_cond = tf.concat([z, input_label], axis=1)  # (batch_size, label_dim + latent_dim)
+    def forward(self, x, embedding):
+        mean, log_var = self.encode(x, embedding)
+        z = self.reparameterize(mean, log_var)
+        recon_x = self.decode(z, embedding)
 
-        return z_cond
+        return recon_x, mean, log_var
 
-    def generate(self, text_embeddings, num_samples=None):
-        if len(text_embeddings.shape) == 1:
-            num_samples = num_samples or 1
-            text_embeddings = tf.tile(tf.expand_dims(text_embeddings, 0), [num_samples, 1])
+    def generate(self, embedding, num_samples=1):
+        embedding = embedding.unsqueeze(0).repeat(num_samples, 1) if len(embedding.shape) == 1 else embedding
 
-        batch_size = tf.shape(text_embeddings)[0]
+        z = torch.randn(embedding.size(0), self.latent_dim).to(embedding.device)
 
-        z = tf.random.normal(shape=(batch_size, self.latent_dim), mean=0.0, stddev=1.0)
+        with torch.no_grad():
+            generated = self.decode(z, embedding)
 
-        z_cond = tf.concat([z, text_embeddings], axis=1)
+        return generated
 
-        logits = self.decoder(z_cond, is_train=False)
-        generated_images = tf.nn.sigmoid(logits)
-
-        return generated_images
-
-    def reconstruct(self, images, labels):
-        output = self((images, labels), is_train=False)
-        return output['recon_img']
-
+    def reconstruct(self, x, clip_embedding):
+        with torch.no_grad():
+            mean, _ = self.encode(x, clip_embedding)
+            recon = self.decode(mean, clip_embedding)
+        return recon
 
