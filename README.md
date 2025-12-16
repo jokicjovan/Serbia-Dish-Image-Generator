@@ -124,7 +124,6 @@ image.save("output.png")
 ---
 
 ## ⚡ CVAE Model
-## ⚡ CVAE Model
 ### 🔍 Architecture Overview
 
 - Conditional VAE: Generates and reconstructs images conditioned on CLIP text embeddings
