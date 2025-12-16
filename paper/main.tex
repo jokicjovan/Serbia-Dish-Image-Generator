@@ -205,22 +205,27 @@ Za implementaciju kondicionog varijacionog autoenkodera je korišćena konvuoluc
 \paragraph{Dekoder} Ulaz u dekoder predstavlja latentni vektor koji se konkatenira sa \textit{CLIP} embedingom. Dekoder se sastoji iz četiri konvoluciona transponovana bloka koji uvećavaju prostornu dimenzionalnost. Ovde se, kao i u enkoderu, koriste ReLU aktivacija i \textit{batch} normalizacija. Izuzetak predstavlja finalni sloj koji koristi Tanh aktivaciju. 
 Trening je izvršen kroz 35 epoha, dok funkcija gubitka kombinuje \textit{MSE} (\textit{eng. Mean Squared Error}) i Kullback-Leibler divergenciju 
 \subsubsection{Arhitektura cGAN}
-Za implementaciju kondicionog GAN-a korišćena je arhitektura zasnovana na rezidualnim blokovima sa CLIP embedinzima kao uslovom.
+Za implementaciju kondicionog GAN-a korišćena je arhitektura zasnovana na rezidualnim blokovima sa CLIP embedinzima kao uslovom, uz primenu naprednih tehnika stabilizacije.
 
-\paragraph{Generator} sastoji se od niza ResNet blokova sa uzorkovanjem naviše (4×4 → 128×128). Ključna komponenta je Conditional Batch Normalization (CondBN) gde se parametri γ i β generišu iz tekstualnih embedinga. Koristi se ReLU aktivacija u skrivenim slojevima i Tanh na izlazu.
+\paragraph{Generator} Sastoji se od niza ResNet blokova sa uzorkovanjem naviše (4×4 → 128×128). Ključna komponenta je Conditional Batch Normalization (CondBN) gde se parametri $\gamma$ i $\beta$ generišu direktno iz 768-dimenzionalnih tekstualnih embedinga. Koristi se ReLU aktivacija u skrivenim slojevima i Tanh na izlazu.
 
-\paragraph{Diskriminator} je implementiran kao Projection Discriminator sa ResNet blokovima za smanjenje dimenzionalnosti. Umesto konkatenacije, koristi se tehnika projekcije: skalarni proizvod između vektora obeležja slike i projektovanog embedinga teksta.
+\paragraph{Diskriminator} Implementiran je kao \textit{Projection Discriminator} sa ResNet blokovima. Za obezbeđivanje Lipschitz-ovog ograničenja, ključnog za stabilnost GAN treninga, primenjena je spektralna normalizacija (eng. \textit{Spectral Normalization}) na svim slojevima.
 
-\paragraph{Trening} koristi Hinge Loss, Adam optimizator ($\beta_1=0.0$, $\beta_2=0.9$), R1 gradient penalty, i EMA sa faktorom 0.999 za stabilnost.
+\paragraph{Trening} Koristi Hinge Loss funkciju i Adam optimizator ($\beta_1=0.0$, $\beta_2=0.9$). Radi sprečavanja preprilagođavanja diskriminatora na malom skupu podataka, primenjena je diferencijabilna augmentacija (DiffAug) koja uključuje nasumične promene boja i geometrijske transformacije tokom samog treninga. Dodatno, koristi se R1 \textit{gradient penalty} i eksponencijalni pokretni prosek (EMA) težina generatora za stabilniju inferenciju.
 
 \subsection{Fino podešavanje latentnog difuzionog modela}
-Zbog visoke računske zahtevnosti potpunog treniranja difuzionih modela, u ovom radu je primenjen pristup efikasnog finog podešavanja (eng. \textit{Parameter-Efficient Fine-Tuning} - PEFT). Konkretno, korišćena je tehnika \textit{Low-Rank Adaptation} (LoRA) primenjena na pre-trenirani \textit{Stable Diffusion v1.5} model.
+Zbog visoke računske zahtevnosti potpunog treniranja difuzionih modela, u ovom radu je primenjen pristup efikasnog finog podešavanja (eng. \textit{Parameter-Efficient Fine-Tuning} - PEFT) korišćenjem tehnike LoRA na \textit{Stable Diffusion v1.5} modelu.
 
-Umesto ažuriranja svih težina u U-Net mreži, LoRA zamrzava originalne parametre modela i uvodi parove dekompozicionih matrica niskog ranga u slojeve unakrsne pažnje (eng. \textit{cross-attention layers}). Ovo omogućava modelu da nauči specifične vizuelne karakteristike novog skupa podataka bez katastrofalnog zaboravljanja (eng. \textit{catastrophic forgetting}) prethodnog znanja, uz drastično manju potrošnju VRAM memorije.
+Umesto ažuriranja svih težina, LoRA ubacuje trenabilne matrice niskog ranga u slojeve unakrsne pažnje (eng. \textit{cross-attention}). Definisana su dva eksperimentalna okvira kako bi se ispitala uloga semantičkog razumevanja:
+\begin{itemize}
+    \item \textbf{UNet-only:} Fino podešavanje isključivo vizuelnog dela modela (U-Net), dok tekstualni enkoder ostaje zamrznut.
+    \item \textbf{UNet + Text Encoder:} Istovremeno ažuriranje vizuelnog modela i CLIP tekstualnog enkodera, kako bi se model bolje prilagodio specifičnoj terminologiji srpske kuhinje.
+\end{itemize}
 
-Proces finog podešavanja fokusiran je na minimizaciju greške rekonstrukcije šuma, pri čemu model uči da generiše slike koje odgovaraju tekstualnim opisima iz domena našeg skupa podataka, zadržavajući pritom semantičko razumevanje stečeno na ogromnom skupu podataka (LAION-5B) na kojem je originalni model treniran.
+Ovaj pristup omogućava komparativnu analizu između stabilnosti vizuelnog generisanja i fleksibilnosti semantičkog razumevanja.
+
 \subsection{Eksperimentalno okruženje}
-Svi modeli su trenirani i evaluirani na hardverskoj konfiguraciji koja uključuje NVIDIA GeForce RTX 5060 Ti grafičku karticu. Implementacija je urađena u programskom jeziku Python koristeći biblioteke \textit{PyTorch} i \textit{Diffusers}.
+Treniranje je sprovedeno u hibridnom hardverskom okruženju. Modeli trenirani od nule (cVAE, cGAN) razvijani su na lokalnoj radnoj stanici sa NVIDIA GeForce RTX 5060 Ti grafičkom karticom. Za fino podešavanje \textit{Stable Diffusion} modela korišćeno je \textit{cloud} okruženje (Google Colab) sa NVIDIA T4 GPU-om, radi optimizacije korišćenjem \textit{xFormers} biblioteke i efikasnije manipulacije memorijom. Implementacija se oslanja na \textit{PyTorch} i \textit{Diffusers} biblioteke.
 
 Hiperparametri treninga za cVAE model su bili sledeći:
 \begin{itemize}
