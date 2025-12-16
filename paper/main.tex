@@ -260,7 +260,8 @@ Za fino podešavanje difuzionog modela korišćeni su sledeći parametri:
 
 \subsection{cVAE rezultati}
 
-Proces treniranja cVAE modela kroz 35 epoha pokazuje uspešnu konvergenciju i stabilnost varijacionog učenja. Ukupan gubitak ({eng. total loss}) na početku treninga iznosi približno 2700 i rapidno opada tokom prvih 10 epoha, dostigavši vrednost oko 800. Nakon toga, model nastavlja da se postepeno poboljšava, sa finalnim vrednostima od približno 600 za trening skup i 680 za validacioni skup.
+Proces treniranja cVAE modela kroz 35 epoha pokazuje uspešnu konvergenciju i stabilnost varijacionog učenja. Ukupan gubitak ({eng. total loss}) na početku treninga iznosi približno 2700 i rapidno opada tokom prvih 10 epoha, dostigavši vrednost oko 800. Nakon toga, model nastavlja da se postepeno poboljšava, sa finalnim vrednostima od približno 600 za trening skup i 680 za validacioni skup. Iako stabilan, cVAE model generiše slike koje su generalno mutnije i sa manje detalja u poređenju sa adversarijalnim i difuzionim pristupima, što je očekivano ograničenje MSE funkcije gubitka.
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\columnwidth]{docs/images/cvae/losses_epoch_35.png}
@@ -273,9 +274,10 @@ Proces treniranja cVAE modela kroz 35 epoha pokazuje uspešnu konvergenciju i st
 \caption{Primeri slika srpskih jela nastalih korišćenjem cVAE modela.}
 \label{fig:cgan_samples}
 \end{figure}
+
 \subsection{cGAN rezultati}
 
-Proces treniranja cGAN modela kroz 40.000 iteracija pokazuje uspešnu adversarijalnu stabilizaciju. Generator loss se kreće u opsegu 0.5-2.0, dok diskriminator loss osciluje oko 1.0-1.5, što ukazuje na zdravu konkurenciju između komponenti. Model dostiže stabilnu konvergenciju oko 32.000 koraka bez znakova mode collapse-a ili training instabilnosti.
+Proces treniranja cGAN modela kroz 40.000 iteracija pokazuje uspešnu adversarijalnu stabilizaciju. Generator loss se kreće u opsegu 0.5-2.0, dok diskriminator loss osciluje oko 1.0-1.5, što ukazuje na zdravu konkurenciju između komponenti. Ključni faktor za uspeh bila je upotreba bogatijih, 768-dimenzionalnih CLIP embeddinga (ViT-L/14) umesto standardnih 512-dimenzionalnih, što je omogućilo preciznije semantičko uslovljavanje.
 
 \begin{figure}[htbp]
 \centering
@@ -283,6 +285,8 @@ Proces treniranja cGAN modela kroz 40.000 iteracija pokazuje uspešnu adversarij
 \caption{Dinamika treninga cGAN modela kroz finalne korake (~32k iteracija). Prikazani su generator loss, discriminator loss i discriminator outputs (real/fake logits).}
 \label{fig:cgan_training}
 \end{figure}
+
+Model dostiže stabilnu konvergenciju oko 32.000 koraka bez znakova kolapsa moda (eng. \textit{mode collapse}), zahvaljujući primeni spektralne normalizacije i konzervativnih stopa učenja.
 
 \begin{figure}[htbp]
 \centering
@@ -293,7 +297,7 @@ Proces treniranja cGAN modela kroz 40.000 iteracija pokazuje uspešnu adversarij
 
 \subsection{LoRA rezultati}
 
-LoRA fine-tuning Stable Diffusion v1.5 modela evaluiran je kroz različite korake treninga sa dve konfiguracije: UNet-only i UNet + Text Encoder.
+LoRA fine-tuning Stable Diffusion v1.5 modela evaluiran je kroz različite korake treninga, poredeći dve strategije: treniranje samo UNet-a i zajedničko treniranje UNet-a i tekstualnog enkodera.
 
 \begin{figure}[htbp]
 \centering
@@ -301,6 +305,8 @@ LoRA fine-tuning Stable Diffusion v1.5 modela evaluiran je kroz različite korak
 \caption{Dinamika treninga LoRA modela. Prikazani su raw loss, EMA loss i rolling average kroz 500+ koraka treninga, demonstrirajući stabilnu konvergenciju.}
 \label{fig:lora_training}
 \end{figure}
+
+Analiza metrika prikazana u Tabeli \ref{tab:lora_results} otkriva interesantnu dinamiku: treniranje tekstualnog enkodera pruža rani skok u performansama (najbolji FID 155.17 na koraku 200), verovatno zbog boljeg prilagođavanja specifičnoj terminologiji skupa podataka. Međutim, nastavak treniranja tekstualnog enkodera dovodi do blagog pada performansi, sugerišući preprilagođavanje (eng. \textit{overfitting}). Nasuprot tome, treniranje samo UNet-a pokazuje veću stabilnost kroz epohe.
 
 \begin{table}[htbp]
 \caption{Rezultati LoRA finog podešavanja}
@@ -323,9 +329,9 @@ LoRA fine-tuning Stable Diffusion v1.5 modela evaluiran je kroz različite korak
 \end{center}
 \end{table}
 
-\newpage
-UNet + Text Encoder konfiguracija postiže najbolji FID rezultat (155.17) na 200 koraka, dok UNet-only zahteva 400 koraka za optimalne performanse (158.30). Prošireni eksperiment sa 7K uzoraka postiže FID od 113.24, ali pokazuje znake overfitting-a u kvalitativnoj analizi.
+Posebno je značajan nalaz iz proširenog eksperimenta sa 7.000 uzoraka, gde je postignut izuzetno nizak FID od 113.24. Iako numerički superioran, kvalitativna analiza otkrila je snažan \textit{overfitting}: model je počeo da "memoriše" trening primere, generišući slike koje su gotovo identične originalima u smislu kompozicije i osvetljenja, gubeći sposobnost generalizacije i varijacije. Ovo potvrđuje da FID metrika mora biti praćena vizuelnom inspekcijom.
 
+\newpage
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.9\columnwidth]{docs/images/sd_lora/fid_steps.png}
@@ -348,62 +354,26 @@ UNet + Text Encoder konfiguracija postiže najbolji FID rezultat (155.17) na 200
 \label{fig:lora_comparison}
 \end{figure}
 
-\subsection{Komparativna analiza}
+\subsection{Komparativna analiza i diskusija}
 
-Poređenje cVAE, cGAN i LoRA pristupa otkriva komplementarne prednosti:
+Poređenje cVAE, cGAN i LoRA pristupa otkriva jasne kompromise između resursa, kontrole i kvaliteta:
 
-\paragraph{cVAE prednosti} Stabilniji trening bez adversarijalne dinamike i problema mode collapse-a karakterističnih za cGAN i brža inferencija sa jednim forward pass-om umesto iterativnog denoising procesa 
+\paragraph{Kvalitet slike i realizam} LoRA je ubedljivo superiorna, generišući slike visoke rezolucije (512x512) sa realističnim teksturama, zahvaljujući transferu znanja sa LAION-5B skupa. cGAN i cVAE, ograničeni treniranjem od nule na malom skupu, bore se sa generisanjem finih detalja i često proizvode geometrijske deformacije.
 
-\paragraph{cGAN prednosti} Potpuna kontrola nad arhitekturom, kompaktniji model za deployment, trening isključivo na ciljanom skupu podataka.
+\paragraph{Stabilnost treninga} cVAE se pokazao kao najstabilniji, ali po cenu oštrine slike. cGAN zahteva pažljivo podešavanje hiperparametara (R1 penalty, learning rate) kako bi se izbegao kolaps moda, ali nudi bolju oštrinu od cVAE. LoRA je stabilna i brzo konvergira, ali nosi rizik od katastrofalnog zaboravljanja ili overfittinga ako se predugo trenira na malom skupu.
 
-\paragraph{LoRA prednosti} Superiorna vizuelna kvaliteta zahvaljujući pretreniranim težinama, viša rezolucija (512×512 vs 128×128), brža konvergencija.
+\paragraph{Efikasnost resursa} Iako deluje kontraintuitivno, LoRA je najefikasnija za postizanje visokog kvaliteta. Da bi cGAN dostigao sličan nivo realizma, zahtevao bi eksponencijalno više podataka i vremena za trening. LoRA omogućava demokratizaciju generativnih modela, postižući vrhunske rezultate na potrošačkom hardveru.
 
-\paragraph{Kvantitativno poređenje:} LoRA postiže niže FID vrednosti (~155 vs cGAN i cVAE koji nema numeričku FID procenu), dok sva tri pristupa postižu slične CLIPScore nivoe (~64-65). LoRA omogućava fine-tuning velikih modela sa dramatično smanjenim resursima, dok cGAN zahteva precizniju regulaciju hiperparametara za stabilnost.
-
-\subsection{Diskusija i ograničenja}
-
-\subsubsection{Inherentna ograničenja cGAN pristupa}
-
-Rezultati jasno pokazuju da cGAN i cVAE modeli trenirani od nule ne mogu da se mere sa performansama LoRA fine-tuned Stable Diffusion modela. Ova razlika nije iznenađujuća i proističe iz nekoliko fundamentalnih ograničenja:
-
-\paragraph{Ograničeni kapacitet skupa podataka:} Sa približno 7.000 slika, skup podataka je značajno manji od milijardi primera na kojima su trenirani modeli kao što je Stable Diffusion. cGAN i cVAE modeli moraju da uče reprezentacije "od nule" bez prethodnog znanja o vizuelnom svetu, što rezultuje:
-
-\begin{itemize}
-    \item Čestim geometrijskim deformacijama u generisanim slikama
-    \item Nekonzistentnim teksturama i površinama
-    \item Ograničenim razumevanjem prostornih odnosa između objekata
-    \item Teškoćama u generisanju finih detalja karakterističnih za srpska jela
-\end{itemize}
-
-\paragraph{Arhitekturna ograničenja:} cGAN model sa 128×128 rezolucijom i smanjenim brojem kanala (32), kao i cVAE sa identičnom ili čak nižom rezolucijom predstavlja značajan kompromis u odnosu na 512×512 LoRA model. Ova ograničenja su bila neophodna zbog memorijskih ograničenja GPU-a, ali direktno utiču na kvalitet generisanih slika.
-
-\paragraph{Potreba za proširenim treniranjem:} Trenutni rezultati ukazuju da bi cGAN model trebalo značajno duži trening period i veći skup podataka za postizanje zadovoljavajućeg kvaliteta. Procenjuje se da bi bilo potrebno:
-
-\begin{itemize}
-    \item Najmanje 20.000-30.000 visokokvalitetnih slika srpskih jela
-    \item 100.000-200.000 iteracija treninga za postizanje stabilnosti
-    \item Viša rezolucija (256×256 ili 512×512) za bolju reprezentaciju detalja
-    \item Naprednije regularizacijske tehnike za sprečavanje overfitting-a
-\end{itemize}
-
-\subsubsection{Prednosti LoRA pristupa u praktičnim scenarijima}
-
-LoRA fine-tuning se pokazao kao superioran pristup za praktične primene iz nekoliko razloga:
-
-\begin{itemize}
-    \item Leveraging pretrained knowledge: Korišćenje već naučenih reprezentacija sa LAION-5B skupa podataka omogućava modelu da se fokusira na specifičnosti srpske kuhinje umesto na fundamentalno učenje vizuelnih koncepta
-    \item Resource efficiency: Značajno manji računski troškovi u odnosu na trening cGAN-a od nule
-    \item Quality guarantee: Predvidljiv kvalitet rezultata zahvaljujući stabilnoj osnovi Stable Diffusion modela
-\end{itemize}
-
-\newpage
+Zaključno, za specifične domene sa ograničenim podacima poput nacionalne kuhinje, adaptacija velikih modela (LoRA) predstavlja optimalnu strategiju, dok su arhitekture trenirane od nule (cGAN, cVAE) primerenije za scenarije gde je dostupna ogromna količina specifičnih podataka ili gde su hardverski resursi za inferenciju ekstremno ograničeni.
 \section{Zaključak}
 
-Ovaj rad je predstavio sveobuhvatnu studiju o primeni generativnih modela veštačke inteligencije u cilju digitalnog očuvanja i promocije srpskog kulinarskog nasleđa. Kroz razvoj namenskog skupa podataka i komparativnu analizu tri različite arhitekture, demonstrirano je da primena naprednih metoda dubokog učenja može uspešno premostiti jaz između tekstualnih zapisa i vizuelne reprezentacije. Kreiranje i kuriranje prvog multimodalnog skupa podataka srpske tradicionalne kuhinje, koji se sastoji od 7.000 parova slika i teksta, predstavlja temeljni doprinos ovog istraživanja. Pokazalo se da je kvalitet podataka, uz semantičko obogaćivanje pomoću CLIP i GPT modela, presudan faktor za uspešno treniranje, koji u specifičnim domenima nadmašuje značaj samog kvantiteta sirovih podataka.
+Ovaj rad je predstavio sveobuhvatnu studiju o primeni generativnih modela veštačke inteligencije za digitalno očuvanje srpskog kulinarskog nasleđa. Temeljni doprinos istraživanja predstavlja razvoj prvog kuriranog multimodalnog skupa podataka od 7.000 parova slika i teksta. Analiza je pokazala da je semantički kvalitet opisa, postignut integracijom GPT i CLIP modela, bio presudan za uspešno uslovljavanje generativnih procesa.
 
-Rezultati komparativne analize jasno ukazuju na superiornost adaptivnog pristupa. Fino podešavanje \textit{Stable Diffusion} modela tehnikom LoRA (FID 155.17) omogućilo je generisanje fotorealističnih prikaza visoke rezolucije, efikasno koristeći prethodno stečeno "opšte znanje" modela i prilagođavajući ga specifičnostima srpske gastronomije. Nasuprot tome, modeli trenirani od nule, poput cVAE i cGAN, iako sposobni za učenje osnovnih distribucija boja i oblika, pokazali su ograničenja u vidu niže rezolucije i pojave geometrijskih artefakata. Analiza sugeriše da bi za postizanje uporedivog kvaliteta ovim pristupima bio neophodan drastično veći skup podataka i značajniji računarski resursi, što ih čini manje praktičnim za domene sa ograničenim izvorima podataka.
+Rezultati nedvosmisleno potvrđuju primat \textit{transfer learning} pristupa kroz LoRA fino podešavanje. Međutim, studija je otkrila važne nijanse u procesu treniranja: dok je uključivanje tekstualnog enkodera donelo inicijalna poboljšanja, dugotrajno treniranje na ograničenom skupu dovelo je do gubitka generalizacije. Posebno je značajan nalaz da puko povećanje skupa podataka i produženo treniranje mogu dovesti do "memorisanja" uzoraka, gde numerički bolji FID skor prikriva kvalitativni pad u raznovrsnosti generisanih jela. Ovo naglašava potrebu za balansom između adaptacije modela i očuvanja njegovog prethodnog znanja.
 
-Zaključno, istraživanje potvrđuje da je za digitalizaciju i vizuelizaciju kulturnog nasleđa strategija prenosa znanja (eng. \textit{transfer learning}) najefikasniji put. LoRA nudi optimalan balans između kvaliteta i resursa, čineći ovakva rešenja održivim i dostupnim. Buduća istraživanja će se usmeriti ka daljem proširenju skupa podataka i istraživanju hibridnih arhitektura koje bi mogle dodatno unaprediti vernost i brzinu generisanja, otvarajući nove mogućnosti za interaktivnu edukaciju i promociju nacionalne baštine.
+S druge strane, arhitekture trenirane od nule (cGAN i cVAE) su, uprkos nižoj vizuelnoj vernosti, demonstrirale važnost arhitektonskih izbora. Implementacija 768-dimenzionalnih CLIP embeddinga u cGAN modelu pokazala se kao ključna za stabilizaciju adversarijalnog treninga i precizno semantičko mapiranje, nudeći putokaz za buduće lake modele specifične namene.
+
+Zaključno, dok LoRA nudi trenutno najviši kvalitet za vizuelizaciju kulturne baštine, dugoročno rešenje leži u hibridnom pristupu: korišćenju moćnih pre-treniranih osnova uz pažljivo kurirane, manje skupove podataka i rigoroznu kvalitativnu, a ne samo kvantitativnu evaluaciju.
 
 % Bibliografija
 \newpage
