@@ -2,8 +2,8 @@
 
 This project aims to generate realistic images of Serbian dishes based on short text captions. Three models are being experimented with on the same dataset:
 1. LoRA-fine-tuned Stable Diffusion
-2. CVAE-based model (placeholder)
-3. GAN-based model (placeholder)
+2. CVAE model
+3. GAN model
 
 The project is structured as follows:
 - `data_pipeline/`: scripts for data collection, cleaning, preprocessing
@@ -11,8 +11,8 @@ The project is structured as follows:
   - `preprocessing/`: image cleaning, cropping, resizing, and caption preparation
 - `models_pipeline/`: scripts for training and evaluating models
   - `sd_lora/`: LoRA training and evaluation for Stable Diffusion
-  - `cvae/`: placeholder for CVAE model
-  - `gan/`: placeholder for GAN model
+  - `cvae/`: training from scratch and evaluation for CVAE model
+  - `gan/`: training from scratch and evaluation for GAN model
 
 All models share the **same dataset** of Serbian dishes, consisting of ~1,000 image-caption pairs. Captions were generated using GPT-4o-mini based on scraped **dish name, ingredients, and preparation**, to produce a short description of dish appearance used as input for training and generation.
 
@@ -235,19 +235,11 @@ Notice how the generated image:
 - Shows limited variation from known training examples
 
 #### Key Takeaways
-
-| Aspect | Finding | Recommendation |
-|--------|---------|----------------|
-| **Dataset Size** | Larger datasets improve FID but increase overfitting risk | Use datasets >5,000 images with proper regularization |
-| **Training Duration** | 1,000 steps leads to memorization | Stop training around 400-600 steps for small-to-medium datasets |
-| **Component Training** | Training both UNet + Text Encoder intensifies overfitting | Consider UNet-only for datasets <5,000 images |
-| **Evaluation Approach** | Quantitative metrics alone are insufficient | **Always combine numerical metrics with qualitative visual inspection** |
-
-**Conclusion:** While increasing dataset size and training duration improves FID scores, excessive fine-tuning—especially of both UNet and Text Encoder—can lead to overfitting. Visual realism improves at the cost of diversity and generalization. The **optimal training approach balances convergence with generalization**, requiring careful monitoring of both quantitative metrics and qualitative outputs.
+While increasing dataset size and training duration improves FID scores, excessive fine-tuning—especially of both UNet and Text Encoder—can lead to overfitting. Visual realism improves at the cost of diversity and generalization. The **optimal training approach balances convergence with generalization**, requiring careful monitoring of both quantitative metrics and qualitative outputs.
 
 ---
 
-## ⚡ CVAE Model
+## 🧩 CVAE Model
 ### 🔍 Architecture Overview
 
 - Conditional VAE: Generates and reconstructs images conditioned on CLIP text embeddings
@@ -330,7 +322,7 @@ Dataset handler: dataset.py (CaptionImageSet)
   --output my_sarma.png`
   
 
-## ⚡ cGAN Model
+## 🎭 cGAN Model
 
 ### 📍 Architecture Overview
 A conditional Generative Adversarial Network (cGAN) implementation for text-to-image generation of Serbian dishes, using CLIP embeddings for conditioning.
