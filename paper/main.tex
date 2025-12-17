@@ -15,6 +15,7 @@
 \usepackage{hhline}
 \usepackage{subcaption}
 \usepackage{url}
+\usepackage{float}
 
 % Linkovi
 \definecolor{lightblue}{RGB}{0,191,255}
@@ -116,7 +117,7 @@ Standardni difuzioni modeli su računarski zahtevni jer rade u prostoru piksela.
 
 \subsection{LoRA (Low-Rank Adaptation)}
 
-Fino podešavanje (\textit{fine-tuning}) modela sa milijardama parametara, kao što je \textit{Stable Diffusion}, je izuzetno skupo. LoRA (\textit{Low-Rank Adaptation}) \cite{ref8} je tehnika za efikasno fino podešavanje. LoRA zamrzava originalne težine modela ($W_0$) i ubacuje dve male, trenabilne matrice niskog ranga ($A$ i $B$) u ključne slojeve (npr. \textit{attention} slojeve). Tokom treninga, ažuriraju se samo parametri $A$ i $B$, gde je $\Delta W = BA$. Pošto je $r \ll d$ (gde je $r$ rang, a $d$ dimenzija), broj parametara za treniranje je drastično smanjen \cite{ref8}.
+Fino podešavanje (\textit{fine-tuning}) modela sa milijardama parametara, kao što je \textit{Stable Diffusion}, je izuzetno skupo. LoRA (\textit{Low-Rank Adaptation}) \cite{ref8} je tehnika za efikasno fino podešavanje. LoRA zamrzava originalne težine modela ($W_0$) i ubacuje dve male, matrice za trening niskog ranga ($A$ i $B$) u ključne slojeve (npr. \textit{attention} slojeve). Tokom treninga, ažuriraju se samo parametri $A$ i $B$, gde je $\Delta W = BA$. Pošto je $r \ll d$ (gde je $r$ rang, a $d$ dimenzija), broj parametara za treniranje je drastično smanjen \cite{ref8}.
 
 \subsection{FID (Fréchet Inception Distance)}
 
@@ -200,10 +201,10 @@ U prvoj fazi eksperimenta, implementirani su i trenirani cVAE i cGAN modeli "od 
 \subsubsection{Arhitektura cVAE}
 Za implementaciju kondicionog varijacionog autoenkodera je korišćena konvuoluciona arhitektura zasnovana na CLIP embedinzima kao uslovnom signalu. Model se sastoji iz enkodera i dekodera, i adaptirani su za generisanje slika dimenzija 64x64. U daljem tekstu ćemo se osvrnuti na komponente \textit{cVAE} modela:
 
-\paragraph{Enkoder} Arhitektura enkodera ima za cilj da transformiše ulazne slike u latentni prostor zadate dimenzionalnosti.\textit{CLIP} embedinzi se prostorno repliciraju i konkateniraju sa ulaznom slikom duž kanalne dimenzije. Enkoder se sastoji od četiri konvoluciona bloka. Nakon svakog konvolucionog bloka izuzev prvog, prisutna je \textit{batch} normalizacija i kao i deaktivacija određenog procenta neurona. Korišćena je ReLU aktivacija. Dva linearna sloja generišu parametre latentne distribucije (μ i log σ²). Uzorkovanje iz latentnog prostora vrši se pomoću reparametrizacionog trika: z = μ + σ · ε. 
+\paragraph{Enkoder} Arhitektura enkodera ima za cilj da transformiše ulazne slike u latentni prostor zadate dimenzionalnosti.\textit{CLIP} embedinzi se prostorno repliciraju i konkateniraju sa ulaznom slikom duž kanalne dimenzije. Enkoder se sastoji od četiri konvoluciona bloka. Nakon svakog konvolucionog bloka izuzev prvog, prisutna je \textit{batch} normalizacija i kao i deaktivacija određenog procenta neurona. Korišćena je ReLU aktivacija. Dva linearna sloja generišu parametre latentne distribucije (μ i log σ²). Uzorkovanje iz latentnog prostora vrši se pomoću reparametrizacionog trika: z = μ + σ · ε.
 
-\paragraph{Dekoder} Ulaz u dekoder predstavlja latentni vektor koji se konkatenira sa \textit{CLIP} embedingom. Dekoder se sastoji iz četiri konvoluciona transponovana bloka koji uvećavaju prostornu dimenzionalnost. Ovde se, kao i u enkoderu, koriste ReLU aktivacija i \textit{batch} normalizacija. Izuzetak predstavlja finalni sloj koji koristi Tanh aktivaciju. 
-Trening je izvršen kroz 35 epoha, dok funkcija gubitka kombinuje \textit{MSE} (\textit{eng. Mean Squared Error}) i Kullback-Leibler divergenciju 
+\paragraph{Dekoder} Ulaz u dekoder predstavlja latentni vektor koji se konkatenira sa \textit{CLIP} embedingom. Dekoder se sastoji iz četiri konvoluciona transponovana bloka koji uvećavaju prostornu dimenzionalnost. Ovde se, kao i u enkoderu, koriste ReLU aktivacija i \textit{batch} normalizacija. Izuzetak predstavlja finalni sloj koji koristi Tanh aktivaciju.
+Trening je izvršen kroz 35 epoha, dok funkcija gubitka kombinuje \textit{MSE} (\textit{eng. Mean Squared Error}) i Kullback-Leibler divergenciju
 \subsubsection{Arhitektura cGAN}
 Za implementaciju kondicionog GAN-a korišćena je arhitektura zasnovana na rezidualnim blokovima sa CLIP embedinzima kao uslovom, uz primenu naprednih tehnika stabilizacije.
 
@@ -218,8 +219,8 @@ Zbog visoke računske zahtevnosti potpunog treniranja difuzionih modela, u ovom 
 
 Umesto ažuriranja svih težina, LoRA ubacuje trenabilne matrice niskog ranga u slojeve unakrsne pažnje (eng. \textit{cross-attention}). Definisana su dva eksperimentalna okvira kako bi se ispitala uloga semantičkog razumevanja:
 \begin{itemize}
-    \item \textbf{UNet-only:} Fino podešavanje isključivo vizuelnog dela modela (U-Net), dok tekstualni enkoder ostaje zamrznut.
-    \item \textbf{UNet + Text Encoder:} Istovremeno ažuriranje vizuelnog modela i CLIP tekstualnog enkodera, kako bi se model bolje prilagodio specifičnoj terminologiji srpske kuhinje.
+    \item UNet-only: Fino podešavanje isključivo vizuelnog dela modela (U-Net), dok tekstualni enkoder ostaje zamrznut.
+    \item UNet + Text Encoder:e Istovremeno ažuriranje vizuelnog modela i CLIP tekstualnog enkodera, kako bi se model bolje prilagodio specifičnoj terminologiji srpske kuhinje.
 \end{itemize}
 
 Ovaj pristup omogućava komparativnu analizu između stabilnosti vizuelnog generisanja i fleksibilnosti semantičkog razumevanja.
@@ -230,7 +231,7 @@ Treniranje je sprovedeno u hibridnom hardverskom okruženju. Modeli trenirani od
 Hiperparametri treninga za cVAE model su bili sledeći:
 \begin{itemize}
     \item Trajanje treninga: 35 epoha sa priodom čuvanja kontrolnih tačaka na svakih 5 epoha.
-    \item Veličina paketa (eng. \textit{batch size}): 64. 
+    \item Veličina paketa (eng. \textit{batch size}): 64.
     \item Stopa učenja (eng. \textit{learning rate}):
      $2 \times 10^{-4}$, sa AdamW optimizatorom i weight decay faktorom od  $1 \times 10^{-5}$ za regularizaciju .
     \item Optimizator: Korišćen je AdamW optimizator sa parametrima $\beta_1=0.9$ i $\beta_2=0.999$.
@@ -255,9 +256,9 @@ Hiperparametri treninga za cGAN model su bili sledeći:
 Za fino podešavanje difuzionog modela korišćeni su sledeći parametri:
 \begin{itemize}
     \item Osnovni model: Stable Diffusion v1.5.
-    \item Trajanje treninga: 2,000 iteracija.
+    \item Trajanje treninga: 200-1000 iteracija.
     \item Stopa učenja: Konstantna stopa od $1 \times 10^{-4}$.
-    \item Rezolucija: Slike su redimenzionirane na $512 \times 512$ piksela.
+    \item Rezolucija: Slike su redimezionirane na $512 \times 512$ piksela.
     \item Optimizacija memorije: Korišćena je \textit{mixed-precision} (fp16) tehnika kako bi se smanjilo zauzeće memorije tokom treninga.
 \end{itemize}
 
@@ -265,7 +266,9 @@ Za fino podešavanje difuzionog modela korišćeni su sledeći parametri:
 
 \subsection{cVAE rezultati}
 
-Proces treniranja cVAE modela kroz 35 epoha pokazuje uspešnu konvergenciju i stabilnost varijacionog učenja. Ukupan gubitak ({eng. total loss}) na početku treninga iznosi približno 2700 i rapidno opada tokom prvih 10 epoha, dostigavši vrednost oko 800. Nakon toga, model nastavlja da se postepeno poboljšava, sa finalnim vrednostima od približno 600 za trening skup i 680 za validacioni skup. Iako stabilan, cVAE model generiše slike koje su generalno mutnije i sa manje detalja u poređenju sa adversarijalnim i difuzionim pristupima, što je očekivano ograničenje MSE funkcije gubitka.
+Proces treniranja cVAE modela kroz 35 epoha pokazuje uspešnu konvergenciju i stabilnost varijacionog učenja. Ukupan gubitak ({eng. \textit{total loss}}) na početku treninga iznosi približno 2700 i rapidno opada tokom prvih 10 epoha, dostigavši vrednost oko 800. Nakon toga, model nastavlja da se postepeno poboljšava, sa finalnim vrednostima od približno 600 za trening skup i 680 za validacioni skup.
+Evaluacija modela na test skupu od 500 slika pokazuje sledeće performanse: FID (eng. \textit{Fréchet Inception Distance}) skor od 204.09 ukazuje na značajnu razliku u distribuciji između generisanih i realnih slika. CLIP skor od 0.1858 ± 0.0243 meri semantičku usklađenost generisanih slika sa tekstualnim opisima, dok CLIP kosinusna sličnost od 0.1695 ± 0.0352 pokazuje umerenu korelaciju između ulaznih tekstualnih embedinga i generisanih slika. Ove metrike ukazuju da model uspešno uči uslovljenu generaciju, ali sa prostorom za dalja poboljšanja
+
 
 \begin{figure}[htbp]
 \centering
@@ -292,6 +295,7 @@ Proces treniranja cGAN modela kroz 40.000 iteracija pokazuje uspešnu adversarij
 \end{figure}
 
 Model dostiže stabilnu konvergenciju oko 32.000 koraka bez znakova kolapsa moda (eng. \textit{mode collapse}), zahvaljujući primeni spektralne normalizacije i konzervativnih stopa učenja.
+\newpage
 
 \begin{figure}[htbp]
 \centering
@@ -302,7 +306,11 @@ Model dostiže stabilnu konvergenciju oko 32.000 koraka bez znakova kolapsa moda
 
 \subsection{LoRA rezultati}
 
-LoRA fine-tuning Stable Diffusion v1.5 modela evaluiran je kroz različite korake treninga, poredeći dve strategije: treniranje samo UNet-a i zajedničko treniranje UNet-a i tekstualnog enkodera.
+LoRA fine-tuning Stable Diffusion v1.5 modela evaluiran je kroz različite korake treninga, poredeći dve strategije: treniranje samo UNet-a i zajedničko treniranje UNet-a i tekstualnog enkodera. Svi osnovni eksperimenti sprovedeni su na skupu od približno 1.000 slika, koji se pokazao kao optimalan balans između učenja domenski specifičnih vizuelnih karakteristika i očuvanja sposobnosti generalizacije.
+
+Dinamika treninga prikazana na slici \ref{fig:lora_training} pokazuje stabilnu i brzu konvergenciju, pri čemu se većina korisnih reprezentacija uči u prvih 200–300 koraka. Odsustvo oscilacija u EMA i rolling loss krivama ukazuje na stabilan proces optimizacije i adekvatno izabrane hiperparametre.
+
+
 
 \begin{figure}[htbp]
 \centering
@@ -311,7 +319,10 @@ LoRA fine-tuning Stable Diffusion v1.5 modela evaluiran je kroz različite korak
 \label{fig:lora_training}
 \end{figure}
 
-Analiza metrika prikazana u Tabeli \ref{tab:lora_results} otkriva interesantnu dinamiku: treniranje tekstualnog enkodera pruža rani skok u performansama (najbolji FID 155.17 na koraku 200), verovatno zbog boljeg prilagođavanja specifičnoj terminologiji skupa podataka. Međutim, nastavak treniranja tekstualnog enkodera dovodi do blagog pada performansi, sugerišući preprilagođavanje (eng. \textit{overfitting}). Nasuprot tome, treniranje samo UNet-a pokazuje veću stabilnost kroz epohe.
+Rezultati prikazani u Tabeli \ref{tab:lora_results} ukazuju da zajedničko treniranje UNet-a i tekstualnog enkodera ostvaruje najbolje kvantitativne performanse u ranoj fazi treninga (FID = 155.17 na 200 koraka), što se može pripisati boljem semantičkom poravnanju tekstualnih opisa tradicionalnih jela. Međutim, produženo treniranje ove konfiguracije dovodi do pogoršanja metrika, što ukazuje na pojavu preprilagođavanja (\textit{overfitting}) usled ograničene veličine skupa podataka.
+
+Nasuprot tome, treniranje samo UNet LoRA adaptera pokazuje veću stabilnost kroz veći broj koraka, uz manje varijacije FID i CLIP metrika. Ovi rezultati sugerišu da je UNet-only pristup robusniji izbor za manje skupove podataka, dok treniranje tekstualnog enkodera zahteva rano zaustavljanje.
+
 
 \begin{table}[htbp]
 \caption{Rezultati LoRA finog podešavanja}
@@ -334,9 +345,11 @@ Analiza metrika prikazana u Tabeli \ref{tab:lora_results} otkriva interesantnu d
 \end{center}
 \end{table}
 
-Posebno je značajan nalaz iz proširenog eksperimenta sa 7.000 uzoraka, gde je postignut izuzetno nizak FID od 113.24. Iako numerički superioran, kvalitativna analiza otkrila je snažan \textit{overfitting}: model je počeo da "memoriše" trening primere, generišući slike koje su gotovo identične originalima u smislu kompozicije i osvetljenja, gubeći sposobnost generalizacije i varijacije. Ovo potvrđuje da FID metrika mora biti praćena vizuelnom inspekcijom.
+U dodatnom eksperimentu sa proširenim skupom od približno 7.000 slika i 1.000 koraka treninga postignut je znatno niži FID (113.24). Iako numerički superioran, ovaj rezultat je praćen izraženim \textit{overfitting}-om: generisane slike pokazuju visoku sličnost sa trening primerima i smanjenu varijaciju. Ovaj nalaz potvrđuje da se FID metrika mora interpretirati u kombinaciji sa kvalitativnom analizom.
 
-\newpage
+Evolucija FID metrike na slici \ref{fig:lora_metrics} potvrđuje da konfiguracija UNet + Text Encoder postiže optimalne performanse u ranoj fazi treninga, dok dalje treniranje ne donosi dodatna poboljšanja. Vizuelno poređenje prikazano na slici \ref{fig:lora_comparison} dodatno ilustruje prednost LoRA fino podešenog modela u odnosu na bazni Stable Diffusion model u kontekstu razumevanja tradicionalnih srpskih jela.
+
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.9\columnwidth]{docs/images/sd_lora/fid_steps.png}
