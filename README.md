@@ -294,6 +294,20 @@ Dataset handler: dataset.py (CaptionImageSet)
 - Preprocessing: Resize to 64×64, normalize to [-1, 1] range
 - CLIP embeddings are generated beforehand and guide the conditional generation process
 
+### Loss
+![Training Collapse Example](docs/images/cvae/losses_epoch_35.png)
+### Sample generations
+![Training Collapse Example](docs/images/cvae/generation_35.png)
+### Evaluation results
+- FID:204.0874
+- CLIP Score:
+  - Mean: 0.1858 ± 0.0243
+  - Median: 0.1844
+  - Range: [0.1085, 0.2549]
+- CLIP Cosine Similarity:
+  - Mean: 0.1695 ± 0.0352 
+  - Median: 0.1683 
+  - Range: [0.0435, 0.2629]
 
 ### How to use this model
 
